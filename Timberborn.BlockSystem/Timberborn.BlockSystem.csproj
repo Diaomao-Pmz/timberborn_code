@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.BlockSystem</RootNamespace>
+    <AssemblyName>Timberborn.BlockSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bindito.Core">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Bindito.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BaseComponentSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BaseComponentSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BlueprintSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlueprintSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Common">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Coordinates">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Coordinates.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntitySystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.EntitySystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.ErrorReporting">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.ErrorReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.LevelVisibilitySystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.LevelVisibilitySystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapStateSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapStateSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Persistence">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Persistence.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SingletonSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SingletonSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TemplateInstantiation">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TemplateInstantiation.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TemplateSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TemplateSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TerrainQueryingSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TerrainQueryingSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TerrainSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TerrainSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TransformControl">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TransformControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.WorldPersistence">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.WorldPersistence.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaClamper.cs" />
+    <Compile Include="AreaIterator.cs" />
+    <Compile Include="Block.cs" />
+    <Compile Include="BlockObject.cs" />
+    <Compile Include="BlockObjectAtopDeletionBlocker.cs" />
+    <Compile Include="BlockObjectBatchLoader.cs" />
+    <Compile Include="BlockObjectCenter.cs" />
+    <Compile Include="BlockObjectExtensions.cs" />
+    <Compile Include="BlockObjectFactory.cs" />
+    <Compile Include="BlockObjectLayout.cs" />
+    <Compile Include="BlockObjectLayoutExtensions.cs" />
+    <Compile Include="BlockObjectPostLoadState.cs" />
+    <Compile Include="BlockObjectRange.cs" />
+    <Compile Include="BlockObjectSetEvent.cs" />
+    <Compile Include="BlockObjectSpec.cs" />
+    <Compile Include="BlockObjectState.cs" />
+    <Compile Include="BlockObjectTerrainCutout.cs" />
+    <Compile Include="BlockObjectTerrainCutoutSpec.cs" />
+    <Compile Include="BlockObjectUnsetEvent.cs" />
+    <Compile Include="BlockObjectValidationService.cs" />
+    <Compile Include="BlockOccupancyService.cs" />
+    <Compile Include="BlockOccupant.cs" />
+    <Compile Include="BlockOccupations.cs" />
+    <Compile Include="BlockOccupationsExtensions.cs" />
+    <Compile Include="Blocks.cs" />
+    <Compile Include="BlockService.cs" />
+    <Compile Include="BlockSpec.cs" />
+    <Compile Include="BlockStackable.cs" />
+    <Compile Include="BlockStackableExtensions.cs" />
+    <Compile Include="BlockSystemConfigurator.cs" />
+    <Compile Include="BlockValidator.cs" />
+    <Compile Include="CustomPivotSpec.cs" />
+    <Compile Include="EnteredFinishedStateEvent.cs" />
+    <Compile Include="EnteredUnfinishedStateEvent.cs" />
+    <Compile Include="EntranceBlockSpec.cs" />
+    <Compile Include="ExitedFinishedStateEvent.cs" />
+    <Compile Include="ExitedUnfinishedStateEvent.cs" />
+    <Compile Include="IBlockObjectCustomOverriding.cs" />
+    <Compile Include="IBlockObjectDeletionBlocker.cs" />
+    <Compile Include="IBlockObjectValidator.cs" />
+    <Compile Include="IBlockOccupancyService.cs" />
+    <Compile Include="IBlockService.cs" />
+    <Compile Include="IFinishedPostLoadStateListener.cs" />
+    <Compile Include="IFinishedStateListener.cs" />
+    <Compile Include="IPostPlacementChangeListener.cs" />
+    <Compile Include="IPrePlacementChangeListener.cs" />
+    <Compile Include="IPrePreviewShownListener.cs" />
+    <Compile Include="IPreviewSelectionListener.cs" />
+    <Compile Include="IPreviewServiceMember.cs" />
+    <Compile Include="IPreviewStateListener.cs" />
+    <Compile Include="IPreviewValidator.cs" />
+    <Compile Include="IUnfinishedStateListener.cs" />
+    <Compile Include="LineDirection.cs" />
+    <Compile Include="MatterBelow.cs" />
+    <Compile Include="MatterBelowExtensions.cs" />
+    <Compile Include="MatterBelowValidator.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="NoTerrainRemoverBelowValidator.cs" />
+    <Compile Include="OverridenBlockObjectService.cs" />
+    <Compile Include="PlaceableBlockObjectSpec.cs" />
+    <Compile Include="PlacementChangeNotifier.cs" />
+    <Compile Include="PositionedBlocks.cs" />
+    <Compile Include="PositionedEntrance.cs" />
+    <Compile Include="Preview.cs" />
+    <Compile Include="PreviewBlockObject.cs" />
+    <Compile Include="PreviewBlockService.cs" />
+    <Compile Include="PreviewState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackableBlockService.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="ToolShapes.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="WorldBlock.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

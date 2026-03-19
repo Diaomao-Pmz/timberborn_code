@@ -41,7 +41,7 @@ namespace Timberborn.BlockObjectPickingSystem
 			if (this.IsOnValidLevel(blockObject) && blockObject.Blocks.GetAllBlocks().Any(new Func<Block, bool>(this.ValidateBlockOccupation)))
 			{
 				Func<BlockObject, bool> selectionPredicate = this._selectionPredicate;
-				return selectionPredicate == null || selectionPredicate.Invoke(blockObject);
+				return selectionPredicate == null || selectionPredicate(blockObject);
 			}
 			return false;
 		}
@@ -52,7 +52,7 @@ namespace Timberborn.BlockObjectPickingSystem
 			if (this.IsOnValidLevel(blockObject) && this.ValidateBlockOccupation(blockObject.PositionedBlocks.GetBlock(coords)))
 			{
 				Func<BlockObject, bool> selectionPredicate = this._selectionPredicate;
-				return selectionPredicate == null || selectionPredicate.Invoke(blockObject);
+				return selectionPredicate == null || selectionPredicate(blockObject);
 			}
 			return false;
 		}
@@ -78,17 +78,17 @@ namespace Timberborn.BlockObjectPickingSystem
 		// Token: 0x06000031 RID: 49 RVA: 0x00002910 File Offset: 0x00000B10
 		public static bool HasBottomOccupationOnBaseZ(BlockObject blockObject, int baseZ)
 		{
-			return Enumerable.Any<Block>(from block in blockObject.PositionedBlocks.GetAllBlocks()
+			return (from block in blockObject.PositionedBlocks.GetAllBlocks()
 			where block.Coordinates.z == baseZ
-			select block, (Block block) => block.Occupation.IsBottomOrFloorOrBoth());
+			select block).Any((Block block) => block.Occupation.IsBottomOrFloorOrBoth());
 		}
 
 		// Token: 0x06000032 RID: 50 RVA: 0x0000296C File Offset: 0x00000B6C
 		public static bool HasTopOccupationOnBaseZ(BlockObject blockObject, int baseZ)
 		{
-			return Enumerable.Any<Block>(from block in blockObject.PositionedBlocks.GetAllBlocks()
+			return (from block in blockObject.PositionedBlocks.GetAllBlocks()
 			where block.Coordinates.z == baseZ
-			select block, (Block block) => block.Occupation.IsTopOrCornersOrBoth());
+			select block).Any((Block block) => block.Occupation.IsTopOrCornersOrBoth());
 		}
 
 		// Token: 0x06000033 RID: 51 RVA: 0x000029C6 File Offset: 0x00000BC6

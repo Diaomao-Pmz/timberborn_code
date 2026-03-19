@@ -5,12 +5,12 @@ using System.Runtime.CompilerServices;
 
 // Token: 0x02000002 RID: 2
 [CompilerGenerated]
-[EditorBrowsable(1)]
+[EditorBrowsable(EditorBrowsableState.Never)]
 [GeneratedCode("Unity.MonoScriptGenerator.MonoScriptInfoGenerator", null)]
 internal class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 {
 	// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
-	[MethodImpl(256)]
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	private static UnitySourceGeneratedAssemblyMonoScriptTypes_v1.MonoScriptData Get()
 	{
 		UnitySourceGeneratedAssemblyMonoScriptTypes_v1.MonoScriptData result = default(UnitySourceGeneratedAssemblyMonoScriptTypes_v1.MonoScriptData);

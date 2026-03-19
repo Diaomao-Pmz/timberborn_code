@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B885E68-22CD-4499-9B74-CDFE820A8BEB}</ProjectGuid>
+    <ProjectGuid>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.MapEditorUI</RootNamespace>
@@ -44,17 +44,8 @@
     <Reference Include="Timberborn.BaseComponentSystem">
       <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BaseComponentSystem.dll</HintPath>
     </Reference>
-    <Reference Include="Timberborn.BlockObjectTools">
-      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockObjectTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BlockObjectToolsUI">
-      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockObjectToolsUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BlockSystem">
-      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BlockSystemUI">
-      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockSystemUI.dll</HintPath>
+    <Reference Include="Timberborn.BottomBarSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BottomBarSystem.dll</HintPath>
     </Reference>
     <Reference Include="Timberborn.CoreUI">
       <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.CoreUI.dll</HintPath>
@@ -141,9 +132,21 @@
     <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Timberborn.BottomBarSystem\Timberborn.BottomBarSystem.csproj">
-      <Project>{1B885E68-22CD-4499-9B74-CDFE820A8BEA}</Project>
-      <Name>Timberborn.BottomBarSystem</Name>
+    <ProjectReference Include="..\Timberborn.BlockObjectToolsUI\Timberborn.BlockObjectToolsUI.csproj">
+      <Project>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E2}</Project>
+      <Name>Timberborn.BlockObjectToolsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockObjectTools\Timberborn.BlockObjectTools.csproj">
+      <Project>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E1}</Project>
+      <Name>Timberborn.BlockObjectTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystemUI\Timberborn.BlockSystemUI.csproj">
+      <Project>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E6}</Project>
+      <Name>Timberborn.BlockSystemUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
+      <Project>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E4}</Project>
+      <Name>Timberborn.BlockSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

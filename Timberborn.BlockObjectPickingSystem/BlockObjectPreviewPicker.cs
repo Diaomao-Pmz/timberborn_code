@@ -58,10 +58,10 @@ namespace Timberborn.BlockObjectPickingSystem
 				}
 				if (BlockObjectPreviewPicker.ShouldObjectBlockCoordinates(objectHitByRaycast, coordinates))
 				{
-					return default(PickedCoordinates?);
+					return null;
 				}
 			}
-			return default(PickedCoordinates?);
+			return null;
 		}
 
 		// Token: 0x06000040 RID: 64 RVA: 0x00002CB8 File Offset: 0x00000EB8

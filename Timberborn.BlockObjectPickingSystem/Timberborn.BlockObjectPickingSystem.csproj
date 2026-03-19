@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B885E68-22CD-4499-9B74-CDFE820A8BE9}</ProjectGuid>
+    <ProjectGuid>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.BlockObjectPickingSystem</RootNamespace>
@@ -40,12 +40,6 @@
     </Reference>
     <Reference Include="Timberborn.BaseComponentSystem">
       <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BaseComponentSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BlockObjectModelSystem">
-      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockObjectModelSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BlockSystem">
-      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockSystem.dll</HintPath>
     </Reference>
     <Reference Include="Timberborn.BlueprintSystem">
       <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlueprintSystem.dll</HintPath>
@@ -91,6 +85,16 @@
     <Compile Include="SelectionStart.cs" />
     <Compile Include="StackedBlockObjectPicker.cs" />
     <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Timberborn.BlockObjectModelSystem\Timberborn.BlockObjectModelSystem.csproj">
+      <Project>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3DF}</Project>
+      <Name>Timberborn.BlockObjectModelSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
+      <Project>{23DCA0B5-2BD1-4ADB-805B-31AE935EE3E4}</Project>
+      <Name>Timberborn.BlockSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

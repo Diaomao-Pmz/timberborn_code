@@ -28,7 +28,7 @@ namespace Timberborn.BlockObjectPickingSystem
 			BlockObject blockObject = (blockObjectHit != null) ? blockObjectHit.GetValueOrDefault().BlockObject : null;
 			if (blockObject != null)
 			{
-				if (!selectingArea && !BlockObjectPicker.IsStackable(blockObject) && (blockObjectFilter == null || blockObjectFilter.Invoke(blockObject)) && pickingMode != BlockObjectPickingMode.DownwardStack)
+				if (!selectingArea && !BlockObjectPicker.IsStackable(blockObject) && (blockObjectFilter == null || blockObjectFilter(blockObject)) && pickingMode != BlockObjectPickingMode.DownwardStack)
 				{
 					return Enumerables.One<BlockObject>(blockObject);
 				}
@@ -54,7 +54,9 @@ namespace Timberborn.BlockObjectPickingSystem
 		// Token: 0x0600000E RID: 14 RVA: 0x000022F4 File Offset: 0x000004F4
 		public IEnumerable<BlockObject> PickBlockObjectsInArea(Vector3Int startCoords, Vector3Int endCoords, BlockObjectPickerFilter filter)
 		{
-			IEnumerable<BlockObject> enumerable = Enumerable.Distinct<BlockObject>(Enumerable.SelectMany<Vector3Int, BlockObject>(Enumerable.Where<Vector3Int>(this._areaIterator.GetCuboid(startCoords, endCoords, 0), (Vector3Int coords) => this._blockService.AnyObjectAt(coords)), (Vector3Int coords) => this.GetValidObjects(coords, filter)));
+			IEnumerable<BlockObject> enumerable = (from coords in this._areaIterator.GetCuboid(startCoords, endCoords, 0)
+			where this._blockService.AnyObjectAt(coords)
+			select coords).SelectMany((Vector3Int coords) => this.GetValidObjects(coords, filter)).Distinct<BlockObject>();
 			foreach (BlockObject blockObject in enumerable)
 			{
 				yield return blockObject;

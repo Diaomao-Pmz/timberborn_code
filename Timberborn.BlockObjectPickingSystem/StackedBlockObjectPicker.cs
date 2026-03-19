@@ -55,7 +55,9 @@ namespace Timberborn.BlockObjectPickingSystem
 		// Token: 0x06000068 RID: 104 RVA: 0x00003494 File Offset: 0x00001694
 		public IEnumerable<BlockObject> GetBlockObjectsInCuboid(Vector3Int start, Vector3Int end, BlockObjectPickerFilter selectionFilter)
 		{
-			return Enumerable.Distinct<BlockObject>(Enumerable.SelectMany<Vector3Int, BlockObject>(Enumerable.Where<Vector3Int>(this._areaIterator.GetCuboid(start, end, 0), (Vector3Int coords) => this._blockService.AnyObjectAt(coords)), (Vector3Int coords) => this.GetValidObjects(coords, selectionFilter)));
+			return (from coords in this._areaIterator.GetCuboid(start, end, 0)
+			where this._blockService.AnyObjectAt(coords)
+			select coords).SelectMany((Vector3Int coords) => this.GetValidObjects(coords, selectionFilter)).Distinct<BlockObject>();
 		}
 
 		// Token: 0x06000069 RID: 105 RVA: 0x000034EC File Offset: 0x000016EC

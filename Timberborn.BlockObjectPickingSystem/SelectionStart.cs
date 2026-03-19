@@ -30,7 +30,7 @@ namespace Timberborn.BlockObjectPickingSystem
 		// Token: 0x06000061 RID: 97 RVA: 0x000032B8 File Offset: 0x000014B8
 		public SelectionStart(Vector3Int coordinates)
 		{
-			this = new SelectionStart(coordinates, default(BlockObjectHit?), 0);
+			this = new SelectionStart(coordinates, null, 0);
 		}
 
 		// Token: 0x06000062 RID: 98 RVA: 0x000032D8 File Offset: 0x000014D8
@@ -51,7 +51,7 @@ namespace Timberborn.BlockObjectPickingSystem
 			{
 				return this._originalBlockObjectHit;
 			}
-			return default(BlockObjectHit?);
+			return null;
 		}
 
 		// Token: 0x04000045 RID: 69

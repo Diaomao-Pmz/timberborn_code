@@ -68,7 +68,7 @@ namespace Timberborn.MapEditorUI
 			button.text = this._loc.T(locKey);
 			button.RegisterCallback<ClickEvent>(delegate(ClickEvent _)
 			{
-				action.Invoke();
+				action();
 			}, 0);
 			this._mapFileButtons.Add(button);
 		}
