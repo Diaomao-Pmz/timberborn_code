@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timberborn.AssetSystem", "Timberborn.AssetSystem\Timberborn.AssetSystem.csproj", "{1B885E68-22CD-4499-9B74-CDFE820A8BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timberborn.BlockObjectPickingSystem", "Timberborn.BlockObjectPickingSystem\Timberborn.BlockObjectPickingSystem.csproj", "{1B885E68-22CD-4499-9B74-CDFE820A8BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timberborn.BottomBarSystem", "Timberborn.BottomBarSystem\Timberborn.BottomBarSystem.csproj", "{1B885E68-22CD-4499-9B74-CDFE820A8BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timberborn.MapEditorUI", "Timberborn.MapEditorUI\Timberborn.MapEditorUI.csproj", "{1B885E68-22CD-4499-9B74-CDFE820A8BEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B885E68-22CD-4499-9B74-CDFE820A8BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

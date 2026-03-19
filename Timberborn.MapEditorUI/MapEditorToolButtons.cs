@@ -10,10 +10,10 @@ using Timberborn.ToolButtonSystem;
 
 namespace Timberborn.MapEditorUI
 {
-	// Token: 0x02000007 RID: 7
-	internal class MapEditorToolButtons : IBottomBarElementsProvider
+	// Token: 0x0200000A RID: 10
+	public class MapEditorToolButtons : IBottomBarElementsProvider
 	{
-		// Token: 0x0600002D RID: 45 RVA: 0x000027F8 File Offset: 0x000009F8
+		// Token: 0x06000038 RID: 56 RVA: 0x00002A58 File Offset: 0x00000C58
 		public MapEditorToolButtons(ToolButtonFactory toolButtonFactory, AbsoluteTerrainHeightBrushTool absoluteTerrainHeightBrushTool, RelativeTerrainHeightBrushTool relativeTerrainHeightBrushTool, SculptingTerrainBrushTool sculptingTerrainBrushTool, NaturalResourceSpawningBrushTool naturalResourceSpawningBrushTool, NaturalResourceRemovalBrushTool naturalResourceRemovalBrushTool, EntityBlockObjectDeletionTool entityBlockObjectDeletionTool, ThumbnailCapturingTool thumbnailCapturingTool, MapMetadataTool mapMetadataTool)
 		{
 			this._toolButtonFactory = toolButtonFactory;
@@ -27,7 +27,7 @@ namespace Timberborn.MapEditorUI
 			this._mapMetadataTool = mapMetadataTool;
 		}
 
-		// Token: 0x0600002E RID: 46 RVA: 0x00002850 File Offset: 0x00000A50
+		// Token: 0x06000039 RID: 57 RVA: 0x00002AB0 File Offset: 0x00000CB0
 		public IEnumerable<BottomBarElement> GetElements()
 		{
 			ToolButton toolButton = this._toolButtonFactory.CreateGrouplessBlue(this._absoluteTerrainHeightBrushTool, MapEditorToolButtons.AbsoluteTerrainHeightBrushImageKey);
@@ -49,55 +49,55 @@ namespace Timberborn.MapEditorUI
 			yield break;
 		}
 
-		// Token: 0x04000027 RID: 39
-		private static readonly string AbsoluteTerrainHeightBrushImageKey = "AbsoluteTerrainHeightBrush";
-
-		// Token: 0x04000028 RID: 40
-		private static readonly string RelativeTerrainHeightBrushImageKey = "RelativeTerrainHeightBrushIcon";
-
-		// Token: 0x04000029 RID: 41
-		private static readonly string SculptingTerrainBrushImageKey = "SculptingTerrainBrushIcon";
-
-		// Token: 0x0400002A RID: 42
-		private static readonly string NaturalResourcesSpawningImageKey = "NaturalResourcesIcon";
-
-		// Token: 0x0400002B RID: 43
-		private static readonly string NaturalResourcesRemovalImageKey = "RemoveNaturalResourcesIcon";
-
-		// Token: 0x0400002C RID: 44
-		private static readonly string DeleteBuildingImageKey = "DeleteObjectIcon";
-
-		// Token: 0x0400002D RID: 45
-		private static readonly string ThumbnailCapturingImageKey = "ThumbnailCapturingIcon";
-
-		// Token: 0x0400002E RID: 46
-		private static readonly string MapMetadataImageKey = "MapMetadataIcon";
-
-		// Token: 0x0400002F RID: 47
-		private readonly ToolButtonFactory _toolButtonFactory;
-
-		// Token: 0x04000030 RID: 48
-		private readonly AbsoluteTerrainHeightBrushTool _absoluteTerrainHeightBrushTool;
-
-		// Token: 0x04000031 RID: 49
-		private readonly RelativeTerrainHeightBrushTool _relativeTerrainHeightBrushTool;
-
-		// Token: 0x04000032 RID: 50
-		private readonly SculptingTerrainBrushTool _sculptingTerrainBrushTool;
-
-		// Token: 0x04000033 RID: 51
-		private readonly NaturalResourceSpawningBrushTool _naturalResourceSpawningBrushTool;
-
 		// Token: 0x04000034 RID: 52
-		private readonly NaturalResourceRemovalBrushTool _naturalResourceRemovalBrushTool;
+		public static readonly string AbsoluteTerrainHeightBrushImageKey = "AbsoluteTerrainHeightBrush";
 
 		// Token: 0x04000035 RID: 53
-		private readonly EntityBlockObjectDeletionTool _entityBlockObjectDeletionTool;
+		public static readonly string RelativeTerrainHeightBrushImageKey = "RelativeTerrainHeightBrushIcon";
 
 		// Token: 0x04000036 RID: 54
-		private readonly ThumbnailCapturingTool _thumbnailCapturingTool;
+		public static readonly string SculptingTerrainBrushImageKey = "SculptingTerrainBrushIcon";
 
 		// Token: 0x04000037 RID: 55
-		private readonly MapMetadataTool _mapMetadataTool;
+		public static readonly string NaturalResourcesSpawningImageKey = "NaturalResourcesIcon";
+
+		// Token: 0x04000038 RID: 56
+		public static readonly string NaturalResourcesRemovalImageKey = "RemoveNaturalResourcesIcon";
+
+		// Token: 0x04000039 RID: 57
+		public static readonly string DeleteBuildingImageKey = "DeleteObjectIcon";
+
+		// Token: 0x0400003A RID: 58
+		public static readonly string ThumbnailCapturingImageKey = "ThumbnailCapturingIcon";
+
+		// Token: 0x0400003B RID: 59
+		public static readonly string MapMetadataImageKey = "MapMetadataIcon";
+
+		// Token: 0x0400003C RID: 60
+		public readonly ToolButtonFactory _toolButtonFactory;
+
+		// Token: 0x0400003D RID: 61
+		public readonly AbsoluteTerrainHeightBrushTool _absoluteTerrainHeightBrushTool;
+
+		// Token: 0x0400003E RID: 62
+		public readonly RelativeTerrainHeightBrushTool _relativeTerrainHeightBrushTool;
+
+		// Token: 0x0400003F RID: 63
+		public readonly SculptingTerrainBrushTool _sculptingTerrainBrushTool;
+
+		// Token: 0x04000040 RID: 64
+		public readonly NaturalResourceSpawningBrushTool _naturalResourceSpawningBrushTool;
+
+		// Token: 0x04000041 RID: 65
+		public readonly NaturalResourceRemovalBrushTool _naturalResourceRemovalBrushTool;
+
+		// Token: 0x04000042 RID: 66
+		public readonly EntityBlockObjectDeletionTool _entityBlockObjectDeletionTool;
+
+		// Token: 0x04000043 RID: 67
+		public readonly ThumbnailCapturingTool _thumbnailCapturingTool;
+
+		// Token: 0x04000044 RID: 68
+		public readonly MapMetadataTool _mapMetadataTool;
 	}
 }

@@ -11,10 +11,10 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorUI
 {
-	// Token: 0x02000006 RID: 6
-	internal class MapEditorOptionsBox : IOptionsBox, IPanelController, ILoadableSingleton
+	// Token: 0x02000009 RID: 9
+	public class MapEditorOptionsBox : IOptionsBox, IPanelController, ILoadableSingleton
 	{
-		// Token: 0x0600001B RID: 27 RVA: 0x00002566 File Offset: 0x00000766
+		// Token: 0x06000026 RID: 38 RVA: 0x000027CF File Offset: 0x000009CF
 		public MapEditorOptionsBox(VisualElementLoader visualElementLoader, MainMenuSceneLoader mainMenuSceneLoader, DialogBoxShower dialogBoxShower, ISettingsController settingsController, KeyBindingsBox keyBindingsBox, PanelStack panelStack, MapSaverLoader mapSaverLoader)
 		{
 			this._visualElementLoader = visualElementLoader;
@@ -26,136 +26,136 @@ namespace Timberborn.MapEditorUI
 			this._mapSaverLoader = mapSaverLoader;
 		}
 
-		// Token: 0x0600001C RID: 28 RVA: 0x000025A4 File Offset: 0x000007A4
+		// Token: 0x06000027 RID: 39 RVA: 0x0000280C File Offset: 0x00000A0C
 		public void Load()
 		{
 			this._root = this._visualElementLoader.LoadVisualElement("MapEditor/MapEditorOptionsBox");
-			this._root.Q("Resume", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnResumeClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("Save", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnSaveClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("SaveAs", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnSaveAsClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("Load", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnLoadClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("NewMap", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnNewMapClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("Bindings", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnBindingsClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("Settings", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnSettingsClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("ExitToMenu", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnExitToMenuClicked), TrickleDown.NoTrickleDown);
-			this._root.Q("ExitToDesktop", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnExitToDesktopClicked), TrickleDown.NoTrickleDown);
+			UQueryExtensions.Q<Button>(this._root, "Resume", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnResumeClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "Save", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnSaveClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "SaveAs", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnSaveAsClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "Load", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnLoadClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "NewMap", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnNewMapClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "Bindings", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnBindingsClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "Settings", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnSettingsClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "ExitToMenu", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnExitToMenuClicked), 0);
+			UQueryExtensions.Q<Button>(this._root, "ExitToDesktop", null).RegisterCallback<ClickEvent>(new EventCallback<ClickEvent>(this.OnExitToDesktopClicked), 0);
 		}
 
-		// Token: 0x0600001D RID: 29 RVA: 0x00002702 File Offset: 0x00000902
+		// Token: 0x06000028 RID: 40 RVA: 0x0000296A File Offset: 0x00000B6A
 		public VisualElement GetPanel()
 		{
 			return this._root;
 		}
 
-		// Token: 0x0600001E RID: 30 RVA: 0x0000270A File Offset: 0x0000090A
+		// Token: 0x06000029 RID: 41 RVA: 0x00002972 File Offset: 0x00000B72
 		public void Show()
 		{
 			this._panelStack.PushOverlay(this);
 		}
 
-		// Token: 0x0600001F RID: 31 RVA: 0x00002718 File Offset: 0x00000918
+		// Token: 0x0600002A RID: 42 RVA: 0x00002980 File Offset: 0x00000B80
 		public bool OnUIConfirmed()
 		{
 			return false;
 		}
 
-		// Token: 0x06000020 RID: 32 RVA: 0x0000271B File Offset: 0x0000091B
+		// Token: 0x0600002B RID: 43 RVA: 0x00002983 File Offset: 0x00000B83
 		public void OnUICancelled()
 		{
 			this.Close();
 		}
 
-		// Token: 0x06000021 RID: 33 RVA: 0x00002723 File Offset: 0x00000923
-		private void OnResumeClicked(ClickEvent evt)
+		// Token: 0x0600002C RID: 44 RVA: 0x00002983 File Offset: 0x00000B83
+		public void OnResumeClicked(ClickEvent evt)
 		{
 			this.Close();
 		}
 
-		// Token: 0x06000022 RID: 34 RVA: 0x0000272B File Offset: 0x0000092B
-		private void OnSaveClicked(ClickEvent evt)
+		// Token: 0x0600002D RID: 45 RVA: 0x0000298B File Offset: 0x00000B8B
+		public void OnSaveClicked(ClickEvent evt)
 		{
 			this._mapSaverLoader.Save(null);
 		}
 
-		// Token: 0x06000023 RID: 35 RVA: 0x00002739 File Offset: 0x00000939
-		private void OnSaveAsClicked(ClickEvent evt)
+		// Token: 0x0600002E RID: 46 RVA: 0x00002999 File Offset: 0x00000B99
+		public void OnSaveAsClicked(ClickEvent evt)
 		{
 			this._mapSaverLoader.SaveAs(null);
 		}
 
-		// Token: 0x06000024 RID: 36 RVA: 0x00002747 File Offset: 0x00000947
-		private void OnLoadClicked(ClickEvent evt)
+		// Token: 0x0600002F RID: 47 RVA: 0x000029A7 File Offset: 0x00000BA7
+		public void OnLoadClicked(ClickEvent evt)
 		{
 			this._mapSaverLoader.LoadMap();
 		}
 
-		// Token: 0x06000025 RID: 37 RVA: 0x00002754 File Offset: 0x00000954
-		private void OnNewMapClicked(ClickEvent evt)
+		// Token: 0x06000030 RID: 48 RVA: 0x000029B4 File Offset: 0x00000BB4
+		public void OnNewMapClicked(ClickEvent evt)
 		{
 			this._mapSaverLoader.NewMap();
 		}
 
-		// Token: 0x06000026 RID: 38 RVA: 0x00002761 File Offset: 0x00000961
-		private void OnBindingsClicked(ClickEvent evt)
+		// Token: 0x06000031 RID: 49 RVA: 0x000029C1 File Offset: 0x00000BC1
+		public void OnBindingsClicked(ClickEvent evt)
 		{
 			this._panelStack.HideAndPushOverlay(this._keyBindingsBox);
 		}
 
-		// Token: 0x06000027 RID: 39 RVA: 0x00002774 File Offset: 0x00000974
-		private void OnSettingsClicked(ClickEvent evt)
+		// Token: 0x06000032 RID: 50 RVA: 0x000029D4 File Offset: 0x00000BD4
+		public void OnSettingsClicked(ClickEvent evt)
 		{
 			this._panelStack.HideAndPushOverlay(this._settingsController);
 		}
 
-		// Token: 0x06000028 RID: 40 RVA: 0x00002787 File Offset: 0x00000987
-		private void OnExitToMenuClicked(ClickEvent evt)
+		// Token: 0x06000033 RID: 51 RVA: 0x000029E7 File Offset: 0x00000BE7
+		public void OnExitToMenuClicked(ClickEvent evt)
 		{
 			this.ShowExitDialog(new Action(this._mainMenuSceneLoader.SaveAndOpenMainMenu));
 		}
 
-		// Token: 0x06000029 RID: 41 RVA: 0x000027A0 File Offset: 0x000009A0
-		private void OnExitToDesktopClicked(ClickEvent evt)
+		// Token: 0x06000034 RID: 52 RVA: 0x00002A00 File Offset: 0x00000C00
+		public void OnExitToDesktopClicked(ClickEvent evt)
 		{
 			this.ShowExitDialog(new Action(GameQuitter.Quit));
 		}
 
-		// Token: 0x0600002A RID: 42 RVA: 0x000027B4 File Offset: 0x000009B4
-		private void Close()
+		// Token: 0x06000035 RID: 53 RVA: 0x00002A14 File Offset: 0x00000C14
+		public void Close()
 		{
 			this._panelStack.Pop(this);
 		}
 
-		// Token: 0x0600002B RID: 43 RVA: 0x000027C2 File Offset: 0x000009C2
-		private void ShowExitDialog(Action exitAction)
+		// Token: 0x06000036 RID: 54 RVA: 0x00002A22 File Offset: 0x00000C22
+		public void ShowExitDialog(Action exitAction)
 		{
 			this._dialogBoxShower.Create().SetLocalizedMessage(MapEditorOptionsBox.ExitChangesLostPromptLocKey).SetConfirmButton(exitAction).SetDefaultCancelButton().Show();
 		}
 
-		// Token: 0x0400001E RID: 30
-		private static readonly string ExitChangesLostPromptLocKey = "Menu.ExitChangesLostPrompt";
+		// Token: 0x0400002B RID: 43
+		public static readonly string ExitChangesLostPromptLocKey = "Menu.ExitChangesLostPrompt";
 
-		// Token: 0x0400001F RID: 31
-		private readonly VisualElementLoader _visualElementLoader;
+		// Token: 0x0400002C RID: 44
+		public readonly VisualElementLoader _visualElementLoader;
 
-		// Token: 0x04000020 RID: 32
-		private readonly MainMenuSceneLoader _mainMenuSceneLoader;
+		// Token: 0x0400002D RID: 45
+		public readonly MainMenuSceneLoader _mainMenuSceneLoader;
 
-		// Token: 0x04000021 RID: 33
-		private readonly DialogBoxShower _dialogBoxShower;
+		// Token: 0x0400002E RID: 46
+		public readonly DialogBoxShower _dialogBoxShower;
 
-		// Token: 0x04000022 RID: 34
-		private readonly ISettingsController _settingsController;
+		// Token: 0x0400002F RID: 47
+		public readonly ISettingsController _settingsController;
 
-		// Token: 0x04000023 RID: 35
-		private readonly KeyBindingsBox _keyBindingsBox;
+		// Token: 0x04000030 RID: 48
+		public readonly KeyBindingsBox _keyBindingsBox;
 
-		// Token: 0x04000024 RID: 36
-		private readonly PanelStack _panelStack;
+		// Token: 0x04000031 RID: 49
+		public readonly PanelStack _panelStack;
 
-		// Token: 0x04000025 RID: 37
-		private readonly MapSaverLoader _mapSaverLoader;
+		// Token: 0x04000032 RID: 50
+		public readonly MapSaverLoader _mapSaverLoader;
 
-		// Token: 0x04000026 RID: 38
-		private VisualElement _root;
+		// Token: 0x04000033 RID: 51
+		public VisualElement _root;
 	}
 }

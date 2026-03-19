@@ -12,8 +12,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorUI
 {
-	// Token: 0x02000003 RID: 3
-	internal class DeleteBlockObjectFragment : IEntityPanelFragment
+	// Token: 0x02000004 RID: 4
+	public class DeleteBlockObjectFragment : IEntityPanelFragment
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BF File Offset: 0x000002BF
 		public DeleteBlockObjectFragment(VisualElementLoader visualElementLoader, EntityService entityService, BindableButtonFactory bindableButtonFactory, ITooltipRegistrar tooltipRegistrar, IUndoRegistry undoRegistry)
@@ -29,7 +29,7 @@ namespace Timberborn.MapEditorUI
 		public VisualElement InitializeFragment()
 		{
 			this._root = this._visualElementLoader.LoadVisualElement("Common/EntityPanel/DeleteObjectFragment");
-			Button button = this._root.Q("Button", null);
+			Button button = UQueryExtensions.Q<Button>(this._root, "Button", null);
 			this._deleteButton = this._bindableButtonFactory.Create(button, DeleteBlockObjectFragment.DeleteObjectKey, new Action(this.DeleteObject), true);
 			this._tooltipRegistrar.Register(button, new Func<string>(this.GetTooltipText));
 			this._root.ToggleDisplayStyle(false);
@@ -69,7 +69,7 @@ namespace Timberborn.MapEditorUI
 		}
 
 		// Token: 0x06000008 RID: 8 RVA: 0x00002206 File Offset: 0x00000406
-		private void DeleteObject()
+		public void DeleteObject()
 		{
 			if (this.IsSelectedObjectDeletable())
 			{
@@ -79,45 +79,45 @@ namespace Timberborn.MapEditorUI
 		}
 
 		// Token: 0x06000009 RID: 9 RVA: 0x0000222C File Offset: 0x0000042C
-		private string GetTooltipText()
+		public string GetTooltipText()
 		{
 			return this._deletionDescriber.GetDescription();
 		}
 
 		// Token: 0x0600000A RID: 10 RVA: 0x00002239 File Offset: 0x00000439
-		private bool IsSelectedObjectDeletable()
+		public bool IsSelectedObjectDeletable()
 		{
 			return this._selectedBlockObject && this._selectedBlockObject.CanDelete();
 		}
 
-		// Token: 0x04000001 RID: 1
-		private static readonly string DeleteObjectKey = "DeleteObject";
-
-		// Token: 0x04000002 RID: 2
-		private readonly VisualElementLoader _visualElementLoader;
-
-		// Token: 0x04000003 RID: 3
-		private readonly EntityService _entityService;
-
-		// Token: 0x04000004 RID: 4
-		private readonly BindableButtonFactory _bindableButtonFactory;
-
-		// Token: 0x04000005 RID: 5
-		private readonly ITooltipRegistrar _tooltipRegistrar;
-
 		// Token: 0x04000006 RID: 6
-		private readonly IUndoRegistry _undoRegistry;
+		public static readonly string DeleteObjectKey = "DeleteObject";
 
 		// Token: 0x04000007 RID: 7
-		private BlockObject _selectedBlockObject;
+		public readonly VisualElementLoader _visualElementLoader;
 
 		// Token: 0x04000008 RID: 8
-		private BlockObjectDeletionDescriber _deletionDescriber;
+		public readonly EntityService _entityService;
 
 		// Token: 0x04000009 RID: 9
-		private VisualElement _root;
+		public readonly BindableButtonFactory _bindableButtonFactory;
 
 		// Token: 0x0400000A RID: 10
-		private BindableButton _deleteButton;
+		public readonly ITooltipRegistrar _tooltipRegistrar;
+
+		// Token: 0x0400000B RID: 11
+		public readonly IUndoRegistry _undoRegistry;
+
+		// Token: 0x0400000C RID: 12
+		public BlockObject _selectedBlockObject;
+
+		// Token: 0x0400000D RID: 13
+		public BlockObjectDeletionDescriber _deletionDescriber;
+
+		// Token: 0x0400000E RID: 14
+		public VisualElement _root;
+
+		// Token: 0x0400000F RID: 15
+		public BindableButton _deleteButton;
 	}
 }

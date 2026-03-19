@@ -8,10 +8,10 @@ using Timberborn.ToolButtonSystem;
 
 namespace Timberborn.MapEditorUI
 {
-	// Token: 0x02000005 RID: 5
-	internal class MapEditorBlockObjectButtons : IBottomBarElementsProvider
+	// Token: 0x02000007 RID: 7
+	public class MapEditorBlockObjectButtons : IBottomBarElementsProvider
 	{
-		// Token: 0x06000018 RID: 24 RVA: 0x00002502 File Offset: 0x00000702
+		// Token: 0x0600001A RID: 26 RVA: 0x0000250F File Offset: 0x0000070F
 		public MapEditorBlockObjectButtons(BlockObjectToolGroupSpecService blockObjectToolGroupSpecService, PlaceableBlockObjectSpecService placeableBlockObjectSpecService, BlockObjectToolGroupButtonFactory blockObjectToolGroupButtonFactory, BlockObjectToolButtonFactory blockObjectToolButtonFactory)
 		{
 			this._blockObjectToolGroupSpecService = blockObjectToolGroupSpecService;
@@ -20,7 +20,7 @@ namespace Timberborn.MapEditorUI
 			this._blockObjectToolButtonFactory = blockObjectToolButtonFactory;
 		}
 
-		// Token: 0x06000019 RID: 25 RVA: 0x00002527 File Offset: 0x00000727
+		// Token: 0x0600001B RID: 27 RVA: 0x00002534 File Offset: 0x00000734
 		public IEnumerable<BottomBarElement> GetElements()
 		{
 			BlockObjectToolGroupSpec spec = this._blockObjectToolGroupSpecService.GetSpec(MapEditorBlockObjectButtons.SingleLevelGroup);
@@ -42,27 +42,27 @@ namespace Timberborn.MapEditorUI
 			yield break;
 		}
 
-		// Token: 0x04000018 RID: 24
-		private static readonly string SingleLevelGroup = "MapEditor";
+		// Token: 0x0400001E RID: 30
+		public static readonly string SingleLevelGroup = "MapEditor";
 
-		// Token: 0x04000019 RID: 25
-		private static readonly string[] NestedGroups = new string[]
+		// Token: 0x0400001F RID: 31
+		public static readonly string[] NestedGroups = new string[]
 		{
 			"MapEditorWater",
 			"MapEditorObjects",
 			"Ruins"
 		};
 
-		// Token: 0x0400001A RID: 26
-		private readonly BlockObjectToolGroupSpecService _blockObjectToolGroupSpecService;
+		// Token: 0x04000020 RID: 32
+		public readonly BlockObjectToolGroupSpecService _blockObjectToolGroupSpecService;
 
-		// Token: 0x0400001B RID: 27
-		private readonly PlaceableBlockObjectSpecService _placeableBlockObjectSpecService;
+		// Token: 0x04000021 RID: 33
+		public readonly PlaceableBlockObjectSpecService _placeableBlockObjectSpecService;
 
-		// Token: 0x0400001C RID: 28
-		private readonly BlockObjectToolGroupButtonFactory _blockObjectToolGroupButtonFactory;
+		// Token: 0x04000022 RID: 34
+		public readonly BlockObjectToolGroupButtonFactory _blockObjectToolGroupButtonFactory;
 
-		// Token: 0x0400001D RID: 29
-		private readonly BlockObjectToolButtonFactory _blockObjectToolButtonFactory;
+		// Token: 0x04000023 RID: 35
+		public readonly BlockObjectToolButtonFactory _blockObjectToolButtonFactory;
 	}
 }

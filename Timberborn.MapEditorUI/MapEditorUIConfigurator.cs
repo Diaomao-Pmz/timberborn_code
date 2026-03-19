@@ -7,12 +7,12 @@ using Timberborn.Options;
 
 namespace Timberborn.MapEditorUI
 {
-	// Token: 0x02000008 RID: 8
+	// Token: 0x0200000C RID: 12
 	[Context("MapEditor")]
-	internal class MapEditorUIConfigurator : Configurator
+	public class MapEditorUIConfigurator : Configurator
 	{
-		// Token: 0x06000030 RID: 48 RVA: 0x000028C0 File Offset: 0x00000AC0
-		protected override void Configure()
+		// Token: 0x06000043 RID: 67 RVA: 0x00002DB8 File Offset: 0x00000FB8
+		public override void Configure()
 		{
 			base.Bind<NoStartingLocationAlertFragment>().AsSingleton();
 			base.Bind<NonCompatibleMapAlertFragment>().AsSingleton();
@@ -26,17 +26,17 @@ namespace Timberborn.MapEditorUI
 			base.MultiBind<EntityPanelModule>().ToProvider<MapEditorUIConfigurator.EntityPanelModuleProvider>().AsSingleton();
 		}
 
-		// Token: 0x02000010 RID: 16
-		private class AlertPanelModuleProvider : IProvider<AlertPanelModule>
+		// Token: 0x0200000D RID: 13
+		public class AlertPanelModuleProvider : IProvider<AlertPanelModule>
 		{
-			// Token: 0x06000050 RID: 80 RVA: 0x00002FC7 File Offset: 0x000011C7
+			// Token: 0x06000045 RID: 69 RVA: 0x00002E59 File Offset: 0x00001059
 			public AlertPanelModuleProvider(NoStartingLocationAlertFragment noStartingLocationAlertFragment, NonCompatibleMapAlertFragment nonCompatibleMapAlertFragment)
 			{
 				this._noStartingLocationAlertFragment = noStartingLocationAlertFragment;
 				this._nonCompatibleMapAlertFragment = nonCompatibleMapAlertFragment;
 			}
 
-			// Token: 0x06000051 RID: 81 RVA: 0x00002FDD File Offset: 0x000011DD
+			// Token: 0x06000046 RID: 70 RVA: 0x00002E6F File Offset: 0x0000106F
 			public AlertPanelModule Get()
 			{
 				AlertPanelModule.Builder builder = new AlertPanelModule.Builder();
@@ -45,24 +45,24 @@ namespace Timberborn.MapEditorUI
 				return builder.Build();
 			}
 
-			// Token: 0x04000057 RID: 87
-			private readonly NoStartingLocationAlertFragment _noStartingLocationAlertFragment;
+			// Token: 0x04000049 RID: 73
+			public readonly NoStartingLocationAlertFragment _noStartingLocationAlertFragment;
 
-			// Token: 0x04000058 RID: 88
-			private readonly NonCompatibleMapAlertFragment _nonCompatibleMapAlertFragment;
+			// Token: 0x0400004A RID: 74
+			public readonly NonCompatibleMapAlertFragment _nonCompatibleMapAlertFragment;
 		}
 
-		// Token: 0x02000011 RID: 17
-		private class BottomBarModuleProvider : IProvider<BottomBarModule>
+		// Token: 0x0200000E RID: 14
+		public class BottomBarModuleProvider : IProvider<BottomBarModule>
 		{
-			// Token: 0x06000052 RID: 82 RVA: 0x00003003 File Offset: 0x00001203
+			// Token: 0x06000047 RID: 71 RVA: 0x00002E95 File Offset: 0x00001095
 			public BottomBarModuleProvider(MapEditorToolButtons mapEditorToolButtons, MapEditorBlockObjectButtons mapEditorBlockObjectButtons)
 			{
 				this._mapEditorToolButtons = mapEditorToolButtons;
 				this._mapEditorBlockObjectButtons = mapEditorBlockObjectButtons;
 			}
 
-			// Token: 0x06000053 RID: 83 RVA: 0x00003019 File Offset: 0x00001219
+			// Token: 0x06000048 RID: 72 RVA: 0x00002EAB File Offset: 0x000010AB
 			public BottomBarModule Get()
 			{
 				BottomBarModule.Builder builder = new BottomBarModule.Builder();
@@ -71,23 +71,23 @@ namespace Timberborn.MapEditorUI
 				return builder.Build();
 			}
 
-			// Token: 0x04000059 RID: 89
-			private readonly MapEditorToolButtons _mapEditorToolButtons;
+			// Token: 0x0400004B RID: 75
+			public readonly MapEditorToolButtons _mapEditorToolButtons;
 
-			// Token: 0x0400005A RID: 90
-			private readonly MapEditorBlockObjectButtons _mapEditorBlockObjectButtons;
+			// Token: 0x0400004C RID: 76
+			public readonly MapEditorBlockObjectButtons _mapEditorBlockObjectButtons;
 		}
 
-		// Token: 0x02000012 RID: 18
-		private class EntityPanelModuleProvider : IProvider<EntityPanelModule>
+		// Token: 0x0200000F RID: 15
+		public class EntityPanelModuleProvider : IProvider<EntityPanelModule>
 		{
-			// Token: 0x06000054 RID: 84 RVA: 0x0000303F File Offset: 0x0000123F
+			// Token: 0x06000049 RID: 73 RVA: 0x00002ED1 File Offset: 0x000010D1
 			public EntityPanelModuleProvider(DeleteBlockObjectFragment deleteBlockObjectFragment)
 			{
 				this._deleteBlockObjectFragment = deleteBlockObjectFragment;
 			}
 
-			// Token: 0x06000055 RID: 85 RVA: 0x0000304E File Offset: 0x0000124E
+			// Token: 0x0600004A RID: 74 RVA: 0x00002EE0 File Offset: 0x000010E0
 			public EntityPanelModule Get()
 			{
 				EntityPanelModule.Builder builder = new EntityPanelModule.Builder();
@@ -95,8 +95,8 @@ namespace Timberborn.MapEditorUI
 				return builder.Build();
 			}
 
-			// Token: 0x0400005B RID: 91
-			private readonly DeleteBlockObjectFragment _deleteBlockObjectFragment;
+			// Token: 0x0400004D RID: 77
+			public readonly DeleteBlockObjectFragment _deleteBlockObjectFragment;
 		}
 	}
 }

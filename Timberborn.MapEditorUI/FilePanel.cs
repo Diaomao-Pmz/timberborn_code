@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorUI
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	public class FilePanel : ILoadableSingleton
 	{
 		// Token: 0x0600000C RID: 12 RVA: 0x00002261 File Offset: 0x00000461
@@ -30,28 +30,28 @@ namespace Timberborn.MapEditorUI
 		public void Load()
 		{
 			VisualElement visualElement = this._visualElementLoader.LoadVisualElement("MapEditor/FilePanel");
-			this._mapFileButtons = visualElement.Q("MapFileButtons", null);
-			this._bindableButtonFactory.CreateAndBind(visualElement.Q("SaveButton", null), FilePanel.SaveMapKey, delegate
+			this._mapFileButtons = UQueryExtensions.Q<VisualElement>(visualElement, "MapFileButtons", null);
+			this._bindableButtonFactory.CreateAndBind(UQueryExtensions.Q<Button>(visualElement, "SaveButton", null), FilePanel.SaveMapKey, delegate
 			{
 				this._mapSaverLoader.Save(null);
 			});
-			visualElement.Q("SaveAsButton", null).RegisterCallback<ClickEvent>(delegate(ClickEvent _)
+			UQueryExtensions.Q<Button>(visualElement, "SaveAsButton", null).RegisterCallback<ClickEvent>(delegate(ClickEvent _)
 			{
 				this._mapSaverLoader.SaveAs(null);
-			}, TrickleDown.NoTrickleDown);
-			visualElement.Q("LoadButton", null).RegisterCallback<ClickEvent>(delegate(ClickEvent _)
+			}, 0);
+			UQueryExtensions.Q<Button>(visualElement, "LoadButton", null).RegisterCallback<ClickEvent>(delegate(ClickEvent _)
 			{
 				this._mapSaverLoader.LoadMap();
-			}, TrickleDown.NoTrickleDown);
-			visualElement.Q("NewMapButton", null).RegisterCallback<ClickEvent>(delegate(ClickEvent _)
+			}, 0);
+			UQueryExtensions.Q<Button>(visualElement, "NewMapButton", null).RegisterCallback<ClickEvent>(delegate(ClickEvent _)
 			{
 				this._mapSaverLoader.NewMap();
-			}, TrickleDown.NoTrickleDown);
-			this._undoButton = this._bindableButtonFactory.CreateAndBind(visualElement.Q("UndoButton", null), FilePanel.UndoKey, delegate
+			}, 0);
+			this._undoButton = this._bindableButtonFactory.CreateAndBind(UQueryExtensions.Q<Button>(visualElement, "UndoButton", null), FilePanel.UndoKey, delegate
 			{
 				this._undoRegistry.Undo();
 			});
-			this._redoButton = this._bindableButtonFactory.CreateAndBind(visualElement.Q("RedoButton", null), FilePanel.RedoKey, delegate
+			this._redoButton = this._bindableButtonFactory.CreateAndBind(UQueryExtensions.Q<Button>(visualElement, "RedoButton", null), FilePanel.RedoKey, delegate
 			{
 				this._undoRegistry.Redo();
 			});
@@ -68,8 +68,8 @@ namespace Timberborn.MapEditorUI
 			button.text = this._loc.T(locKey);
 			button.RegisterCallback<ClickEvent>(delegate(ClickEvent _)
 			{
-				action();
-			}, TrickleDown.NoTrickleDown);
+				action.Invoke();
+			}, 0);
 			this._mapFileButtons.Add(button);
 		}
 
@@ -81,7 +81,7 @@ namespace Timberborn.MapEditorUI
 		}
 
 		// Token: 0x06000010 RID: 16 RVA: 0x0000243C File Offset: 0x0000063C
-		private void UpdateUndoButtons()
+		public void UpdateUndoButtons()
 		{
 			if (this._undoRegistry.CanUndo)
 			{
@@ -99,43 +99,43 @@ namespace Timberborn.MapEditorUI
 			this._redoButton.Disable();
 		}
 
-		// Token: 0x0400000B RID: 11
-		private static readonly string SaveMapKey = "SaveMap";
-
-		// Token: 0x0400000C RID: 12
-		private static readonly string UndoKey = "Undo";
-
-		// Token: 0x0400000D RID: 13
-		private static readonly string RedoKey = "Redo";
-
-		// Token: 0x0400000E RID: 14
-		private readonly MapSaverLoader _mapSaverLoader;
-
-		// Token: 0x0400000F RID: 15
-		private readonly VisualElementLoader _visualElementLoader;
-
 		// Token: 0x04000010 RID: 16
-		private readonly UILayout _uiLayout;
+		public static readonly string SaveMapKey = "SaveMap";
 
 		// Token: 0x04000011 RID: 17
-		private readonly BindableButtonFactory _bindableButtonFactory;
+		public static readonly string UndoKey = "Undo";
 
 		// Token: 0x04000012 RID: 18
-		private readonly ILoc _loc;
+		public static readonly string RedoKey = "Redo";
 
 		// Token: 0x04000013 RID: 19
-		private readonly IUndoRegistry _undoRegistry;
+		public readonly MapSaverLoader _mapSaverLoader;
 
 		// Token: 0x04000014 RID: 20
-		private readonly EventBus _eventBus;
+		public readonly VisualElementLoader _visualElementLoader;
 
 		// Token: 0x04000015 RID: 21
-		private VisualElement _mapFileButtons;
+		public readonly UILayout _uiLayout;
 
 		// Token: 0x04000016 RID: 22
-		private BindableButton _undoButton;
+		public readonly BindableButtonFactory _bindableButtonFactory;
 
 		// Token: 0x04000017 RID: 23
-		private BindableButton _redoButton;
+		public readonly ILoc _loc;
+
+		// Token: 0x04000018 RID: 24
+		public readonly IUndoRegistry _undoRegistry;
+
+		// Token: 0x04000019 RID: 25
+		public readonly EventBus _eventBus;
+
+		// Token: 0x0400001A RID: 26
+		public VisualElement _mapFileButtons;
+
+		// Token: 0x0400001B RID: 27
+		public BindableButton _undoButton;
+
+		// Token: 0x0400001C RID: 28
+		public BindableButton _redoButton;
 	}
 }
