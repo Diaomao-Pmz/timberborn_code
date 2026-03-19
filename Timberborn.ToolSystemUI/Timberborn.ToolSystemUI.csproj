@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827EF}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CF6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.ToolSystemUI</RootNamespace>
@@ -33,6 +33,21 @@
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Timberborn.Common">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SingletonSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SingletonSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.ToolPanelSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.ToolPanelSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.ToolSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.ToolSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.WaterSystemRendering">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.WaterSystemRendering.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule" />
     <Reference Include="UnityEngine.UIElementsModule" />
   </ItemGroup>
@@ -55,36 +70,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF0}</Project>
       <Name>Bindito.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\netstandard\netstandard.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEF}</Project>
       <Name>netstandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
-      <Name>Timberborn.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF3}</Project>
       <Name>Timberborn.CoreUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
-      <Name>Timberborn.SingletonSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.ToolPanelSystem\Timberborn.ToolPanelSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827ED}</Project>
-      <Name>Timberborn.ToolPanelSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.ToolSystem\Timberborn.ToolSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827EE}</Project>
-      <Name>Timberborn.ToolSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.WaterSystemRendering\Timberborn.WaterSystemRendering.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78280E}</Project>
-      <Name>Timberborn.WaterSystemRendering</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

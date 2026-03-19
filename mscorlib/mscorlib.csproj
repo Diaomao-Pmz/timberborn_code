@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782640}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CEE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>mscorlib</RootNamespace>

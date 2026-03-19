@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78280C}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.WaterSourceSystemUI</RootNamespace>
@@ -33,6 +33,27 @@
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Timberborn.BaseComponentSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BaseComponentSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Debugging">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Debugging.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntityUndoSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.EntityUndoSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Localization">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapStateSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapStateSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SliderToggleSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SliderToggleSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.WaterSourceSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.WaterSourceSystem.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule" />
     <Reference Include="UnityEngine.UIElementsModule" />
   </ItemGroup>
@@ -52,48 +73,20 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF0}</Project>
       <Name>Bindito.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\netstandard\netstandard.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEF}</Project>
       <Name>netstandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
-      <Name>Timberborn.BaseComponentSystem</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF3}</Project>
       <Name>Timberborn.CoreUI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Debugging\Timberborn.Debugging.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A7}</Project>
-      <Name>Timberborn.Debugging</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Timberborn.EntityPanelSystem\Timberborn.EntityPanelSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C2}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF4}</Project>
       <Name>Timberborn.EntityPanelSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.EntityUndoSystem\Timberborn.EntityUndoSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C4}</Project>
-      <Name>Timberborn.EntityUndoSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
-      <Name>Timberborn.Localization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MapStateSystem\Timberborn.MapStateSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78273A}</Project>
-      <Name>Timberborn.MapStateSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SliderToggleSystem\Timberborn.SliderToggleSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AF}</Project>
-      <Name>Timberborn.SliderToggleSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.WaterSourceSystem\Timberborn.WaterSourceSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78280B}</Project>
-      <Name>Timberborn.WaterSourceSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

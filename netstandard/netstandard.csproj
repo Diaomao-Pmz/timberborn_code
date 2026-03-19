@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>netstandard</RootNamespace>
@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\mscorlib\mscorlib.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782640}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEE}</Project>
       <Name>mscorlib</Name>
     </ProjectReference>
   </ItemGroup>

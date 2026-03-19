@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78267A}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CF2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.BottomBarSystem</RootNamespace>
@@ -33,6 +33,15 @@
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SingletonSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SingletonSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.UILayoutSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.UILayoutSystem.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule" />
     <Reference Include="UnityEngine.UIElementsModule" />
   </ItemGroup>
@@ -50,28 +59,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF0}</Project>
       <Name>Bindito.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\netstandard\netstandard.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEF}</Project>
       <Name>netstandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
-      <Name>System.Collections.Immutable</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF3}</Project>
       <Name>Timberborn.CoreUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
-      <Name>Timberborn.SingletonSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.UILayoutSystem\Timberborn.UILayoutSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F9}</Project>
-      <Name>Timberborn.UILayoutSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782732}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.MapEditorUI</RootNamespace>
@@ -33,6 +33,87 @@
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Timberborn.AlertPanelSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.AlertPanelSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.ApplicationLifetime">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.ApplicationLifetime.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BaseComponentSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BaseComponentSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BlockObjectTools">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockObjectTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BlockObjectToolsUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockObjectToolsUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BlockSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BlockSystemUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BlockSystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntitySystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.EntitySystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.InputSystemUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.InputSystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.KeyBindingSystemUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.KeyBindingSystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Localization">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MainMenuSceneLoading">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MainMenuSceneLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapEditorBrushesUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapEditorBrushesUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapEditorNaturalResourcesUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapEditorNaturalResourcesUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapEditorPersistenceUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapEditorPersistenceUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapMetadataSystemUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapMetadataSystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.MapThumbnailCapturingUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.MapThumbnailCapturingUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Options">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SettingsSystemUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SettingsSystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SingletonSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SingletonSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.StartingLocationSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.StartingLocationSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.ToolButtonSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.ToolButtonSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.ToolSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.ToolSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TooltipSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TooltipSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.UILayoutSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.UILayoutSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.UndoSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.UndoSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Versioning">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Versioning.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule" />
     <Reference Include="UnityEngine.UIElementsModule" />
   </ItemGroup>
@@ -53,132 +134,24 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF0}</Project>
       <Name>Bindito.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\netstandard\netstandard.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEF}</Project>
       <Name>netstandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Timberborn.AlertPanelSystem\Timberborn.AlertPanelSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78264A}</Project>
-      <Name>Timberborn.AlertPanelSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.ApplicationLifetime\Timberborn.ApplicationLifetime.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78264D}</Project>
-      <Name>Timberborn.ApplicationLifetime</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
-      <Name>Timberborn.BaseComponentSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BlockObjectToolsUI\Timberborn.BlockObjectToolsUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266C}</Project>
-      <Name>Timberborn.BlockObjectToolsUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BlockObjectTools\Timberborn.BlockObjectTools.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266B}</Project>
-      <Name>Timberborn.BlockObjectTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BlockSystemUI\Timberborn.BlockSystemUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782670}</Project>
-      <Name>Timberborn.BlockSystemUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266E}</Project>
-      <Name>Timberborn.BlockSystem</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Timberborn.BottomBarSystem\Timberborn.BottomBarSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78267A}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF2}</Project>
       <Name>Timberborn.BottomBarSystem</Name>
     </ProjectReference>
     <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF3}</Project>
       <Name>Timberborn.CoreUI</Name>
     </ProjectReference>
     <ProjectReference Include="..\Timberborn.EntityPanelSystem\Timberborn.EntityPanelSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C2}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF4}</Project>
       <Name>Timberborn.EntityPanelSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
-      <Name>Timberborn.EntitySystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.InputSystemUI\Timberborn.InputSystemUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782709}</Project>
-      <Name>Timberborn.InputSystemUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.KeyBindingSystemUI\Timberborn.KeyBindingSystemUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782711}</Project>
-      <Name>Timberborn.KeyBindingSystemUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
-      <Name>Timberborn.Localization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MainMenuSceneLoading\Timberborn.MainMenuSceneLoading.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782720}</Project>
-      <Name>Timberborn.MainMenuSceneLoading</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MapEditorBrushesUI\Timberborn.MapEditorBrushesUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782721}</Project>
-      <Name>Timberborn.MapEditorBrushesUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MapEditorNaturalResourcesUI\Timberborn.MapEditorNaturalResourcesUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782726}</Project>
-      <Name>Timberborn.MapEditorNaturalResourcesUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MapEditorPersistenceUI\Timberborn.MapEditorPersistenceUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782728}</Project>
-      <Name>Timberborn.MapEditorPersistenceUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MapMetadataSystemUI\Timberborn.MapMetadataSystemUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782737}</Project>
-      <Name>Timberborn.MapMetadataSystemUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.MapThumbnailCapturingUI\Timberborn.MapThumbnailCapturingUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78273E}</Project>
-      <Name>Timberborn.MapThumbnailCapturingUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Options\Timberborn.Options.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78276A}</Project>
-      <Name>Timberborn.Options</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SettingsSystemUI\Timberborn.SettingsSystemUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A5}</Project>
-      <Name>Timberborn.SettingsSystemUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
-      <Name>Timberborn.SingletonSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.StartingLocationSystem\Timberborn.StartingLocationSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B8}</Project>
-      <Name>Timberborn.StartingLocationSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.ToolButtonSystem\Timberborn.ToolButtonSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827EC}</Project>
-      <Name>Timberborn.ToolButtonSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.ToolSystem\Timberborn.ToolSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827EE}</Project>
-      <Name>Timberborn.ToolSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.TooltipSystem\Timberborn.TooltipSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F0}</Project>
-      <Name>Timberborn.TooltipSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.UILayoutSystem\Timberborn.UILayoutSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F9}</Project>
-      <Name>Timberborn.UILayoutSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.UndoSystem\Timberborn.UndoSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827FD}</Project>
-      <Name>Timberborn.UndoSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Versioning\Timberborn.Versioning.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827FF}</Project>
-      <Name>Timberborn.Versioning</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

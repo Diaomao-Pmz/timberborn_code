@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bindito.Unity</RootNamespace>
+    <AssemblyName>Bindito.Unity</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETStandard</TargetFrameworkIdentifier>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IInstantiator.cs" />
+    <Compile Include="InstantiatingSceneInitializer.cs" />
+    <Compile Include="Instantiator.cs" />
+    <Compile Include="Internal\GameObjectExtensions.cs" />
+    <Compile Include="Internal\InactiveParent.cs" />
+    <Compile Include="Internal\ProjectContainerProvider.cs" />
+    <Compile Include="Internal\SceneProvider.cs" />
+    <Compile Include="ISceneInitializer.cs" />
+    <Compile Include="ISceneProvider.cs" />
+    <Compile Include="JetBrains\Annotations\AspAttributeRoutingAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspChildControlTypeAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspDataFieldAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspDataFieldsAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspDefaultRouteValuesAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMethodPropertyAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMinimalApiDeclarationAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMinimalApiGroupAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMinimalApiHandlerAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMinimalApiImplicitEndpointDeclarationAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcActionAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcActionSelectorAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcAreaAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcAreaMasterLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcAreaPartialViewLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcAreaViewComponentViewLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcAreaViewLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcControllerAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcDisplayTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcEditorTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcMasterAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcMasterLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcModelTypeAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcPartialViewAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcPartialViewLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcSuppressViewErrorAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcViewAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcViewComponentAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcViewComponentViewAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcViewComponentViewLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspMvcViewLocationFormatAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspRequiredAttributeAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspRouteConventionAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspRouteOrderAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspRouteValuesConstraintsAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspRouteVerbsAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AspTypePropertyAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AssertionConditionAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\AssertionConditionType.cs" />
+    <Compile Include="JetBrains\Annotations\AssertionMethodAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\BaseTypeRequiredAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\CanBeNullAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\CannotApplyEqualityOperatorAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\CodeTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\CollectionAccessAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\CollectionAccessType.cs" />
+    <Compile Include="JetBrains\Annotations\ContractAnnotationAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\DefaultEqualityUsageAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\HandlesResourceDisposalAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\HtmlAttributeValueAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\HtmlElementAttributesAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\IgnoreSpellingAndGrammarErrorsAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\ImplicitUseKindFlags.cs" />
+    <Compile Include="JetBrains\Annotations\ImplicitUseTargetFlags.cs" />
+    <Compile Include="JetBrains\Annotations\InjectedLanguage.cs" />
+    <Compile Include="JetBrains\Annotations\InstantHandleAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\InvokerParameterNameAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\ItemCanBeNullAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\ItemNotNullAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\LanguageInjectionAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\LinqTunnelAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\LocalizationRequiredAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\MacroAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\MeansImplicitUseAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\MeansTestSubjectAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\MustDisposeResourceAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\MustUseReturnValueAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\NoEnumerationAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\NonNegativeValueAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\NoReorderAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\NotifyPropertyChangedInvocatorAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\NotNullAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\PathReferenceAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\ProvidesContextAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\PublicAPIAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\PureAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorDirectiveAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorHelperCommonAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorImportNamespaceAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorInjectionAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorLayoutAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorPageBaseTypeAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorSectionAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorWriteLiteralMethodAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorWriteMethodAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RazorWriteMethodParameterAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RegexPatternAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RequireStaticDelegateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RouteParameterConstraintAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\RouteTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\SourceTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\SourceTemplateTargetExpression.cs" />
+    <Compile Include="JetBrains\Annotations\StringFormatMethodAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\StructuredMessageTemplateAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\TerminatesProgramAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\TestSubjectAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\UriStringAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\UsedImplicitlyAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\ValueProviderAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\ValueRangeAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\XamlItemBindingOfItemsControlAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\XamlItemsControlAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\XamlItemStyleOfItemsControlAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\XamlOneWayBindingModeByDefaultAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\XamlTwoWayBindingModeByDefaultAttribute.cs" />
+    <Compile Include="ProjectConfigurator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SceneConfigurator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF0}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEF}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

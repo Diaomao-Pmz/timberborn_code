@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="HelloWorldWrapper" class="hello-world__wrapper">
-        <Style src="/Assets/Mods/HelloWorld/AssetBundles/Resources/UI/Styles/HelloWorldStyle.uss" />
-        <ui:Label name="HelloWorldLabel" text="Hello world!" class="hello-world__label" />
-    </ui:VisualElement>
-</ui:UXML>

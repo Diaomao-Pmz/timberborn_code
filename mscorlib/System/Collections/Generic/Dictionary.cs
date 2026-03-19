@@ -936,7 +936,7 @@ namespace System.Collections.Generic
 		// Token: 0x02000BE1 RID: 3041
 		[__DynamicallyInvokable]
 		[Serializable]
-		public struct Enumerator : IEnumerator<KeyValuePair<!0, !1>>, IDisposable, IEnumerator, IDictionaryEnumerator
+		public struct Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>, IDisposable, IEnumerator, IDictionaryEnumerator
 		{
 			// Token: 0x06006F04 RID: 28420 RVA: 0x0017E642 File Offset: 0x0017C842
 			internal Enumerator(Dictionary<TKey, TValue> dictionary, int getEnumeratorRetType)

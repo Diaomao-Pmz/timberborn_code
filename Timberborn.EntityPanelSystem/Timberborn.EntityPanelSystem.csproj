@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C2}</ProjectGuid>
+    <ProjectGuid>{08252A72-321B-4C7B-9A34-7B2208966CF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.EntityPanelSystem</RootNamespace>
@@ -33,6 +33,42 @@
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.BaseComponentSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.BaseComponentSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Common">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Debugging">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Debugging.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntityNaming">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.EntityNaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntityNamingUI">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.EntityNamingUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.EntitySystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.EntitySystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.Localization">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SelectionSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SelectionSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.SingletonSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.SingletonSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.TooltipSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.TooltipSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Timberborn.UILayoutSystem">
+      <HintPath>D:\Unity project\timberborn-modding-main\Assets\Plugins\Timberborn\Timberborn.UILayoutSystem.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule" />
     <Reference Include="UnityEngine.UIElementsModule" />
   </ItemGroup>
@@ -64,64 +100,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF0}</Project>
       <Name>Bindito.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\netstandard\netstandard.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CEF}</Project>
       <Name>netstandard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
-      <Name>System.Collections.Immutable</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
-      <Name>Timberborn.BaseComponentSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
-      <Name>Timberborn.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Project>{08252A72-321B-4C7B-9A34-7B2208966CF3}</Project>
       <Name>Timberborn.CoreUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Debugging\Timberborn.Debugging.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A7}</Project>
-      <Name>Timberborn.Debugging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.EntityNamingUI\Timberborn.EntityNamingUI.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C1}</Project>
-      <Name>Timberborn.EntityNamingUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.EntityNaming\Timberborn.EntityNaming.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C0}</Project>
-      <Name>Timberborn.EntityNaming</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
-      <Name>Timberborn.EntitySystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
-      <Name>Timberborn.Localization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SelectionSystem\Timberborn.SelectionSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A1}</Project>
-      <Name>Timberborn.SelectionSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
-      <Name>Timberborn.SingletonSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.TooltipSystem\Timberborn.TooltipSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F0}</Project>
-      <Name>Timberborn.TooltipSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Timberborn.UILayoutSystem\Timberborn.UILayoutSystem.csproj">
-      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F9}</Project>
-      <Name>Timberborn.UILayoutSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

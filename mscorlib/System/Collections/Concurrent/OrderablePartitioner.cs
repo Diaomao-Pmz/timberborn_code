@@ -56,7 +56,7 @@ namespace System.Collections.Concurrent
 			{
 				throw new InvalidOperationException("OrderablePartitioner_GetPartitions_WrongNumberOfPartitions");
 			}
-			IEnumerator<TSource>[] array = new IEnumerator<TSource>[partitionCount];
+			IEnumerator<TSource>[] array = new IEnumerator<!0>[partitionCount];
 			for (int i = 0; i < partitionCount; i++)
 			{
 				array[i] = new OrderablePartitioner<TSource>.EnumeratorDropIndices(orderablePartitions[i]);
@@ -108,7 +108,7 @@ namespace System.Collections.Concurrent
 		}
 
 		// Token: 0x02000BCB RID: 3019
-		private class EnumeratorDropIndices : IEnumerator<TSource>, IDisposable, IEnumerator
+		private class EnumeratorDropIndices : IEnumerator<!0>, IDisposable, IEnumerator
 		{
 			// Token: 0x06006E98 RID: 28312 RVA: 0x0017DB5E File Offset: 0x0017BD5E
 			public EnumeratorDropIndices(IEnumerator<KeyValuePair<long, TSource>> source)

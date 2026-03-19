@@ -10,7 +10,7 @@ namespace System.Collections.ObjectModel
 	[DebuggerDisplay("Count = {Count}")]
 	[__DynamicallyInvokable]
 	[Serializable]
-	public class ReadOnlyDictionary<TKey, TValue> : IDictionary<!0, !1>, ICollection<KeyValuePair<!0, !1>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable, IDictionary, ICollection, IReadOnlyDictionary<!0, !1>, IReadOnlyCollection<KeyValuePair<TKey, TValue>>
+	public class ReadOnlyDictionary<TKey, TValue> : IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEnumerable, IDictionary, ICollection, IReadOnlyDictionary<TKey, TValue>, IReadOnlyCollection<KeyValuePair<TKey, TValue>>
 	{
 		// Token: 0x060039EB RID: 14827 RVA: 0x000DD390 File Offset: 0x000DB590
 		[__DynamicallyInvokable]
