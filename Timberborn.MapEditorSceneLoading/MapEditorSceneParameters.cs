@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorSceneLoading
 {
-	// Token: 0x02000008 RID: 8
+	// Token: 0x02000009 RID: 9
 	public class MapEditorSceneParameters : ISceneParameters
 	{
 		// Token: 0x17000001 RID: 1
@@ -21,7 +21,7 @@ namespace Timberborn.MapEditorSceneLoading
 		public MapFileReference? Map { get; }
 
 		// Token: 0x06000012 RID: 18 RVA: 0x000021F2 File Offset: 0x000003F2
-		private MapEditorSceneParameters(bool newMap, Vector2Int? newMapSize, MapFileReference? map)
+		public MapEditorSceneParameters(bool newMap, Vector2Int? newMapSize, MapFileReference? map)
 		{
 			this.NewMap = newMap;
 			this.NewMapSize = newMapSize;

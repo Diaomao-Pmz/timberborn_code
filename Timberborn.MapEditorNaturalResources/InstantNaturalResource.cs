@@ -7,8 +7,8 @@ using Timberborn.SoilMoistureSystem;
 
 namespace Timberborn.MapEditorNaturalResources
 {
-	// Token: 0x02000003 RID: 3
-	internal class InstantNaturalResource : BaseComponent, IAwakableComponent
+	// Token: 0x02000004 RID: 4
+	public class InstantNaturalResource : BaseComponent, IAwakableComponent
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020C0 File Offset: 0x000002C0
 		public void Awake()
@@ -53,7 +53,7 @@ namespace Timberborn.MapEditorNaturalResources
 		}
 
 		// Token: 0x06000004 RID: 4 RVA: 0x000021B0 File Offset: 0x000003B0
-		private void UpdateLivingState()
+		public void UpdateLivingState()
 		{
 			if ((this._dryObject && this._dryObject.IsDry) || (this._livingWaterObject && !this._livingWaterObject.WaterNeedsAreMet) || (this._contaminatedObject && this._contaminatedObject.IsContaminated))
 			{
@@ -63,16 +63,16 @@ namespace Timberborn.MapEditorNaturalResources
 			this._livingNaturalResource.ReverseDeath();
 		}
 
-		// Token: 0x04000001 RID: 1
-		private LivingNaturalResource _livingNaturalResource;
+		// Token: 0x04000006 RID: 6
+		public LivingNaturalResource _livingNaturalResource;
 
-		// Token: 0x04000002 RID: 2
-		private DryObject _dryObject;
+		// Token: 0x04000007 RID: 7
+		public DryObject _dryObject;
 
-		// Token: 0x04000003 RID: 3
-		private LivingWaterObject _livingWaterObject;
+		// Token: 0x04000008 RID: 8
+		public LivingWaterObject _livingWaterObject;
 
-		// Token: 0x04000004 RID: 4
-		private ContaminatedObject _contaminatedObject;
+		// Token: 0x04000009 RID: 9
+		public ContaminatedObject _contaminatedObject;
 	}
 }

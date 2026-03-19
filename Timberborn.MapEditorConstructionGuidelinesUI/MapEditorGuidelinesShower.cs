@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorConstructionGuidelinesUI
 {
-	// Token: 0x02000005 RID: 5
-	internal class MapEditorGuidelinesShower : ILoadableSingleton
+	// Token: 0x02000006 RID: 6
+	public class MapEditorGuidelinesShower : ILoadableSingleton
 	{
 		// Token: 0x06000005 RID: 5 RVA: 0x000020D4 File Offset: 0x000002D4
 		public MapEditorGuidelinesShower(ConstructionGuidelinesRenderingService constructionGuidelinesRenderingService, EventBus eventBus)
@@ -41,7 +41,7 @@ namespace Timberborn.MapEditorConstructionGuidelinesUI
 		}
 
 		// Token: 0x06000009 RID: 9 RVA: 0x00002128 File Offset: 0x00000328
-		private void ChangeGuidelinesVisibility(bool show)
+		public void ChangeGuidelinesVisibility(bool show)
 		{
 			if (show)
 			{
@@ -51,16 +51,16 @@ namespace Timberborn.MapEditorConstructionGuidelinesUI
 			this._constructionGuidelinesToggle.HideGuidelines();
 		}
 
-		// Token: 0x04000001 RID: 1
-		private readonly ConstructionGuidelinesRenderingService _constructionGuidelinesRenderingService;
+		// Token: 0x04000006 RID: 6
+		public readonly ConstructionGuidelinesRenderingService _constructionGuidelinesRenderingService;
 
-		// Token: 0x04000002 RID: 2
-		private readonly EventBus _eventBus;
+		// Token: 0x04000007 RID: 7
+		public readonly EventBus _eventBus;
 
-		// Token: 0x04000003 RID: 3
-		private ConstructionGuidelinesToggle _constructionGuidelinesToggle;
+		// Token: 0x04000008 RID: 8
+		public ConstructionGuidelinesToggle _constructionGuidelinesToggle;
 
-		// Token: 0x04000004 RID: 4
-		private VisualElement _root;
+		// Token: 0x04000009 RID: 9
+		public VisualElement _root;
 	}
 }

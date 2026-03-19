@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorSimulationSystemUI
 {
-	// Token: 0x02000003 RID: 3
+	// Token: 0x02000004 RID: 4
 	public class MapEditorSimulationPanel : ILoadableSingleton, IInputProcessor
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020C0 File Offset: 0x000002C0
@@ -32,12 +32,12 @@ namespace Timberborn.MapEditorSimulationSystemUI
 			VisualElement visualElement = this._visualElementLoader.LoadVisualElement("MapEditor/MapEditorSimulationPanel");
 			this._tooltipRegistrar.RegisterLocalizable(visualElement, MapEditorSimulationPanel.TooltipLocKey);
 			TimeSpeedButtonGroup timeSpeedButtonGroup = this._timeSpeedButtonGroup;
-			UQueryBuilder<Button> uqueryBuilder = visualElement.Query(null, null);
+			UQueryBuilder<Button> uqueryBuilder = UQueryExtensions.Query<Button>(visualElement, null, null);
 			uqueryBuilder = from button in uqueryBuilder
 			where button.name.StartsWith("Speed")
 			select button;
 			timeSpeedButtonGroup.Initialize(uqueryBuilder.Build(), () => (float)this._mapEditorSimulation.SimulationSpeed, new Action<int>(this.SetSpeed));
-			Button button2 = visualElement.Q("Reset", null);
+			Button button2 = UQueryExtensions.Q<Button>(visualElement, "Reset", null);
 			this._bindableButtonFactory.CreateAndBind(button2, MapEditorSimulationPanel.ResetMapEditorSimulationKey, new Action(this.ResetSimulation));
 			this._tooltipRegistrar.RegisterLocalizable(button2, MapEditorSimulationPanel.ResetLocKey);
 			this._inputService.AddInputProcessor(this);
@@ -56,7 +56,7 @@ namespace Timberborn.MapEditorSimulationSystemUI
 		}
 
 		// Token: 0x06000006 RID: 6 RVA: 0x00002218 File Offset: 0x00000418
-		private void SetSpeed(int speed)
+		public void SetSpeed(int speed)
 		{
 			if (speed != 0)
 			{
@@ -74,48 +74,48 @@ namespace Timberborn.MapEditorSimulationSystemUI
 		}
 
 		// Token: 0x06000007 RID: 7 RVA: 0x00002269 File Offset: 0x00000469
-		private void ResetSimulation()
+		public void ResetSimulation()
 		{
 			this._mapEditorSimulation.ResetSimulation();
 		}
 
-		// Token: 0x04000001 RID: 1
-		private static readonly string TooltipLocKey = "MapEditor.SimulationControls.Tooltip";
-
-		// Token: 0x04000002 RID: 2
-		private static readonly string ResetLocKey = "MapEditor.SimulationControls.Reset";
-
-		// Token: 0x04000003 RID: 3
-		private static readonly string ResetMapEditorSimulationKey = "ResetMapEditorSimulation";
-
-		// Token: 0x04000004 RID: 4
-		private static readonly string MapEditorDevSimulationSpeedKey = "MapEditorDevSimulationSpeed";
-
-		// Token: 0x04000005 RID: 5
-		private static readonly int DevSimulationSpeed = 50;
-
 		// Token: 0x04000006 RID: 6
-		private readonly MapEditorSimulation _mapEditorSimulation;
+		public static readonly string TooltipLocKey = "MapEditor.SimulationControls.Tooltip";
 
 		// Token: 0x04000007 RID: 7
-		private readonly VisualElementLoader _visualElementLoader;
+		public static readonly string ResetLocKey = "MapEditor.SimulationControls.Reset";
 
 		// Token: 0x04000008 RID: 8
-		private readonly UILayout _uiLayout;
+		public static readonly string ResetMapEditorSimulationKey = "ResetMapEditorSimulation";
 
 		// Token: 0x04000009 RID: 9
-		private readonly ITooltipRegistrar _tooltipRegistrar;
+		public static readonly string MapEditorDevSimulationSpeedKey = "MapEditorDevSimulationSpeed";
 
 		// Token: 0x0400000A RID: 10
-		private readonly TimeSpeedButtonGroup _timeSpeedButtonGroup;
+		public static readonly int DevSimulationSpeed = 50;
 
 		// Token: 0x0400000B RID: 11
-		private readonly BindableButtonFactory _bindableButtonFactory;
+		public readonly MapEditorSimulation _mapEditorSimulation;
 
 		// Token: 0x0400000C RID: 12
-		private readonly InputService _inputService;
+		public readonly VisualElementLoader _visualElementLoader;
 
 		// Token: 0x0400000D RID: 13
-		private int _speedBeforePause = 1;
+		public readonly UILayout _uiLayout;
+
+		// Token: 0x0400000E RID: 14
+		public readonly ITooltipRegistrar _tooltipRegistrar;
+
+		// Token: 0x0400000F RID: 15
+		public readonly TimeSpeedButtonGroup _timeSpeedButtonGroup;
+
+		// Token: 0x04000010 RID: 16
+		public readonly BindableButtonFactory _bindableButtonFactory;
+
+		// Token: 0x04000011 RID: 17
+		public readonly InputService _inputService;
+
+		// Token: 0x04000012 RID: 18
+		public int _speedBeforePause = 1;
 	}
 }

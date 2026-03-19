@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorPersistence
 {
-	// Token: 0x02000003 RID: 3
+	// Token: 0x02000004 RID: 4
 	public class MapEditorMapLoader
 	{
 		// Token: 0x17000001 RID: 1
@@ -35,7 +35,7 @@ namespace Timberborn.MapEditorPersistence
 			return this._mapLoader.LoadNewMap(size);
 		}
 
-		// Token: 0x04000002 RID: 2
-		private readonly MapLoader _mapLoader;
+		// Token: 0x04000007 RID: 7
+		public readonly MapLoader _mapLoader;
 	}
 }

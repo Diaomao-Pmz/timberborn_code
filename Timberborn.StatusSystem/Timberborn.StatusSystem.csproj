@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.StatusSystem</RootNamespace>
+    <AssemblyName>Timberborn.StatusSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlertStatusSubjectSelector.cs" />
+    <Compile Include="DynamicStatusAggregator.cs" />
+    <Compile Include="DynamicStatusAlertAddedEvent.cs" />
+    <Compile Include="IStatusAggregator.cs" />
+    <Compile Include="IStatusIconOffsetService.cs" />
+    <Compile Include="IStatusIconOffsetter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlotBlockOccupation.cs" />
+    <Compile Include="SlotConstraints.cs" />
+    <Compile Include="StatusAggregator.cs" />
+    <Compile Include="StatusAlertAddedEvent.cs" />
+    <Compile Include="StatusData.cs" />
+    <Compile Include="StatusIconCycler.cs" />
+    <Compile Include="StatusIconCyclerFactory.cs" />
+    <Compile Include="StatusIconCyclerUpdater.cs" />
+    <Compile Include="StatusIconMaterials.cs" />
+    <Compile Include="StatusIconOffsetCalculator.cs" />
+    <Compile Include="StatusIconOffsetService.cs" />
+    <Compile Include="StatusIconSlotFactory.cs" />
+    <Compile Include="StatusInstance.cs" />
+    <Compile Include="StatusInstanceFactory.cs" />
+    <Compile Include="StatusSlot.cs" />
+    <Compile Include="StatusSlotOccupier.cs" />
+    <Compile Include="StatusSlotsUpdater.cs" />
+    <Compile Include="StatusSlotUpdateService.cs" />
+    <Compile Include="StatusSpecification.cs" />
+    <Compile Include="StatusSpriteLoader.cs" />
+    <Compile Include="StatusSubject.cs" />
+    <Compile Include="StatusSystemConfigurator.cs" />
+    <Compile Include="StatusToggle.cs" />
+    <Compile Include="StatusVisibilityToggle.cs" />
+    <Compile Include="StatusWarningType.cs" />
+    <Compile Include="TopBoundForLayer.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.AssetSystem\Timberborn.AssetSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782651}</Project>
+      <Name>Timberborn.AssetSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockObjectModelSystem\Timberborn.BlockObjectModelSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782669}</Project>
+      <Name>Timberborn.BlockObjectModelSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266E}</Project>
+      <Name>Timberborn.BlockSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CameraSystem\Timberborn.CameraSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78268B}</Project>
+      <Name>Timberborn.CameraSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Name>Timberborn.CoreUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
+      <Name>Timberborn.EntitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.LevelVisibilitySystem\Timberborn.LevelVisibilitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782716}</Project>
+      <Name>Timberborn.LevelVisibilitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MortalComponents\Timberborn.MortalComponents.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78274D}</Project>
+      <Name>Timberborn.MortalComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SelectionSystem\Timberborn.SelectionSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A1}</Project>
+      <Name>Timberborn.SelectionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SpriteOperations\Timberborn.SpriteOperations.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B7}</Project>
+      <Name>Timberborn.SpriteOperations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateInstantiation\Timberborn.TemplateInstantiation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D3}</Project>
+      <Name>Timberborn.TemplateInstantiation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TerrainSystem\Timberborn.TerrainSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827DA}</Project>
+      <Name>Timberborn.TerrainSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TimeSystem\Timberborn.TimeSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E9}</Project>
+      <Name>Timberborn.TimeSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.UILayoutSystem\Timberborn.UILayoutSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F9}</Project>
+      <Name>Timberborn.UILayoutSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

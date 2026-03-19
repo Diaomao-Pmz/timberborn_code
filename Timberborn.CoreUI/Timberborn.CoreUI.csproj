@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.CoreUI</RootNamespace>
+    <AssemblyName>Timberborn.CoreUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.IMGUIModule" />
+    <Reference Include="UnityEngine.UIElementsModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlternateClickable.cs" />
+    <Compile Include="AlternateClickableFactory.cs" />
+    <Compile Include="ButtonClickabilityInitializer.cs" />
+    <Compile Include="ColorParser.cs" />
+    <Compile Include="CoreUIConfigurator.cs" />
+    <Compile Include="DelayedButtonEnabler.cs" />
+    <Compile Include="DialogBox.cs" />
+    <Compile Include="DialogBoxShower.cs" />
+    <Compile Include="DoubleSidedProgressBar.cs" />
+    <Compile Include="GradientPointSpec.cs" />
+    <Compile Include="HyperlinkInitializer.cs" />
+    <Compile Include="ILocalizableElement.cs" />
+    <Compile Include="InputBox.cs" />
+    <Compile Include="InputBoxShower.cs" />
+    <Compile Include="IntegerSliderFactory.cs" />
+    <Compile Include="IPanelBlocker.cs" />
+    <Compile Include="IPanelController.cs" />
+    <Compile Include="IVisualElementInitializer.cs" />
+    <Compile Include="LocalizableButton.cs" />
+    <Compile Include="LocalizableLabel.cs" />
+    <Compile Include="LocalizableSlider.cs" />
+    <Compile Include="LocalizableSliderInt.cs" />
+    <Compile Include="LocalizableToggle.cs" />
+    <Compile Include="MeshWriter.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="NineSliceBackground.cs" />
+    <Compile Include="NineSliceButton.cs" />
+    <Compile Include="NineSliceFloatField.cs" />
+    <Compile Include="NineSliceIntegerField.cs" />
+    <Compile Include="NineSliceLabel.cs" />
+    <Compile Include="NineSliceTextField.cs" />
+    <Compile Include="NineSliceVisualElement.cs" />
+    <Compile Include="PanelHiddenEvent.cs" />
+    <Compile Include="PanelShownEvent.cs" />
+    <Compile Include="PanelStack.cs" />
+    <Compile Include="PreciseSlider.cs" />
+    <Compile Include="ProgressBar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadioToggle.cs" />
+    <Compile Include="RadioToggleFactory.cs" />
+    <Compile Include="RotatingBackground.cs" />
+    <Compile Include="RowShader.cs" />
+    <Compile Include="ScrollBarInitializationService.cs" />
+    <Compile Include="ScrollBarInitializer.cs" />
+    <Compile Include="SimpleProgressBar.cs" />
+    <Compile Include="SpecialStrings.cs" />
+    <Compile Include="StackedPanel.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="TextElementInitializer.cs" />
+    <Compile Include="TextFields.cs" />
+    <Compile Include="UIScaler.cs" />
+    <Compile Include="UISettings.cs" />
+    <Compile Include="UISoundInitializer.cs" />
+    <Compile Include="UIVisibilityChangedEvent.cs" />
+    <Compile Include="Underlay.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="VisualElementExtensions.cs" />
+    <Compile Include="VisualElementInitializer.cs" />
+    <Compile Include="VisualElementLoader.cs" />
+    <Compile Include="VisualElementLocalizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.AssetSystem\Timberborn.AssetSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782651}</Project>
+      <Name>Timberborn.AssetSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlueprintSystem\Timberborn.BlueprintSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782672}</Project>
+      <Name>Timberborn.BlueprintSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.InputSystem\Timberborn.InputSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782708}</Project>
+      <Name>Timberborn.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
+      <Name>Timberborn.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PlatformUtilities\Timberborn.PlatformUtilities.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782774}</Project>
+      <Name>Timberborn.PlatformUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.RootProviders\Timberborn.RootProviders.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782792}</Project>
+      <Name>Timberborn.RootProviders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SettingsSystem\Timberborn.SettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A4}</Project>
+      <Name>Timberborn.SettingsSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.UISound\Timberborn.UISound.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827FA}</Project>
+      <Name>Timberborn.UISound</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -6,12 +6,12 @@ using Timberborn.WaterSourceSystem;
 
 namespace Timberborn.MapEditorWaterSourceSystemUI
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	[Context("MapEditor")]
-	internal class MapEditorWaterSourceSystemConfigurator : Configurator
+	public class MapEditorWaterSourceSystemConfigurator : Configurator
 	{
 		// Token: 0x06000007 RID: 7 RVA: 0x00002100 File Offset: 0x00000300
-		protected override void Configure()
+		public override void Configure()
 		{
 			base.Bind<WaterSourceFlowPreview>().AsTransient();
 			base.Bind<BadwaterFlowStopper>().AsTransient();
@@ -21,7 +21,7 @@ namespace Timberborn.MapEditorWaterSourceSystemUI
 		}
 
 		// Token: 0x06000008 RID: 8 RVA: 0x0000215F File Offset: 0x0000035F
-		private static TemplateModule ProvideTemplateModule()
+		public static TemplateModule ProvideTemplateModule()
 		{
 			TemplateModule.Builder builder = new TemplateModule.Builder();
 			builder.AddDecorator<WaterSource, WaterSourceFlowPreview>();
@@ -29,16 +29,16 @@ namespace Timberborn.MapEditorWaterSourceSystemUI
 			return builder.Build();
 		}
 
-		// Token: 0x02000009 RID: 9
-		private class EntityPanelModuleProvider : IProvider<EntityPanelModule>
+		// Token: 0x02000006 RID: 6
+		public class EntityPanelModuleProvider : IProvider<EntityPanelModule>
 		{
-			// Token: 0x0600001D RID: 29 RVA: 0x0000239A File Offset: 0x0000059A
+			// Token: 0x0600000A RID: 10 RVA: 0x0000217F File Offset: 0x0000037F
 			public EntityPanelModuleProvider(WaterSourceFlowPreviewFragment waterSourceFlowPreviewFragment)
 			{
 				this._waterSourceFlowPreviewFragment = waterSourceFlowPreviewFragment;
 			}
 
-			// Token: 0x0600001E RID: 30 RVA: 0x000023A9 File Offset: 0x000005A9
+			// Token: 0x0600000B RID: 11 RVA: 0x0000218E File Offset: 0x0000038E
 			public EntityPanelModule Get()
 			{
 				EntityPanelModule.Builder builder = new EntityPanelModule.Builder();
@@ -46,8 +46,8 @@ namespace Timberborn.MapEditorWaterSourceSystemUI
 				return builder.Build();
 			}
 
-			// Token: 0x04000014 RID: 20
-			private readonly WaterSourceFlowPreviewFragment _waterSourceFlowPreviewFragment;
+			// Token: 0x04000008 RID: 8
+			public readonly WaterSourceFlowPreviewFragment _waterSourceFlowPreviewFragment;
 		}
 	}
 }

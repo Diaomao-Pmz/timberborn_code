@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782653}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.AttractionsBatchControl</RootNamespace>
+    <AssemblyName>Timberborn.AttractionsBatchControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.UIElementsModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttractionsBatchControlConfigurator.cs" />
+    <Compile Include="AttractionsBatchControlRowFactory.cs" />
+    <Compile Include="AttractionsBatchControlTab.cs" />
+    <Compile Include="GoodConsumingAttractionBatchControlRowItemFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.AttractionsUI\Timberborn.AttractionsUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782654}</Project>
+      <Name>Timberborn.AttractionsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Attractions\Timberborn.Attractions.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782652}</Project>
+      <Name>Timberborn.Attractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.AutomationUI\Timberborn.AutomationUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782658}</Project>
+      <Name>Timberborn.AutomationUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BatchControl\Timberborn.BatchControl.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265C}</Project>
+      <Name>Timberborn.BatchControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BuildingsUI\Timberborn.BuildingsUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782688}</Project>
+      <Name>Timberborn.BuildingsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ConstructionSitesUI\Timberborn.ConstructionSitesUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A0}</Project>
+      <Name>Timberborn.ConstructionSitesUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Name>Timberborn.CoreUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
+      <Name>Timberborn.EntitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GoodConsumingBuildingSystem\Timberborn.GoodConsumingBuildingSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826F3}</Project>
+      <Name>Timberborn.GoodConsumingBuildingSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.HaulingUI\Timberborn.HaulingUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826FF}</Project>
+      <Name>Timberborn.HaulingUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.InventorySystemBatchControl\Timberborn.InventorySystemBatchControl.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78270E}</Project>
+      <Name>Timberborn.InventorySystemBatchControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.InventorySystem\Timberborn.InventorySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78270D}</Project>
+      <Name>Timberborn.InventorySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.StatusSystemUI\Timberborn.StatusSystemUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827BA}</Project>
+      <Name>Timberborn.StatusSystemUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

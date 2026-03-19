@@ -7,12 +7,12 @@ using Timberborn.WorldPersistence;
 
 namespace Timberborn.MapEditorScene
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	[Context("MapEditor")]
-	internal class MapEditorSceneConfigurator : Configurator
+	public class MapEditorSceneConfigurator : Configurator
 	{
 		// Token: 0x06000005 RID: 5 RVA: 0x00002110 File Offset: 0x00000310
-		protected override void Configure()
+		public override void Configure()
 		{
 			base.Bind<Accessible>().AsTransient();
 			base.Bind<Demolishable>().AsTransient();

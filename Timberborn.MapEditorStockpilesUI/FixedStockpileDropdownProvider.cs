@@ -10,8 +10,8 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorStockpilesUI
 {
-	// Token: 0x02000003 RID: 3
-	internal class FixedStockpileDropdownProvider : BaseComponent, IAwakableComponent, IStartableComponent, IExtendedTooltipDropdownProvider, IExtendedDropdownProvider, IDropdownProvider
+	// Token: 0x02000004 RID: 4
+	public class FixedStockpileDropdownProvider : BaseComponent, IAwakableComponent, IStartableComponent, IExtendedTooltipDropdownProvider, IExtendedDropdownProvider, IDropdownProvider
 	{
 		// Token: 0x17000001 RID: 1
 		// (get) Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
@@ -78,19 +78,19 @@ namespace Timberborn.MapEditorStockpilesUI
 			return this._fixedStockpileGoodProvider.GetTooltip(value);
 		}
 
-		// Token: 0x04000002 RID: 2
-		private readonly EntityChangeRecorderFactory _entityChangeRecorderFactory;
+		// Token: 0x04000007 RID: 7
+		public readonly EntityChangeRecorderFactory _entityChangeRecorderFactory;
 
-		// Token: 0x04000003 RID: 3
-		private readonly FixedStockpileGoodProvider _fixedStockpileGoodProvider;
+		// Token: 0x04000008 RID: 8
+		public readonly FixedStockpileGoodProvider _fixedStockpileGoodProvider;
 
-		// Token: 0x04000004 RID: 4
-		private FixedStockpileInventorySetter _fixedStockpileInventorySetter;
+		// Token: 0x04000009 RID: 9
+		public FixedStockpileInventorySetter _fixedStockpileInventorySetter;
 
-		// Token: 0x04000005 RID: 5
-		private SingleGoodAllower _singleGoodAllower;
+		// Token: 0x0400000A RID: 10
+		public SingleGoodAllower _singleGoodAllower;
 
-		// Token: 0x04000006 RID: 6
-		private Stockpile _stockpile;
+		// Token: 0x0400000B RID: 11
+		public Stockpile _stockpile;
 	}
 }

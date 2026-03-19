@@ -2,7 +2,7 @@
 
 namespace Timberborn.MapEditorNaturalResources
 {
-	// Token: 0x02000005 RID: 5
+	// Token: 0x02000006 RID: 6
 	public class NaturalResourceLayerChangedEvent
 	{
 	}

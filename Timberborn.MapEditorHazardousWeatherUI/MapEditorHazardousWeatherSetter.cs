@@ -2,7 +2,7 @@
 
 namespace Timberborn.MapEditorHazardousWeatherUI
 {
-	// Token: 0x02000005 RID: 5
+	// Token: 0x02000006 RID: 6
 	public class MapEditorHazardousWeatherSetter
 	{
 		// Token: 0x17000001 RID: 1
@@ -60,10 +60,10 @@ namespace Timberborn.MapEditorHazardousWeatherUI
 			return MapEditorHazardousWeatherSetter.DraughtWeather;
 		}
 
-		// Token: 0x0400000E RID: 14
-		private static readonly string BadtideWeather = "BadtideWeather";
+		// Token: 0x04000013 RID: 19
+		public static readonly string BadtideWeather = "BadtideWeather";
 
-		// Token: 0x0400000F RID: 15
-		private static readonly string DraughtWeather = "DraughtWeather";
+		// Token: 0x04000014 RID: 20
+		public static readonly string DraughtWeather = "DraughtWeather";
 	}
 }

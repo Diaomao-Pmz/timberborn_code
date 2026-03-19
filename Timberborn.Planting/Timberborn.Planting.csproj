@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782771}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.Planting</RootNamespace>
+    <AssemblyName>Timberborn.Planting</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InRangePlantingCoordinates.cs" />
+    <Compile Include="IPlantableGoodIdProvider.cs" />
+    <Compile Include="IPlantingSpotValidator.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Plantable.cs" />
+    <Compile Include="PlantablePrioritizer.cs" />
+    <Compile Include="PlantableReproductionBlocker.cs" />
+    <Compile Include="PlantableReproductionBlockerService.cs" />
+    <Compile Include="PlantableSpec.cs" />
+    <Compile Include="PlantBehavior.cs" />
+    <Compile Include="Planter.cs" />
+    <Compile Include="PlanterBuilding.cs" />
+    <Compile Include="PlanterBuildingSpec.cs" />
+    <Compile Include="PlanterBuildingStatusUpdater.cs" />
+    <Compile Include="PlanterWorkplaceBehavior.cs" />
+    <Compile Include="PlantExecutor.cs" />
+    <Compile Include="PlantingAreaMarkedEvent.cs" />
+    <Compile Include="PlantingAreaValidator.cs" />
+    <Compile Include="PlantingConfigurator.cs" />
+    <Compile Include="PlantingCoordinatesSetEvent.cs" />
+    <Compile Include="PlantingCoordinatesUnsetEvent.cs" />
+    <Compile Include="PlantingCoordinatesUnsetter.cs" />
+    <Compile Include="PlantingMap.cs" />
+    <Compile Include="PlantingMapSerializer.cs" />
+    <Compile Include="PlantingService.cs" />
+    <Compile Include="PlantingSoilValidator.cs" />
+    <Compile Include="PlantingSpot.cs" />
+    <Compile Include="PlantingSpotFinder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BehaviorSystem\Timberborn.BehaviorSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782662}</Project>
+      <Name>Timberborn.BehaviorSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266E}</Project>
+      <Name>Timberborn.BlockSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlueprintSystem\Timberborn.BlueprintSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782672}</Project>
+      <Name>Timberborn.BlueprintSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BuildingsNavigation\Timberborn.BuildingsNavigation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782685}</Project>
+      <Name>Timberborn.BuildingsNavigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Coordinates\Timberborn.Coordinates.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A1}</Project>
+      <Name>Timberborn.Coordinates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Demolishing\Timberborn.Demolishing.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826AD}</Project>
+      <Name>Timberborn.Demolishing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.DuplicationSystem\Timberborn.DuplicationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826B9}</Project>
+      <Name>Timberborn.DuplicationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EnterableSystem\Timberborn.EnterableSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826BF}</Project>
+      <Name>Timberborn.EnterableSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
+      <Name>Timberborn.EntitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MapStateSystem\Timberborn.MapStateSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78273A}</Project>
+      <Name>Timberborn.MapStateSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResourcesMoisture\Timberborn.NaturalResourcesMoisture.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78275A}</Project>
+      <Name>Timberborn.NaturalResourcesMoisture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResourcesReproduction\Timberborn.NaturalResourcesReproduction.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78275C}</Project>
+      <Name>Timberborn.NaturalResourcesReproduction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResources\Timberborn.NaturalResources.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782753}</Project>
+      <Name>Timberborn.NaturalResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Navigation\Timberborn.Navigation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78275E}</Project>
+      <Name>Timberborn.Navigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Persistence\Timberborn.Persistence.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78276F}</Project>
+      <Name>Timberborn.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SoilContaminationSystem\Timberborn.SoilContaminationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B3}</Project>
+      <Name>Timberborn.SoilContaminationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SoilMoistureSystem\Timberborn.SoilMoistureSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B4}</Project>
+      <Name>Timberborn.SoilMoistureSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateInstantiation\Timberborn.TemplateInstantiation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D3}</Project>
+      <Name>Timberborn.TemplateInstantiation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateSystem\Timberborn.TemplateSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D4}</Project>
+      <Name>Timberborn.TemplateSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TerrainSystem\Timberborn.TerrainSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827DA}</Project>
+      <Name>Timberborn.TerrainSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TimeSystem\Timberborn.TimeSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E9}</Project>
+      <Name>Timberborn.TimeSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WalkingSystem\Timberborn.WalkingSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782801}</Project>
+      <Name>Timberborn.WalkingSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WorkSystem\Timberborn.WorkSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782824}</Project>
+      <Name>Timberborn.WorkSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WorldPersistence\Timberborn.WorldPersistence.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782826}</Project>
+      <Name>Timberborn.WorldPersistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

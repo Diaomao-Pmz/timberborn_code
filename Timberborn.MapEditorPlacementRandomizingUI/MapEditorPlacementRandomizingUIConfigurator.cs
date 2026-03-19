@@ -4,19 +4,19 @@ using Timberborn.ToolPanelSystem;
 
 namespace Timberborn.MapEditorPlacementRandomizingUI
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	[Context("MapEditor")]
-	internal class MapEditorPlacementRandomizingUIConfigurator : Configurator
+	public class MapEditorPlacementRandomizingUIConfigurator : Configurator
 	{
 		// Token: 0x06000008 RID: 8 RVA: 0x000021BA File Offset: 0x000003BA
-		protected override void Configure()
+		public override void Configure()
 		{
 			base.Bind<BlockObjectPlacementRandomizingPanel>().AsSingleton();
 			base.MultiBind<ToolPanelModule>().ToProvider<MapEditorPlacementRandomizingUIConfigurator.ToolPanelModuleProvider>().AsSingleton();
 		}
 
-		// Token: 0x02000007 RID: 7
-		private class ToolPanelModuleProvider : IProvider<ToolPanelModule>
+		// Token: 0x02000006 RID: 6
+		public class ToolPanelModuleProvider : IProvider<ToolPanelModule>
 		{
 			// Token: 0x0600000A RID: 10 RVA: 0x000021E1 File Offset: 0x000003E1
 			public ToolPanelModuleProvider(BlockObjectPlacementRandomizingPanel blockObjectPlacementRandomizingPanel)
@@ -32,8 +32,8 @@ namespace Timberborn.MapEditorPlacementRandomizingUI
 				return builder.Build();
 			}
 
-			// Token: 0x0400000D RID: 13
-			private readonly BlockObjectPlacementRandomizingPanel _blockObjectPlacementRandomizingPanel;
+			// Token: 0x0400000B RID: 11
+			public readonly BlockObjectPlacementRandomizingPanel _blockObjectPlacementRandomizingPanel;
 		}
 	}
 }

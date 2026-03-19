@@ -9,16 +9,16 @@ using Timberborn.Stockpiles;
 
 namespace Timberborn.MapEditorStockpilesUI
 {
-	// Token: 0x02000006 RID: 6
-	internal class FixedStockpileInventorySetter : BaseComponent, IAwakableComponent, IStartableComponent, IDuplicable<FixedStockpileInventorySetter>, IDuplicable
+	// Token: 0x02000009 RID: 9
+	public class FixedStockpileInventorySetter : BaseComponent, IAwakableComponent, IStartableComponent, IDuplicable<FixedStockpileInventorySetter>, IDuplicable
 	{
-		// Token: 0x06000022 RID: 34 RVA: 0x00002706 File Offset: 0x00000906
+		// Token: 0x06000029 RID: 41 RVA: 0x00002748 File Offset: 0x00000948
 		public FixedStockpileInventorySetter(FixedStockpileGoodProvider fixedStockpileGoodProvider)
 		{
 			this._fixedStockpileGoodProvider = fixedStockpileGoodProvider;
 		}
 
-		// Token: 0x06000023 RID: 35 RVA: 0x00002715 File Offset: 0x00000915
+		// Token: 0x0600002A RID: 42 RVA: 0x00002757 File Offset: 0x00000957
 		public void Awake()
 		{
 			this._stockpile = base.GetComponent<Stockpile>();
@@ -26,13 +26,13 @@ namespace Timberborn.MapEditorStockpilesUI
 			this._singleGoodAllower = base.GetComponent<SingleGoodAllower>();
 		}
 
-		// Token: 0x06000024 RID: 36 RVA: 0x0000273B File Offset: 0x0000093B
+		// Token: 0x0600002B RID: 43 RVA: 0x0000277D File Offset: 0x0000097D
 		public void Start()
 		{
 			this.ValidateAndInitializeInventory();
 		}
 
-		// Token: 0x06000025 RID: 37 RVA: 0x00002744 File Offset: 0x00000944
+		// Token: 0x0600002C RID: 44 RVA: 0x00002788 File Offset: 0x00000988
 		public void SetGoodId(string goodId)
 		{
 			int totalAmountInStock = this._stockpile.Inventory.TotalAmountInStock;
@@ -43,14 +43,14 @@ namespace Timberborn.MapEditorStockpilesUI
 			}
 		}
 
-		// Token: 0x06000026 RID: 38 RVA: 0x00002784 File Offset: 0x00000984
+		// Token: 0x0600002D RID: 45 RVA: 0x000027C8 File Offset: 0x000009C8
 		public void SetAmount(int amount)
 		{
 			this.ClearInventory();
 			this._stockpile.Inventory.Give(new GoodAmount(this._singleGoodAllower.AllowedGood, amount));
 		}
 
-		// Token: 0x06000027 RID: 39 RVA: 0x000027B0 File Offset: 0x000009B0
+		// Token: 0x0600002E RID: 46 RVA: 0x000027F4 File Offset: 0x000009F4
 		public void DuplicateFrom(FixedStockpileInventorySetter source)
 		{
 			if (this._stockpile.WhitelistedGoodType == source._stockpile.WhitelistedGoodType)
@@ -60,8 +60,8 @@ namespace Timberborn.MapEditorStockpilesUI
 			}
 		}
 
-		// Token: 0x06000028 RID: 40 RVA: 0x00002804 File Offset: 0x00000A04
-		private void ValidateAndInitializeInventory()
+		// Token: 0x0600002F RID: 47 RVA: 0x00002848 File Offset: 0x00000A48
+		public void ValidateAndInitializeInventory()
 		{
 			ImmutableArray<string> goods = this._fixedStockpileGoodProvider.GetGoods(this._stockpile.WhitelistedGoodType);
 			bool hasAllowedGood = this._singleGoodAllower.HasAllowedGood;
@@ -75,16 +75,16 @@ namespace Timberborn.MapEditorStockpilesUI
 			}
 		}
 
-		// Token: 0x06000029 RID: 41 RVA: 0x00002869 File Offset: 0x00000A69
-		private void ResetInventoryGood(string goodId)
+		// Token: 0x06000030 RID: 48 RVA: 0x000028AD File Offset: 0x00000AAD
+		public void ResetInventoryGood(string goodId)
 		{
 			this.ClearInventory();
 			this._singleGoodAllower.Allow(goodId);
 			this._fixedStockpile.SetFixedGood(goodId);
 		}
 
-		// Token: 0x0600002A RID: 42 RVA: 0x0000288C File Offset: 0x00000A8C
-		private void ClearInventory()
+		// Token: 0x06000031 RID: 49 RVA: 0x000028D0 File Offset: 0x00000AD0
+		public void ClearInventory()
 		{
 			foreach (GoodAmount good in this._stockpile.Inventory.Stock.ToImmutableArray<GoodAmount>())
 			{
@@ -92,16 +92,16 @@ namespace Timberborn.MapEditorStockpilesUI
 			}
 		}
 
-		// Token: 0x04000019 RID: 25
-		private readonly FixedStockpileGoodProvider _fixedStockpileGoodProvider;
+		// Token: 0x04000024 RID: 36
+		public readonly FixedStockpileGoodProvider _fixedStockpileGoodProvider;
 
-		// Token: 0x0400001A RID: 26
-		private Stockpile _stockpile;
+		// Token: 0x04000025 RID: 37
+		public Stockpile _stockpile;
 
-		// Token: 0x0400001B RID: 27
-		private FixedStockpile _fixedStockpile;
+		// Token: 0x04000026 RID: 38
+		public FixedStockpile _fixedStockpile;
 
-		// Token: 0x0400001C RID: 28
-		private SingleGoodAllower _singleGoodAllower;
+		// Token: 0x04000027 RID: 39
+		public SingleGoodAllower _singleGoodAllower;
 	}
 }

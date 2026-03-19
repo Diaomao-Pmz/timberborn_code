@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorScene
 {
-	// Token: 0x02000003 RID: 3
+	// Token: 0x02000004 RID: 4
 	public class MapEditorCameraCenterer : ILoadableSingleton
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
@@ -25,10 +25,10 @@ namespace Timberborn.MapEditorScene
 			this._cameraService.MoveTargetTo(CoordinateSystem.GridToWorld(coordinates));
 		}
 
-		// Token: 0x04000001 RID: 1
-		private readonly MapSize _mapSize;
+		// Token: 0x04000006 RID: 6
+		public readonly MapSize _mapSize;
 
-		// Token: 0x04000002 RID: 2
-		private readonly CameraService _cameraService;
+		// Token: 0x04000007 RID: 7
+		public readonly CameraService _cameraService;
 	}
 }

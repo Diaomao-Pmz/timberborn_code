@@ -17,25 +17,25 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorNaturalResourcesUI
 {
-	// Token: 0x0200000C RID: 12
+	// Token: 0x02000012 RID: 18
 	public class NaturalResourceSpawningBrushTool : ITool, IToolDescriptor, IInputProcessor, ILoadableSingleton, IBrushWithSize, IBrushWithShape, IBrushWithGuidelines
 	{
-		// Token: 0x17000008 RID: 8
-		// (get) Token: 0x06000041 RID: 65 RVA: 0x00002C0A File Offset: 0x00000E0A
-		// (set) Token: 0x06000042 RID: 66 RVA: 0x00002C12 File Offset: 0x00000E12
+		// Token: 0x1700000C RID: 12
+		// (get) Token: 0x0600005B RID: 91 RVA: 0x00003133 File Offset: 0x00001333
+		// (set) Token: 0x0600005C RID: 92 RVA: 0x0000313B File Offset: 0x0000133B
 		public int BrushSize { get; set; } = 3;
 
-		// Token: 0x17000009 RID: 9
-		// (get) Token: 0x06000043 RID: 67 RVA: 0x00002C1B File Offset: 0x00000E1B
-		// (set) Token: 0x06000044 RID: 68 RVA: 0x00002C23 File Offset: 0x00000E23
+		// Token: 0x1700000D RID: 13
+		// (get) Token: 0x0600005D RID: 93 RVA: 0x00003144 File Offset: 0x00001344
+		// (set) Token: 0x0600005E RID: 94 RVA: 0x0000314C File Offset: 0x0000134C
 		public BrushShape BrushShape { get; set; }
 
-		// Token: 0x1700000A RID: 10
-		// (get) Token: 0x06000045 RID: 69 RVA: 0x00002C2C File Offset: 0x00000E2C
-		// (set) Token: 0x06000046 RID: 70 RVA: 0x00002C34 File Offset: 0x00000E34
+		// Token: 0x1700000E RID: 14
+		// (get) Token: 0x0600005F RID: 95 RVA: 0x00003155 File Offset: 0x00001355
+		// (set) Token: 0x06000060 RID: 96 RVA: 0x0000315D File Offset: 0x0000135D
 		public float Density { get; set; } = 1f;
 
-		// Token: 0x06000047 RID: 71 RVA: 0x00002C40 File Offset: 0x00000E40
+		// Token: 0x06000061 RID: 97 RVA: 0x00003168 File Offset: 0x00001368
 		public NaturalResourceSpawningBrushTool(InputService inputService, NaturalResourceSpawner naturalResourceSpawner, BrushProbabilityMap brushProbabilityMap, MarkerDrawerFactory markerDrawerFactory, ILoc loc, NaturalResourceLayerService naturalResourceLayerService, NaturalResourceBrushIterator naturalResourceBrushIterator, IUndoRegistry undoRegistry, ISpecService specService)
 		{
 			this._inputService = inputService;
@@ -49,8 +49,8 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._specService = specService;
 		}
 
-		// Token: 0x1700000B RID: 11
-		// (get) Token: 0x06000048 RID: 72 RVA: 0x00002CAA File Offset: 0x00000EAA
+		// Token: 0x1700000F RID: 15
+		// (get) Token: 0x06000062 RID: 98 RVA: 0x000031D2 File Offset: 0x000013D2
 		public bool RandomizeYieldGrowth
 		{
 			get
@@ -59,7 +59,7 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			}
 		}
 
-		// Token: 0x06000049 RID: 73 RVA: 0x00002CB8 File Offset: 0x00000EB8
+		// Token: 0x06000063 RID: 99 RVA: 0x000031E0 File Offset: 0x000013E0
 		public void Load()
 		{
 			this.InitializeToolDescription();
@@ -68,7 +68,7 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this.InitializeEnabledTypes(singleSpec.DefaultNaturalResourceId);
 		}
 
-		// Token: 0x0600004A RID: 74 RVA: 0x00002CFA File Offset: 0x00000EFA
+		// Token: 0x06000064 RID: 100 RVA: 0x00003222 File Offset: 0x00001422
 		public bool ProcessInput()
 		{
 			this.ProcessBrush();
@@ -79,13 +79,13 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			return false;
 		}
 
-		// Token: 0x0600004B RID: 75 RVA: 0x00002D1B File Offset: 0x00000F1B
+		// Token: 0x06000065 RID: 101 RVA: 0x00003243 File Offset: 0x00001443
 		public void Enter()
 		{
 			this._inputService.AddInputProcessor(this);
 		}
 
-		// Token: 0x0600004C RID: 76 RVA: 0x00002D29 File Offset: 0x00000F29
+		// Token: 0x06000066 RID: 102 RVA: 0x00003251 File Offset: 0x00001451
 		public void Exit()
 		{
 			this._inputService.RemoveInputProcessor(this);
@@ -93,38 +93,38 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._undoRegistry.CommitStack();
 		}
 
-		// Token: 0x0600004D RID: 77 RVA: 0x00002D4D File Offset: 0x00000F4D
+		// Token: 0x06000067 RID: 103 RVA: 0x00003275 File Offset: 0x00001475
 		public ToolDescription DescribeTool()
 		{
 			return this._toolDescription;
 		}
 
-		// Token: 0x0600004E RID: 78 RVA: 0x00002D55 File Offset: 0x00000F55
+		// Token: 0x06000068 RID: 104 RVA: 0x0000327D File Offset: 0x0000147D
 		public void EnableSpawnableResource(SpawnableResource id)
 		{
 			this._enabledSpawnableResources.Add(id);
 		}
 
-		// Token: 0x0600004F RID: 79 RVA: 0x00002D64 File Offset: 0x00000F64
+		// Token: 0x06000069 RID: 105 RVA: 0x0000328C File Offset: 0x0000148C
 		public void DisableSpawnableResource(SpawnableResource id)
 		{
 			this._enabledSpawnableResources.Remove(id);
 		}
 
-		// Token: 0x06000050 RID: 80 RVA: 0x00002D73 File Offset: 0x00000F73
+		// Token: 0x0600006A RID: 106 RVA: 0x0000329B File Offset: 0x0000149B
 		public bool IsNaturalResourceEnabled(SpawnableResource id)
 		{
 			return this._enabledSpawnableResources.Contains(id);
 		}
 
-		// Token: 0x06000051 RID: 81 RVA: 0x00002D81 File Offset: 0x00000F81
+		// Token: 0x0600006B RID: 107 RVA: 0x000032A9 File Offset: 0x000014A9
 		public void SwitchRandomizeYieldGrowth(bool state)
 		{
 			this._naturalResourceSpawner.RandomizeYieldGrowth = state;
 		}
 
-		// Token: 0x06000052 RID: 82 RVA: 0x00002D90 File Offset: 0x00000F90
-		private void InitializeEnabledTypes(string defaultType)
+		// Token: 0x0600006C RID: 108 RVA: 0x000032B8 File Offset: 0x000014B8
+		public void InitializeEnabledTypes(string defaultType)
 		{
 			SpawnableResource item = new SpawnableResource(defaultType, false);
 			this._enabledSpawnableResources = new HashSet<SpawnableResource>
@@ -133,8 +133,8 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			};
 		}
 
-		// Token: 0x06000053 RID: 83 RVA: 0x00002DBC File Offset: 0x00000FBC
-		private void ProcessBrush()
+		// Token: 0x0600006D RID: 109 RVA: 0x000032E4 File Offset: 0x000014E4
+		public void ProcessBrush()
 		{
 			foreach (Vector3Int vector3Int in this._naturalResourceBrushIterator.Iterate(this.BrushSize, this.BrushShape))
 			{
@@ -146,8 +146,8 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			}
 		}
 
-		// Token: 0x06000054 RID: 84 RVA: 0x00002E48 File Offset: 0x00001048
-		private void ProcessClickedTile(Vector3Int coords3D)
+		// Token: 0x0600006E RID: 110 RVA: 0x00003370 File Offset: 0x00001570
+		public void ProcessClickedTile(Vector3Int coords3D)
 		{
 			this._naturalResourceLayerService.Enable();
 			if (!this._enabledSpawnableResources.IsEmpty<SpawnableResource>() && this._brushProbabilityMap.TestProbabilityAtCoordinates(coords3D.XY(), this.Density))
@@ -156,52 +156,52 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			}
 		}
 
-		// Token: 0x06000055 RID: 85 RVA: 0x00002E98 File Offset: 0x00001098
-		private void InitializeToolDescription()
+		// Token: 0x0600006F RID: 111 RVA: 0x000033C0 File Offset: 0x000015C0
+		public void InitializeToolDescription()
 		{
 			this._toolDescription = new ToolDescription.Builder(this._loc.T(NaturalResourceSpawningBrushTool.TitleLocKey)).Build();
 		}
 
-		// Token: 0x04000036 RID: 54
-		private static readonly string TitleLocKey = "MapEditor.Brush.NaturalResourceSpawning";
+		// Token: 0x04000056 RID: 86
+		public static readonly string TitleLocKey = "MapEditor.Brush.NaturalResourceSpawning";
 
-		// Token: 0x04000037 RID: 55
-		private static readonly float MarkerYOffset = 0.02f;
+		// Token: 0x04000057 RID: 87
+		public static readonly float MarkerYOffset = 0.02f;
 
-		// Token: 0x0400003B RID: 59
-		private readonly InputService _inputService;
+		// Token: 0x0400005B RID: 91
+		public readonly InputService _inputService;
 
-		// Token: 0x0400003C RID: 60
-		private readonly NaturalResourceSpawner _naturalResourceSpawner;
+		// Token: 0x0400005C RID: 92
+		public readonly NaturalResourceSpawner _naturalResourceSpawner;
 
-		// Token: 0x0400003D RID: 61
-		private readonly BrushProbabilityMap _brushProbabilityMap;
+		// Token: 0x0400005D RID: 93
+		public readonly BrushProbabilityMap _brushProbabilityMap;
 
-		// Token: 0x0400003E RID: 62
-		private readonly MarkerDrawerFactory _markerDrawerFactory;
+		// Token: 0x0400005E RID: 94
+		public readonly MarkerDrawerFactory _markerDrawerFactory;
 
-		// Token: 0x0400003F RID: 63
-		private readonly ILoc _loc;
+		// Token: 0x0400005F RID: 95
+		public readonly ILoc _loc;
 
-		// Token: 0x04000040 RID: 64
-		private readonly NaturalResourceLayerService _naturalResourceLayerService;
+		// Token: 0x04000060 RID: 96
+		public readonly NaturalResourceLayerService _naturalResourceLayerService;
 
-		// Token: 0x04000041 RID: 65
-		private readonly NaturalResourceBrushIterator _naturalResourceBrushIterator;
+		// Token: 0x04000061 RID: 97
+		public readonly NaturalResourceBrushIterator _naturalResourceBrushIterator;
 
-		// Token: 0x04000042 RID: 66
-		private readonly IUndoRegistry _undoRegistry;
+		// Token: 0x04000062 RID: 98
+		public readonly IUndoRegistry _undoRegistry;
 
-		// Token: 0x04000043 RID: 67
-		private readonly ISpecService _specService;
+		// Token: 0x04000063 RID: 99
+		public readonly ISpecService _specService;
 
-		// Token: 0x04000044 RID: 68
-		private MeshDrawer _meshDrawer;
+		// Token: 0x04000064 RID: 100
+		public MeshDrawer _meshDrawer;
 
-		// Token: 0x04000045 RID: 69
-		private ToolDescription _toolDescription;
+		// Token: 0x04000065 RID: 101
+		public ToolDescription _toolDescription;
 
-		// Token: 0x04000046 RID: 70
-		private HashSet<SpawnableResource> _enabledSpawnableResources;
+		// Token: 0x04000066 RID: 102
+		public HashSet<SpawnableResource> _enabledSpawnableResources;
 	}
 }

@@ -13,8 +13,8 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorStockpilesUI
 {
-	// Token: 0x02000005 RID: 5
-	internal class FixedStockpileGoodProvider : ILoadableSingleton
+	// Token: 0x02000006 RID: 6
+	public class FixedStockpileGoodProvider : ILoadableSingleton
 	{
 		// Token: 0x06000016 RID: 22 RVA: 0x000023C8 File Offset: 0x000005C8
 		public FixedStockpileGoodProvider(IGoodService goodService, ISpecService specService, GoodDescriber goodDescriber, FactionSpecService factionSpecService, CommonGoodCollectionIdsProvider commonGoodCollectionIdsProvider)
@@ -77,7 +77,7 @@ namespace Timberborn.MapEditorStockpilesUI
 		}
 
 		// Token: 0x0600001C RID: 28 RVA: 0x000025F4 File Offset: 0x000007F4
-		private int GetGoodOrder(string goodId)
+		public int GetGoodOrder(string goodId)
 		{
 			if (this.IsCommonGood(goodId))
 			{
@@ -92,13 +92,13 @@ namespace Timberborn.MapEditorStockpilesUI
 		}
 
 		// Token: 0x0600001D RID: 29 RVA: 0x00002632 File Offset: 0x00000832
-		private bool IsCommonGood(string goodId)
+		public bool IsCommonGood(string goodId)
 		{
 			return this._collectionIdToGoods[this._commonId].Contains(goodId);
 		}
 
 		// Token: 0x0600001E RID: 30 RVA: 0x0000264C File Offset: 0x0000084C
-		private bool IsSingleFactionGood(string goodId, out string singleFactionId)
+		public bool IsSingleFactionGood(string goodId, out string singleFactionId)
 		{
 			int num = 0;
 			singleFactionId = string.Empty;
@@ -114,7 +114,7 @@ namespace Timberborn.MapEditorStockpilesUI
 		}
 
 		// Token: 0x0600001F RID: 31 RVA: 0x000026A4 File Offset: 0x000008A4
-		private bool IsFactionGood(FactionSpec factionSpec, string goodId)
+		public bool IsFactionGood(FactionSpec factionSpec, string goodId)
 		{
 			foreach (string key in factionSpec.GoodCollectionIds)
 			{
@@ -126,25 +126,25 @@ namespace Timberborn.MapEditorStockpilesUI
 			return false;
 		}
 
-		// Token: 0x04000012 RID: 18
-		private readonly IGoodService _goodService;
-
-		// Token: 0x04000013 RID: 19
-		private readonly ISpecService _specService;
-
-		// Token: 0x04000014 RID: 20
-		private readonly GoodDescriber _goodDescriber;
-
-		// Token: 0x04000015 RID: 21
-		private readonly FactionSpecService _factionSpecService;
-
-		// Token: 0x04000016 RID: 22
-		private readonly CommonGoodCollectionIdsProvider _commonGoodCollectionIdsProvider;
-
 		// Token: 0x04000017 RID: 23
-		private readonly Dictionary<string, HashSet<string>> _collectionIdToGoods = new Dictionary<string, HashSet<string>>();
+		public readonly IGoodService _goodService;
 
 		// Token: 0x04000018 RID: 24
-		private string _commonId;
+		public readonly ISpecService _specService;
+
+		// Token: 0x04000019 RID: 25
+		public readonly GoodDescriber _goodDescriber;
+
+		// Token: 0x0400001A RID: 26
+		public readonly FactionSpecService _factionSpecService;
+
+		// Token: 0x0400001B RID: 27
+		public readonly CommonGoodCollectionIdsProvider _commonGoodCollectionIdsProvider;
+
+		// Token: 0x0400001C RID: 28
+		public readonly Dictionary<string, HashSet<string>> _collectionIdToGoods = new Dictionary<string, HashSet<string>>();
+
+		// Token: 0x0400001D RID: 29
+		public string _commonId;
 	}
 }

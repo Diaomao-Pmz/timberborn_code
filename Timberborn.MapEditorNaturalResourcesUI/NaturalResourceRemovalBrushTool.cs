@@ -18,20 +18,20 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorNaturalResourcesUI
 {
-	// Token: 0x0200000A RID: 10
+	// Token: 0x0200000E RID: 14
 	public class NaturalResourceRemovalBrushTool : ITool, IToolDescriptor, IInputProcessor, ILoadableSingleton, IBrushWithSize, IBrushWithShape, IBrushWithGuidelines
 	{
-		// Token: 0x17000006 RID: 6
-		// (get) Token: 0x06000027 RID: 39 RVA: 0x00002580 File Offset: 0x00000780
-		// (set) Token: 0x06000028 RID: 40 RVA: 0x00002588 File Offset: 0x00000788
+		// Token: 0x1700000A RID: 10
+		// (get) Token: 0x0600003B RID: 59 RVA: 0x00002A74 File Offset: 0x00000C74
+		// (set) Token: 0x0600003C RID: 60 RVA: 0x00002A7C File Offset: 0x00000C7C
 		public int BrushSize { get; set; } = 3;
 
-		// Token: 0x17000007 RID: 7
-		// (get) Token: 0x06000029 RID: 41 RVA: 0x00002591 File Offset: 0x00000791
-		// (set) Token: 0x0600002A RID: 42 RVA: 0x00002599 File Offset: 0x00000799
+		// Token: 0x1700000B RID: 11
+		// (get) Token: 0x0600003D RID: 61 RVA: 0x00002A85 File Offset: 0x00000C85
+		// (set) Token: 0x0600003E RID: 62 RVA: 0x00002A8D File Offset: 0x00000C8D
 		public BrushShape BrushShape { get; set; }
 
-		// Token: 0x0600002B RID: 43 RVA: 0x000025A4 File Offset: 0x000007A4
+		// Token: 0x0600003F RID: 63 RVA: 0x00002A98 File Offset: 0x00000C98
 		public NaturalResourceRemovalBrushTool(InputService inputService, IBlockService blockService, EntityService entityService, MarkerDrawerFactory markerDrawerFactory, ILoc loc, NaturalResourceLayerService naturalResourceLayerService, NaturalResourceBrushIterator naturalResourceBrushIterator, IUndoRegistry undoRegistry, ISpecService specService)
 		{
 			this._inputService = inputService;
@@ -45,7 +45,7 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._specService = specService;
 		}
 
-		// Token: 0x0600002C RID: 44 RVA: 0x00002610 File Offset: 0x00000810
+		// Token: 0x06000040 RID: 64 RVA: 0x00002B04 File Offset: 0x00000D04
 		public void Load()
 		{
 			this.InitializeToolDescription();
@@ -53,7 +53,7 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._meshDrawer = this._markerDrawerFactory.CreateTileDrawer(singleSpec.RemovalTileColor);
 		}
 
-		// Token: 0x0600002D RID: 45 RVA: 0x00002646 File Offset: 0x00000846
+		// Token: 0x06000041 RID: 65 RVA: 0x00002B3A File Offset: 0x00000D3A
 		public bool ProcessInput()
 		{
 			this.ProcessBrush();
@@ -64,13 +64,13 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			return false;
 		}
 
-		// Token: 0x0600002E RID: 46 RVA: 0x00002667 File Offset: 0x00000867
+		// Token: 0x06000042 RID: 66 RVA: 0x00002B5B File Offset: 0x00000D5B
 		public void Enter()
 		{
 			this._inputService.AddInputProcessor(this);
 		}
 
-		// Token: 0x0600002F RID: 47 RVA: 0x00002675 File Offset: 0x00000875
+		// Token: 0x06000043 RID: 67 RVA: 0x00002B69 File Offset: 0x00000D69
 		public void Exit()
 		{
 			this._inputService.RemoveInputProcessor(this);
@@ -78,14 +78,14 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._undoRegistry.CommitStack();
 		}
 
-		// Token: 0x06000030 RID: 48 RVA: 0x00002699 File Offset: 0x00000899
+		// Token: 0x06000044 RID: 68 RVA: 0x00002B8D File Offset: 0x00000D8D
 		public ToolDescription DescribeTool()
 		{
 			return this._toolDescription;
 		}
 
-		// Token: 0x06000031 RID: 49 RVA: 0x000026A4 File Offset: 0x000008A4
-		private void ProcessBrush()
+		// Token: 0x06000045 RID: 69 RVA: 0x00002B98 File Offset: 0x00000D98
+		public void ProcessBrush()
 		{
 			foreach (Vector3Int vector3Int in this._naturalResourceBrushIterator.Iterate(this.BrushSize, this.BrushShape))
 			{
@@ -97,8 +97,8 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			}
 		}
 
-		// Token: 0x06000032 RID: 50 RVA: 0x00002730 File Offset: 0x00000930
-		private void DeleteNaturalResourcesAt(Vector3Int coords3D)
+		// Token: 0x06000046 RID: 70 RVA: 0x00002C24 File Offset: 0x00000E24
+		public void DeleteNaturalResourcesAt(Vector3Int coords3D)
 		{
 			this._naturalResourceLayerService.Enable();
 			this._resourcesToDelete.AddRange(this._blockService.GetObjectsWithComponentAt<NaturalResource>(coords3D));
@@ -109,52 +109,52 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._resourcesToDelete.Clear();
 		}
 
-		// Token: 0x06000033 RID: 51 RVA: 0x000027B8 File Offset: 0x000009B8
-		private void InitializeToolDescription()
+		// Token: 0x06000047 RID: 71 RVA: 0x00002CAC File Offset: 0x00000EAC
+		public void InitializeToolDescription()
 		{
 			this._toolDescription = new ToolDescription.Builder(this._loc.T(NaturalResourceRemovalBrushTool.TitleLocKey)).Build();
 		}
 
-		// Token: 0x04000019 RID: 25
-		private static readonly string TitleLocKey = "MapEditor.Brush.NaturalResourceRemoval";
+		// Token: 0x04000034 RID: 52
+		public static readonly string TitleLocKey = "MapEditor.Brush.NaturalResourceRemoval";
 
-		// Token: 0x0400001A RID: 26
-		private static readonly float MarkerYOffset = 0.02f;
+		// Token: 0x04000035 RID: 53
+		public static readonly float MarkerYOffset = 0.02f;
 
-		// Token: 0x0400001D RID: 29
-		private readonly InputService _inputService;
+		// Token: 0x04000038 RID: 56
+		public readonly InputService _inputService;
 
-		// Token: 0x0400001E RID: 30
-		private readonly IBlockService _blockService;
+		// Token: 0x04000039 RID: 57
+		public readonly IBlockService _blockService;
 
-		// Token: 0x0400001F RID: 31
-		private readonly EntityService _entityService;
+		// Token: 0x0400003A RID: 58
+		public readonly EntityService _entityService;
 
-		// Token: 0x04000020 RID: 32
-		private readonly MarkerDrawerFactory _markerDrawerFactory;
+		// Token: 0x0400003B RID: 59
+		public readonly MarkerDrawerFactory _markerDrawerFactory;
 
-		// Token: 0x04000021 RID: 33
-		private readonly ILoc _loc;
+		// Token: 0x0400003C RID: 60
+		public readonly ILoc _loc;
 
-		// Token: 0x04000022 RID: 34
-		private readonly NaturalResourceLayerService _naturalResourceLayerService;
+		// Token: 0x0400003D RID: 61
+		public readonly NaturalResourceLayerService _naturalResourceLayerService;
 
-		// Token: 0x04000023 RID: 35
-		private readonly NaturalResourceBrushIterator _naturalResourceBrushIterator;
+		// Token: 0x0400003E RID: 62
+		public readonly NaturalResourceBrushIterator _naturalResourceBrushIterator;
 
-		// Token: 0x04000024 RID: 36
-		private readonly IUndoRegistry _undoRegistry;
+		// Token: 0x0400003F RID: 63
+		public readonly IUndoRegistry _undoRegistry;
 
-		// Token: 0x04000025 RID: 37
-		private readonly ISpecService _specService;
+		// Token: 0x04000040 RID: 64
+		public readonly ISpecService _specService;
 
-		// Token: 0x04000026 RID: 38
-		private MeshDrawer _meshDrawer;
+		// Token: 0x04000041 RID: 65
+		public MeshDrawer _meshDrawer;
 
-		// Token: 0x04000027 RID: 39
-		private ToolDescription _toolDescription;
+		// Token: 0x04000042 RID: 66
+		public ToolDescription _toolDescription;
 
-		// Token: 0x04000028 RID: 40
-		private readonly List<NaturalResource> _resourcesToDelete = new List<NaturalResource>();
+		// Token: 0x04000043 RID: 67
+		public readonly List<NaturalResource> _resourcesToDelete = new List<NaturalResource>();
 	}
 }

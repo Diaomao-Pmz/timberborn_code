@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorScene
 {
-	// Token: 0x02000006 RID: 6
+	// Token: 0x02000007 RID: 7
 	public class MapEditorSerializedWorldSupplier : ISerializedWorldSupplier, ILoadableSingleton, INonSingletonPostLoader
 	{
 		// Token: 0x0600000D RID: 13 RVA: 0x00002280 File Offset: 0x00000480
@@ -41,7 +41,7 @@ namespace Timberborn.MapEditorScene
 		}
 
 		// Token: 0x06000011 RID: 17 RVA: 0x000022D0 File Offset: 0x000004D0
-		private SerializedWorld LoadGame(MapEditorSceneParameters mapEditorSceneParameters)
+		public SerializedWorld LoadGame(MapEditorSceneParameters mapEditorSceneParameters)
 		{
 			SerializedWorld result;
 			try
@@ -78,13 +78,13 @@ namespace Timberborn.MapEditorScene
 			return result;
 		}
 
-		// Token: 0x04000004 RID: 4
-		private readonly MapEditorMapLoader _mapEditorMapLoader;
+		// Token: 0x04000009 RID: 9
+		public readonly MapEditorMapLoader _mapEditorMapLoader;
 
-		// Token: 0x04000005 RID: 5
-		private readonly ISceneLoader _sceneLoader;
+		// Token: 0x0400000A RID: 10
+		public readonly ISceneLoader _sceneLoader;
 
-		// Token: 0x04000006 RID: 6
-		private SerializedWorld _serializedWorld;
+		// Token: 0x0400000B RID: 11
+		public SerializedWorld _serializedWorld;
 	}
 }

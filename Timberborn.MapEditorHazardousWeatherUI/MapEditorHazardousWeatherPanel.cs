@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorHazardousWeatherUI
 {
-	// Token: 0x02000004 RID: 4
-	internal class MapEditorHazardousWeatherPanel : ILoadableSingleton, IUpdatableSingleton
+	// Token: 0x02000005 RID: 5
+	public class MapEditorHazardousWeatherPanel : ILoadableSingleton, IUpdatableSingleton
 	{
 		// Token: 0x0600000F RID: 15 RVA: 0x00002262 File Offset: 0x00000462
 		public MapEditorHazardousWeatherPanel(VisualElementLoader visualElementLoader, UILayout uiLayout, HazardousWeatherToggleFactory hazardousWeatherToggleFactory)
@@ -32,16 +32,16 @@ namespace Timberborn.MapEditorHazardousWeatherUI
 			this._sliderToggle.Update();
 		}
 
-		// Token: 0x0400000A RID: 10
-		private readonly VisualElementLoader _visualElementLoader;
+		// Token: 0x0400000F RID: 15
+		public readonly VisualElementLoader _visualElementLoader;
 
-		// Token: 0x0400000B RID: 11
-		private readonly UILayout _uiLayout;
+		// Token: 0x04000010 RID: 16
+		public readonly UILayout _uiLayout;
 
-		// Token: 0x0400000C RID: 12
-		private readonly HazardousWeatherToggleFactory _hazardousWeatherToggleFactory;
+		// Token: 0x04000011 RID: 17
+		public readonly HazardousWeatherToggleFactory _hazardousWeatherToggleFactory;
 
-		// Token: 0x0400000D RID: 13
-		private SliderToggle _sliderToggle;
+		// Token: 0x04000012 RID: 18
+		public SliderToggle _sliderToggle;
 	}
 }

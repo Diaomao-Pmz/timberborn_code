@@ -67,14 +67,14 @@ namespace Timberborn.AssetSystem
 			else
 			{
 				string text2 = "/" + rootDirectory;
-				int num2 = assetPath.IndexOf(text2, 5);
+				int num2 = assetPath.IndexOf(text2, StringComparison.OrdinalIgnoreCase);
 				if (num2 != -1)
 				{
 					string text = assetPath;
 					int num = num2 + text2.Length;
 					assetPath = text.Substring(num, text.Length - num);
 				}
-				else if (assetPath.StartsWith(AssetPathHelper.AssetPathPrefix, 5))
+				else if (assetPath.StartsWith(AssetPathHelper.AssetPathPrefix, StringComparison.OrdinalIgnoreCase))
 				{
 					string text = assetPath;
 					int num = AssetPathHelper.AssetPathPrefix.Length;

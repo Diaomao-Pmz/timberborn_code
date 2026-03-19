@@ -8,12 +8,12 @@ using Timberborn.TemplateInstantiation;
 
 namespace Timberborn.MapEditorNaturalResources
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	[Context("MapEditor")]
-	internal class MapEditorNaturalResourcesConfigurator : Configurator
+	public class MapEditorNaturalResourcesConfigurator : Configurator
 	{
-		// Token: 0x0600000C RID: 12 RVA: 0x0000225C File Offset: 0x0000045C
-		protected override void Configure()
+		// Token: 0x0600000C RID: 12 RVA: 0x00002234 File Offset: 0x00000434
+		public override void Configure()
 		{
 			base.Bind<InstantNaturalResource>().AsTransient();
 			base.Bind<NaturalResourceLayerService>().AsSingleton();
@@ -21,8 +21,8 @@ namespace Timberborn.MapEditorNaturalResources
 			base.MultiBind<TemplateModule>().ToProvider(new Func<TemplateModule>(MapEditorNaturalResourcesConfigurator.ProvideTemplateModule)).AsSingleton();
 		}
 
-		// Token: 0x0600000D RID: 13 RVA: 0x000022AA File Offset: 0x000004AA
-		private static TemplateModule ProvideTemplateModule()
+		// Token: 0x0600000D RID: 13 RVA: 0x00002282 File Offset: 0x00000482
+		public static TemplateModule ProvideTemplateModule()
 		{
 			TemplateModule.Builder builder = new TemplateModule.Builder();
 			builder.AddDecorator<NaturalResourceSpec, StatusSubject>();

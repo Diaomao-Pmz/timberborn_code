@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.SettingsSystemUI</RootNamespace>
+    <AssemblyName>Timberborn.SettingsSystemUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.UIElementsModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessibilitySettingsController.cs" />
+    <Compile Include="AnalyticsSettingsController.cs" />
+    <Compile Include="AnisotropicFilteringDropdownProvider.cs" />
+    <Compile Include="AntiAliasingDropdownProvider.cs" />
+    <Compile Include="BloomDropdownProvider.cs" />
+    <Compile Include="CameraSettingsController.cs" />
+    <Compile Include="DevModeSettingsController.cs" />
+    <Compile Include="FrameRateLimitDropdownProvider.cs" />
+    <Compile Include="GameSavingSettings.cs" />
+    <Compile Include="GameSavingSettingsController.cs" />
+    <Compile Include="GraphicsQualityDropdownProvider.cs" />
+    <Compile Include="GraphicsSettingsController.cs" />
+    <Compile Include="InputSettingsController.cs" />
+    <Compile Include="ISettingsController.cs" />
+    <Compile Include="LanguageSettingsController.cs" />
+    <Compile Include="LightQualityDropdownProvider.cs" />
+    <Compile Include="OnScreenKeyboardDropdownProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenResolutionDropdownProvider.cs" />
+    <Compile Include="ScreenSettingsController.cs" />
+    <Compile Include="SettingsBox.cs" />
+    <Compile Include="SettingsSystemUIConfigurator.cs" />
+    <Compile Include="ShadowQualityGraphicsDropdownProvider.cs" />
+    <Compile Include="SoundSettingsController.cs" />
+    <Compile Include="TextureQualityDropdownProvider.cs" />
+    <Compile Include="TutorialSettingsController.cs" />
+    <Compile Include="UISettingsController.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="VSyncDropdownProvider.cs" />
+    <Compile Include="WaterQualityDropdownProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.AccessibilitySettingsSystem\Timberborn.AccessibilitySettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782644}</Project>
+      <Name>Timberborn.AccessibilitySettingsSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Analytics\Timberborn.Analytics.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78264B}</Project>
+      <Name>Timberborn.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CameraSettingsSystem\Timberborn.CameraSettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78268A}</Project>
+      <Name>Timberborn.CameraSettingsSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Name>Timberborn.CoreUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Debugging\Timberborn.Debugging.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A7}</Project>
+      <Name>Timberborn.Debugging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.DropdownSystem\Timberborn.DropdownSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826B8}</Project>
+      <Name>Timberborn.DropdownSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ErrorReporting\Timberborn.ErrorReporting.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C5}</Project>
+      <Name>Timberborn.ErrorReporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.FactionSystem\Timberborn.FactionSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826CB}</Project>
+      <Name>Timberborn.FactionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GameSaveRepositorySystem\Timberborn.GameSaveRepositorySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826E4}</Project>
+      <Name>Timberborn.GameSaveRepositorySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GraphicsQualitySystem\Timberborn.GraphicsQualitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826FA}</Project>
+      <Name>Timberborn.GraphicsQualitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.InputSystem\Timberborn.InputSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782708}</Project>
+      <Name>Timberborn.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.IntroSettingsSystem\Timberborn.IntroSettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78270B}</Project>
+      <Name>Timberborn.IntroSettingsSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.KeyBindingSystemUI\Timberborn.KeyBindingSystemUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782711}</Project>
+      <Name>Timberborn.KeyBindingSystemUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.LanguageUI\Timberborn.LanguageUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782715}</Project>
+      <Name>Timberborn.LanguageUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
+      <Name>Timberborn.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MainMenuSceneLoading\Timberborn.MainMenuSceneLoading.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782720}</Project>
+      <Name>Timberborn.MainMenuSceneLoading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PlatformUtilities\Timberborn.PlatformUtilities.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782774}</Project>
+      <Name>Timberborn.PlatformUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PlayerDataSystem\Timberborn.PlayerDataSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782775}</Project>
+      <Name>Timberborn.PlayerDataSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ScreenSystem\Timberborn.ScreenSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A0}</Project>
+      <Name>Timberborn.ScreenSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SettingsSystem\Timberborn.SettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827A4}</Project>
+      <Name>Timberborn.SettingsSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SoundSettingsSystem\Timberborn.SoundSettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B5}</Project>
+      <Name>Timberborn.SoundSettingsSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TutorialSettingsSystem\Timberborn.TutorialSettingsSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F4}</Project>
+      <Name>Timberborn.TutorialSettingsSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

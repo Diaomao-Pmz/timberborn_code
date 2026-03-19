@@ -9,8 +9,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorPlacementRandomizingUI
 {
-	// Token: 0x02000003 RID: 3
-	internal class BlockObjectPlacementRandomizingPanel : IToolFragment
+	// Token: 0x02000004 RID: 4
+	public class BlockObjectPlacementRandomizingPanel : IToolFragment
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
 		public BlockObjectPlacementRandomizingPanel(EventBus eventBus, VisualElementLoader visualElementLoader, BlockObjectPlacementRandomizingService blockObjectPlacementRandomizingService)
@@ -26,9 +26,9 @@ namespace Timberborn.MapEditorPlacementRandomizingUI
 			string elementName = "MapEditor/ToolPanel/BlockObjectPlacementRandomizingPanel";
 			this._root = this._visualElementLoader.LoadVisualElement(elementName);
 			this._root.ToggleDisplayStyle(false);
-			this._randomizeToggle = this._root.Q("RandomizeToggle", null);
+			this._randomizeToggle = UQueryExtensions.Q<Toggle>(this._root, "RandomizeToggle", null);
 			this._randomizeToggle.value = this._blockObjectPlacementRandomizingService.Randomize;
-			this._randomizeToggle.RegisterValueChangedCallback(delegate(ChangeEvent<bool> evt)
+			INotifyValueChangedExtensions.RegisterValueChangedCallback<bool>(this._randomizeToggle, delegate(ChangeEvent<bool> evt)
 			{
 				this._blockObjectPlacementRandomizingService.Randomize = evt.newValue;
 			});
@@ -54,19 +54,19 @@ namespace Timberborn.MapEditorPlacementRandomizingUI
 			this._root.ToggleDisplayStyle(false);
 		}
 
-		// Token: 0x04000001 RID: 1
-		private readonly EventBus _eventBus;
+		// Token: 0x04000006 RID: 6
+		public readonly EventBus _eventBus;
 
-		// Token: 0x04000002 RID: 2
-		private readonly VisualElementLoader _visualElementLoader;
+		// Token: 0x04000007 RID: 7
+		public readonly VisualElementLoader _visualElementLoader;
 
-		// Token: 0x04000003 RID: 3
-		private readonly BlockObjectPlacementRandomizingService _blockObjectPlacementRandomizingService;
+		// Token: 0x04000008 RID: 8
+		public readonly BlockObjectPlacementRandomizingService _blockObjectPlacementRandomizingService;
 
-		// Token: 0x04000004 RID: 4
-		private VisualElement _root;
+		// Token: 0x04000009 RID: 9
+		public VisualElement _root;
 
-		// Token: 0x04000005 RID: 5
-		private Toggle _randomizeToggle;
+		// Token: 0x0400000A RID: 10
+		public Toggle _randomizeToggle;
 	}
 }

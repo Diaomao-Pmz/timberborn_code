@@ -5,8 +5,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorHazardousWeatherUI
 {
-	// Token: 0x02000003 RID: 3
-	internal class HazardousWeatherToggleFactory
+	// Token: 0x02000004 RID: 4
+	public class HazardousWeatherToggleFactory
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
 		public HazardousWeatherToggleFactory(SliderToggleFactory sliderToggleFactory, ILoc loc, MapEditorHazardousWeatherSetter mapEditorHazardousWeatherSetter)
@@ -39,31 +39,31 @@ namespace Timberborn.MapEditorHazardousWeatherUI
 			});
 		}
 
-		// Token: 0x04000001 RID: 1
-		private static readonly string TemperateWeatherClass = "hazardous-weather-toggle__icon--temperate";
-
-		// Token: 0x04000002 RID: 2
-		private static readonly string DroughtWeatherClass = "hazardous-weather-toggle__icon--drought";
-
-		// Token: 0x04000003 RID: 3
-		private static readonly string BadtideWeatherClass = "hazardous-weather-toggle__icon--badtide";
-
-		// Token: 0x04000004 RID: 4
-		private static readonly string TemperateWeatherLocKey = "Weather.Temperate";
-
-		// Token: 0x04000005 RID: 5
-		private static readonly string DroughtWeatherLocKey = "Weather.Drought";
-
 		// Token: 0x04000006 RID: 6
-		private static readonly string BadtideWeatherLocKey = "Weather.Badtide";
+		public static readonly string TemperateWeatherClass = "hazardous-weather-toggle__icon--temperate";
 
 		// Token: 0x04000007 RID: 7
-		private readonly SliderToggleFactory _sliderToggleFactory;
+		public static readonly string DroughtWeatherClass = "hazardous-weather-toggle__icon--drought";
 
 		// Token: 0x04000008 RID: 8
-		private readonly ILoc _loc;
+		public static readonly string BadtideWeatherClass = "hazardous-weather-toggle__icon--badtide";
 
 		// Token: 0x04000009 RID: 9
-		private readonly MapEditorHazardousWeatherSetter _mapEditorHazardousWeatherSetter;
+		public static readonly string TemperateWeatherLocKey = "Weather.Temperate";
+
+		// Token: 0x0400000A RID: 10
+		public static readonly string DroughtWeatherLocKey = "Weather.Drought";
+
+		// Token: 0x0400000B RID: 11
+		public static readonly string BadtideWeatherLocKey = "Weather.Badtide";
+
+		// Token: 0x0400000C RID: 12
+		public readonly SliderToggleFactory _sliderToggleFactory;
+
+		// Token: 0x0400000D RID: 13
+		public readonly ILoc _loc;
+
+		// Token: 0x0400000E RID: 14
+		public readonly MapEditorHazardousWeatherSetter _mapEditorHazardousWeatherSetter;
 	}
 }

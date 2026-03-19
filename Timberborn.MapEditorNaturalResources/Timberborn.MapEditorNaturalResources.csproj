@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D53CA8FE-0901-47DA-9CE4-9D43A94314D6}</ProjectGuid>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782725}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.MapEditorNaturalResources</RootNamespace>
     <AssemblyName>Timberborn.MapEditorNaturalResources</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,63 +30,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bindito.Core">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Bindito.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\netstandard.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BaseComponentSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.BaseComponentSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.BlockSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.BlockSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.Common">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.EntitySystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.EntitySystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.Gathering">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.Gathering.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.Growing">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.Growing.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.NaturalResources">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.NaturalResources.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.NaturalResourcesLifecycle">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.NaturalResourcesLifecycle.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.NaturalResourcesModelSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.NaturalResourcesModelSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.NaturalResourcesMoisture">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.NaturalResourcesMoisture.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.SingletonSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.SingletonSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.SoilContaminationSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.SoilContaminationSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.SoilMoistureSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.SoilMoistureSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.StatusSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.StatusSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.TemplateInstantiation">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.TemplateInstantiation.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
+    <Reference Include="UnityEngine.CoreModule" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -100,6 +46,76 @@
     <Compile Include="NaturalResourceSpawner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266E}</Project>
+      <Name>Timberborn.BlockSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
+      <Name>Timberborn.EntitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Gathering\Timberborn.Gathering.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826F0}</Project>
+      <Name>Timberborn.Gathering</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Growing\Timberborn.Growing.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826FC}</Project>
+      <Name>Timberborn.Growing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResourcesLifecycle\Timberborn.NaturalResourcesLifecycle.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782756}</Project>
+      <Name>Timberborn.NaturalResourcesLifecycle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResourcesModelSystem\Timberborn.NaturalResourcesModelSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782759}</Project>
+      <Name>Timberborn.NaturalResourcesModelSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResourcesMoisture\Timberborn.NaturalResourcesMoisture.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78275A}</Project>
+      <Name>Timberborn.NaturalResourcesMoisture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NaturalResources\Timberborn.NaturalResources.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782753}</Project>
+      <Name>Timberborn.NaturalResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SoilContaminationSystem\Timberborn.SoilContaminationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B3}</Project>
+      <Name>Timberborn.SoilContaminationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SoilMoistureSystem\Timberborn.SoilMoistureSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B4}</Project>
+      <Name>Timberborn.SoilMoistureSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.StatusSystem\Timberborn.StatusSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B9}</Project>
+      <Name>Timberborn.StatusSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateInstantiation\Timberborn.TemplateInstantiation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D3}</Project>
+      <Name>Timberborn.TemplateInstantiation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -716,22 +716,22 @@ internal class UnitySourceGeneratedAssemblyMonoScriptTypes_v1
 		return result;
 	}
 
-	// Token: 0x02000009 RID: 9
+	// Token: 0x02000003 RID: 3
 	private struct MonoScriptData
 	{
-		// Token: 0x04000021 RID: 33
+		// Token: 0x04000001 RID: 1
 		public byte[] FilePathsData;
 
-		// Token: 0x04000022 RID: 34
+		// Token: 0x04000002 RID: 2
 		public byte[] TypesData;
 
-		// Token: 0x04000023 RID: 35
+		// Token: 0x04000003 RID: 3
 		public int TotalTypes;
 
-		// Token: 0x04000024 RID: 36
+		// Token: 0x04000004 RID: 4
 		public int TotalFiles;
 
-		// Token: 0x04000025 RID: 37
+		// Token: 0x04000005 RID: 5
 		public bool IsEditorOnly;
 	}
 }

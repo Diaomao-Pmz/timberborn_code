@@ -3,12 +3,12 @@ using Bindito.Core;
 
 namespace Timberborn.MapEditorConstructionGuidelinesUI
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	[Context("MapEditor")]
-	internal class ConstructionGuidelinesUIConfigurator : Configurator
+	public class ConstructionGuidelinesUIConfigurator : Configurator
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
-		protected override void Configure()
+		public override void Configure()
 		{
 			base.Bind<MapEditorGuidelinesShower>().AsSingleton();
 		}

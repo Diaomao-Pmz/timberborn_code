@@ -2,7 +2,7 @@
 
 namespace Timberborn.MapEditorPlacementRandomizing
 {
-	// Token: 0x02000007 RID: 7
+	// Token: 0x02000008 RID: 8
 	public class BlockObjectPlacementRandomizingService
 	{
 		// Token: 0x17000001 RID: 1

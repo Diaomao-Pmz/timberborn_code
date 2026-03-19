@@ -9,15 +9,15 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorNaturalResources
 {
-	// Token: 0x02000007 RID: 7
+	// Token: 0x02000008 RID: 8
 	public class NaturalResourceSpawner
 	{
 		// Token: 0x17000002 RID: 2
-		// (get) Token: 0x06000015 RID: 21 RVA: 0x00002400 File Offset: 0x00000600
-		// (set) Token: 0x06000016 RID: 22 RVA: 0x00002408 File Offset: 0x00000608
+		// (get) Token: 0x06000015 RID: 21 RVA: 0x000023D0 File Offset: 0x000005D0
+		// (set) Token: 0x06000016 RID: 22 RVA: 0x000023D8 File Offset: 0x000005D8
 		public bool RandomizeYieldGrowth { get; set; } = true;
 
-		// Token: 0x06000017 RID: 23 RVA: 0x00002411 File Offset: 0x00000611
+		// Token: 0x06000017 RID: 23 RVA: 0x000023E1 File Offset: 0x000005E1
 		public NaturalResourceSpawner(NaturalResourceFactory naturalResourceFactory, IRandomNumberGenerator randomNumberGenerator, IBlockService blockService)
 		{
 			this._naturalResourceFactory = naturalResourceFactory;
@@ -25,7 +25,7 @@ namespace Timberborn.MapEditorNaturalResources
 			this._blockService = blockService;
 		}
 
-		// Token: 0x06000018 RID: 24 RVA: 0x00002438 File Offset: 0x00000638
+		// Token: 0x06000018 RID: 24 RVA: 0x00002408 File Offset: 0x00000608
 		public void Spawn(IEnumerable<SpawnableResource> spawnableResources, Vector3Int coordinates)
 		{
 			if (!this._blockService.AnyObjectAt(coordinates))
@@ -41,8 +41,8 @@ namespace Timberborn.MapEditorNaturalResources
 			}
 		}
 
-		// Token: 0x06000019 RID: 25 RVA: 0x00002494 File Offset: 0x00000694
-		private void SetGrowStage(NaturalResource naturalResource, bool mature)
+		// Token: 0x06000019 RID: 25 RVA: 0x00002464 File Offset: 0x00000664
+		public void SetGrowStage(NaturalResource naturalResource, bool mature)
 		{
 			Growable component = naturalResource.GetComponent<Growable>();
 			if (component != null)
@@ -52,8 +52,8 @@ namespace Timberborn.MapEditorNaturalResources
 			}
 		}
 
-		// Token: 0x0600001A RID: 26 RVA: 0x000024D4 File Offset: 0x000006D4
-		private void SetGatherableYieldGrowStage(NaturalResource naturalResource, bool mature)
+		// Token: 0x0600001A RID: 26 RVA: 0x000024A4 File Offset: 0x000006A4
+		public void SetGatherableYieldGrowStage(NaturalResource naturalResource, bool mature)
 		{
 			if (mature)
 			{
@@ -66,13 +66,13 @@ namespace Timberborn.MapEditorNaturalResources
 			}
 		}
 
-		// Token: 0x04000009 RID: 9
-		private readonly NaturalResourceFactory _naturalResourceFactory;
+		// Token: 0x0400000E RID: 14
+		public readonly NaturalResourceFactory _naturalResourceFactory;
 
-		// Token: 0x0400000A RID: 10
-		private readonly IRandomNumberGenerator _randomNumberGenerator;
+		// Token: 0x0400000F RID: 15
+		public readonly IRandomNumberGenerator _randomNumberGenerator;
 
-		// Token: 0x0400000B RID: 11
-		private readonly IBlockService _blockService;
+		// Token: 0x04000010 RID: 16
+		public readonly IBlockService _blockService;
 	}
 }

@@ -4,7 +4,7 @@ using Timberborn.UILayoutSystem;
 
 namespace Timberborn.MapEditorStartup
 {
-	// Token: 0x02000003 RID: 3
+	// Token: 0x02000004 RID: 4
 	public class MapEditorInitializer : IUpdatableSingleton
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BB File Offset: 0x000002BB
@@ -23,10 +23,10 @@ namespace Timberborn.MapEditorStartup
 			}
 		}
 
-		// Token: 0x04000001 RID: 1
-		private bool _alreadyInitialized;
+		// Token: 0x04000006 RID: 6
+		public bool _alreadyInitialized;
 
-		// Token: 0x04000002 RID: 2
-		private readonly EventBus _eventBus;
+		// Token: 0x04000007 RID: 7
+		public readonly EventBus _eventBus;
 	}
 }

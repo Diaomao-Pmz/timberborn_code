@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782656}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.AutomationBuildings</RootNamespace>
+    <AssemblyName>Timberborn.AutomationBuildings</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.AudioModule" />
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutomationBuildingsConfigurator.cs" />
+    <Compile Include="Chronometer.cs" />
+    <Compile Include="ChronometerMode.cs" />
+    <Compile Include="ChronometerSpec.cs" />
+    <Compile Include="ContaminationSensor.cs" />
+    <Compile Include="ContaminationSensorSpec.cs" />
+    <Compile Include="DepthSensor.cs" />
+    <Compile Include="DepthSensorSpec.cs" />
+    <Compile Include="Detonator.cs" />
+    <Compile Include="DetonatorSpec.cs" />
+    <Compile Include="FlowSensor.cs" />
+    <Compile Include="FlowSensorSpec.cs" />
+    <Compile Include="Gate.cs" />
+    <Compile Include="GateModel.cs" />
+    <Compile Include="GateModelSpec.cs" />
+    <Compile Include="GateNavMeshBlocker.cs" />
+    <Compile Include="GateOpeningMode.cs" />
+    <Compile Include="GatePathTransformer.cs" />
+    <Compile Include="GatePlacement.cs" />
+    <Compile Include="GateSpec.cs" />
+    <Compile Include="GateUpdater.cs" />
+    <Compile Include="Indicator.cs" />
+    <Compile Include="IndicatorPinnedMode.cs" />
+    <Compile Include="IndicatorPinnedModeChangedEvent.cs" />
+    <Compile Include="IndicatorSpec.cs" />
+    <Compile Include="IntervalType.cs" />
+    <Compile Include="Lever.cs" />
+    <Compile Include="LeverModel.cs" />
+    <Compile Include="LeverModelSpec.cs" />
+    <Compile Include="LeverPinnedChangedEvent.cs" />
+    <Compile Include="LeverSpec.cs" />
+    <Compile Include="Memory.cs" />
+    <Compile Include="MemoryMode.cs" />
+    <Compile Include="MemorySpec.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="NumericComparisonMode.cs" />
+    <Compile Include="NumericComparisonModeExtensions.cs" />
+    <Compile Include="PausableBuildingTerminal.cs" />
+    <Compile Include="PinnedLeverModified.cs" />
+    <Compile Include="PopulationCounter.cs" />
+    <Compile Include="PopulationCounterMode.cs" />
+    <Compile Include="PopulationCounterSpec.cs" />
+    <Compile Include="PowerMeter.cs" />
+    <Compile Include="PowerMeterMode.cs" />
+    <Compile Include="PowerMeterSpec.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relay.cs" />
+    <Compile Include="RelayMode.cs" />
+    <Compile Include="RelaySpec.cs" />
+    <Compile Include="ResourceCounter.cs" />
+    <Compile Include="ResourceCounterBannerSetter.cs" />
+    <Compile Include="ResourceCounterMode.cs" />
+    <Compile Include="ResourceCounterSpec.cs" />
+    <Compile Include="SamplingPopulationService.cs" />
+    <Compile Include="SamplingResourcesService.cs" />
+    <Compile Include="ScienceCounter.cs" />
+    <Compile Include="ScienceCounterSpec.cs" />
+    <Compile Include="Speaker.cs" />
+    <Compile Include="SpeakerAnimationController.cs" />
+    <Compile Include="SpeakerBuiltinSounds.cs" />
+    <Compile Include="SpeakerCustomSoundLoader.cs" />
+    <Compile Include="SpeakerPlaybackMode.cs" />
+    <Compile Include="SpeakerPlayer.cs" />
+    <Compile Include="SpeakerSoundService.cs" />
+    <Compile Include="SpeakerSoundSpec.cs" />
+    <Compile Include="SpeakerSoundsReloadedEvent.cs" />
+    <Compile Include="SpeakerSpatialMode.cs" />
+    <Compile Include="SpeakerSpec.cs" />
+    <Compile Include="SpringReturnService.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="Timer.cs" />
+    <Compile Include="TimerInterval.cs" />
+    <Compile Include="TimerIntervalFactory.cs" />
+    <Compile Include="TimerIntervalSerializer.cs" />
+    <Compile Include="TimerMode.cs" />
+    <Compile Include="TimerModel.cs" />
+    <Compile Include="TimerModelSpec.cs" />
+    <Compile Include="TimerSpec.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="WeatherStation.cs" />
+    <Compile Include="WeatherStationMode.cs" />
+    <Compile Include="WeatherStationSpec.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Automation\Timberborn.Automation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782655}</Project>
+      <Name>Timberborn.Automation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockingSystem\Timberborn.BlockingSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782667}</Project>
+      <Name>Timberborn.BlockingSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlockSystem\Timberborn.BlockSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78266E}</Project>
+      <Name>Timberborn.BlockSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlueprintSystem\Timberborn.BlueprintSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782672}</Project>
+      <Name>Timberborn.BlueprintSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BuildingsNavigation\Timberborn.BuildingsNavigation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782685}</Project>
+      <Name>Timberborn.BuildingsNavigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BuildingsReachability\Timberborn.BuildingsReachability.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782686}</Project>
+      <Name>Timberborn.BuildingsReachability</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Buildings\Timberborn.Buildings.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782684}</Project>
+      <Name>Timberborn.Buildings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Coordinates\Timberborn.Coordinates.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A1}</Project>
+      <Name>Timberborn.Coordinates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CoreSound\Timberborn.CoreSound.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A2}</Project>
+      <Name>Timberborn.CoreSound</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.DuplicationSystem\Timberborn.DuplicationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826B9}</Project>
+      <Name>Timberborn.DuplicationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntityNaming\Timberborn.EntityNaming.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C0}</Project>
+      <Name>Timberborn.EntityNaming</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
+      <Name>Timberborn.EntitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Explosions\Timberborn.Explosions.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C8}</Project>
+      <Name>Timberborn.Explosions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.FileSystem\Timberborn.FileSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826D1}</Project>
+      <Name>Timberborn.FileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GameCycleSystem\Timberborn.GameCycleSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826D8}</Project>
+      <Name>Timberborn.GameCycleSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GameDistricts\Timberborn.GameDistricts.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826D9}</Project>
+      <Name>Timberborn.GameDistricts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Goods\Timberborn.Goods.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826F5}</Project>
+      <Name>Timberborn.Goods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.HazardousWeatherSystem\Timberborn.HazardousWeatherSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782700}</Project>
+      <Name>Timberborn.HazardousWeatherSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Illumination\Timberborn.Illumination.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782706}</Project>
+      <Name>Timberborn.Illumination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.LocalizationSerialization\Timberborn.LocalizationSerialization.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271C}</Project>
+      <Name>Timberborn.LocalizationSerialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
+      <Name>Timberborn.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MechanicalSystem\Timberborn.MechanicalSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782741}</Project>
+      <Name>Timberborn.MechanicalSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Navigation\Timberborn.Navigation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78275E}</Project>
+      <Name>Timberborn.Navigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NotificationSystem\Timberborn.NotificationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782768}</Project>
+      <Name>Timberborn.NotificationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PathSystem\Timberborn.PathSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78276D}</Project>
+      <Name>Timberborn.PathSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Persistence\Timberborn.Persistence.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78276F}</Project>
+      <Name>Timberborn.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PlatformUtilities\Timberborn.PlatformUtilities.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782774}</Project>
+      <Name>Timberborn.PlatformUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Population\Timberborn.Population.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782777}</Project>
+      <Name>Timberborn.Population</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.QuickNotificationSystem\Timberborn.QuickNotificationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782783}</Project>
+      <Name>Timberborn.QuickNotificationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.RecoverableGoodSystem\Timberborn.RecoverableGoodSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782786}</Project>
+      <Name>Timberborn.RecoverableGoodSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ResourceCountingSystem\Timberborn.ResourceCountingSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782790}</Project>
+      <Name>Timberborn.ResourceCountingSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ScienceSystem\Timberborn.ScienceSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78279D}</Project>
+      <Name>Timberborn.ScienceSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SoundSystem\Timberborn.SoundSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B6}</Project>
+      <Name>Timberborn.SoundSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.StatusSystem\Timberborn.StatusSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827B9}</Project>
+      <Name>Timberborn.StatusSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateInstantiation\Timberborn.TemplateInstantiation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D3}</Project>
+      <Name>Timberborn.TemplateInstantiation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TimbermeshAnimations\Timberborn.TimbermeshAnimations.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E4}</Project>
+      <Name>Timberborn.TimbermeshAnimations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TimeSystem\Timberborn.TimeSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E9}</Project>
+      <Name>Timberborn.TimeSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.UnderstructureSystem\Timberborn.UnderstructureSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827FC}</Project>
+      <Name>Timberborn.UnderstructureSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WalkingSystem\Timberborn.WalkingSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782801}</Project>
+      <Name>Timberborn.WalkingSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WaterSystem\Timberborn.WaterSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78280D}</Project>
+      <Name>Timberborn.WaterSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WeatherSystem\Timberborn.WeatherSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782812}</Project>
+      <Name>Timberborn.WeatherSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WorkSystem\Timberborn.WorkSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782824}</Project>
+      <Name>Timberborn.WorkSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WorldPersistence\Timberborn.WorldPersistence.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782826}</Project>
+      <Name>Timberborn.WorldPersistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

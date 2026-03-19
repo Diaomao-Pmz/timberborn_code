@@ -30,14 +30,14 @@ namespace Timberborn.AssetSystem
 		public T LoadSafe<T>(string path) where T : Object
 		{
 			string path2 = AssetPathHelper.NormalizePath(path);
-			OrderedAsset? orderedAsset = default(OrderedAsset?);
+			OrderedAsset? orderedAsset = null;
 			ImmutableArray<IAssetProvider>.Enumerator enumerator = this._assetProviders.GetEnumerator();
 			while (enumerator.MoveNext())
 			{
-				OrderedAsset orderedAsset2;
-				if (enumerator.Current.TryLoad<T>(path2, out orderedAsset2) && (orderedAsset == null || orderedAsset2.Order > orderedAsset.Value.Order))
+				OrderedAsset value;
+				if (enumerator.Current.TryLoad<T>(path2, out value) && (orderedAsset == null || value.Order > orderedAsset.Value.Order))
 				{
-					orderedAsset = new OrderedAsset?(orderedAsset2);
+					orderedAsset = new OrderedAsset?(value);
 				}
 			}
 			return (T)((object)((orderedAsset != null) ? orderedAsset.GetValueOrDefault().Asset : null));
@@ -47,7 +47,9 @@ namespace Timberborn.AssetSystem
 		public IEnumerable<LoadedAsset<T>> LoadAll<T>(string path) where T : Object
 		{
 			string normalizedPath = AssetPathHelper.NormalizePath(path);
-			return Enumerable.OrderBy<LoadedAsset<T>, int>(Enumerable.SelectMany<IAssetProvider, LoadedAsset<T>>(this._assetProviders, (IAssetProvider assetProvider) => AssetLoader.CreateLoadedAssets<T>(assetProvider, normalizedPath)), (LoadedAsset<T> loadedAsset) => loadedAsset.Order);
+			return from loadedAsset in this._assetProviders.SelectMany((IAssetProvider assetProvider) => AssetLoader.CreateLoadedAssets<T>(assetProvider, normalizedPath))
+			orderby loadedAsset.Order
+			select loadedAsset;
 		}
 
 		// Token: 0x06000007 RID: 7 RVA: 0x000021FC File Offset: 0x000003FC
@@ -62,7 +64,8 @@ namespace Timberborn.AssetSystem
 		// Token: 0x06000008 RID: 8 RVA: 0x0000222C File Offset: 0x0000042C
 		public static IEnumerable<LoadedAsset<T>> CreateLoadedAssets<T>(IAssetProvider assetProvider, string normalizedPath) where T : Object
 		{
-			return Enumerable.Select<OrderedAsset, LoadedAsset<T>>(assetProvider.LoadAll<T>(normalizedPath), (OrderedAsset asset) => new LoadedAsset<T>((T)((object)asset.Asset), assetProvider.IsBuiltIn, asset.Order));
+			return from asset in assetProvider.LoadAll<T>(normalizedPath)
+			select new LoadedAsset<T>((T)((object)asset.Asset), assetProvider.IsBuiltIn, asset.Order);
 		}
 
 		// Token: 0x04000006 RID: 6

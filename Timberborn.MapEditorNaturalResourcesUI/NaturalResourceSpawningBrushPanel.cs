@@ -13,10 +13,10 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorNaturalResourcesUI
 {
-	// Token: 0x0200000B RID: 11
-	internal class NaturalResourceSpawningBrushPanel : IToolFragment
+	// Token: 0x0200000F RID: 15
+	public class NaturalResourceSpawningBrushPanel : IToolFragment
 	{
-		// Token: 0x06000035 RID: 53 RVA: 0x000027F0 File Offset: 0x000009F0
+		// Token: 0x06000049 RID: 73 RVA: 0x00002CE4 File Offset: 0x00000EE4
 		public NaturalResourceSpawningBrushPanel(EventBus eventBus, TemplateService templateService, ILoc loc, VisualElementLoader visualElementLoader)
 		{
 			this._eventBus = eventBus;
@@ -25,27 +25,27 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._visualElementLoader = visualElementLoader;
 		}
 
-		// Token: 0x06000036 RID: 54 RVA: 0x00002820 File Offset: 0x00000A20
+		// Token: 0x0600004A RID: 74 RVA: 0x00002D14 File Offset: 0x00000F14
 		public VisualElement InitializeFragment()
 		{
 			this._root = this._visualElementLoader.LoadVisualElement("MapEditor/ToolPanel/NaturalResourceSpawningBrushPanel");
-			this._togglesContainer = this._root.Q("Toggles", null);
-			this._densitySlider = this._root.Q("Slider", null);
-			this._sliderValue = this._root.Q("SliderValue", null);
-			this._randomizeYieldGrowthToggle = this._root.Q("RandomizeYieldGrowthToggle", null);
+			this._togglesContainer = UQueryExtensions.Q<VisualElement>(this._root, "Toggles", null);
+			this._densitySlider = UQueryExtensions.Q<Slider>(this._root, "Slider", null);
+			this._sliderValue = UQueryExtensions.Q<Label>(this._root, "SliderValue", null);
+			this._randomizeYieldGrowthToggle = UQueryExtensions.Q<Toggle>(this._root, "RandomizeYieldGrowthToggle", null);
 			this._root.ToggleDisplayStyle(false);
 			this._eventBus.Register(this);
 			this.InitializeTypeToggles();
 			this._densitySlider.highValue = 1f;
-			this._densitySlider.RegisterValueChangedCallback(new EventCallback<ChangeEvent<float>>(this.SetDensity));
-			this._randomizeYieldGrowthToggle.RegisterValueChangedCallback(delegate(ChangeEvent<bool> evt)
+			INotifyValueChangedExtensions.RegisterValueChangedCallback<float>(this._densitySlider, new EventCallback<ChangeEvent<float>>(this.SetDensity));
+			INotifyValueChangedExtensions.RegisterValueChangedCallback<bool>(this._randomizeYieldGrowthToggle, delegate(ChangeEvent<bool> evt)
 			{
 				this._tool.SwitchRandomizeYieldGrowth(evt.newValue);
 			});
 			return this._root;
 		}
 
-		// Token: 0x06000037 RID: 55 RVA: 0x00002904 File Offset: 0x00000B04
+		// Token: 0x0600004B RID: 75 RVA: 0x00002DF8 File Offset: 0x00000FF8
 		[OnEvent]
 		public void OnToolEntered(ToolEnteredEvent toolEnteredEvent)
 		{
@@ -64,15 +64,15 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			}
 		}
 
-		// Token: 0x06000038 RID: 56 RVA: 0x000029DC File Offset: 0x00000BDC
+		// Token: 0x0600004C RID: 76 RVA: 0x00002ED0 File Offset: 0x000010D0
 		[OnEvent]
 		public void OnToolExited(ToolExitedEvent toolExitedEvent)
 		{
 			this._root.ToggleDisplayStyle(false);
 		}
 
-		// Token: 0x06000039 RID: 57 RVA: 0x000029EC File Offset: 0x00000BEC
-		private void InitializeTypeToggles()
+		// Token: 0x0600004D RID: 77 RVA: 0x00002EE0 File Offset: 0x000010E0
+		public void InitializeTypeToggles()
 		{
 			foreach (NaturalResourceSpec naturalResourceSpec in from naturalResource in this._templateService.GetAll<NaturalResourceSpec>()
 			where naturalResource.UsableWithCurrentFeatureToggles
@@ -86,13 +86,13 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			}
 		}
 
-		// Token: 0x0600003A RID: 58 RVA: 0x00002AC0 File Offset: 0x00000CC0
-		private void AddToggle(SpawnableResource spawnable, string spawnableName)
+		// Token: 0x0600004E RID: 78 RVA: 0x00002FB4 File Offset: 0x000011B4
+		public void AddToggle(SpawnableResource spawnable, string spawnableName)
 		{
 			VisualElement visualElement = this._visualElementLoader.LoadVisualElement("MapEditor/ToolPanel/ToolPanelToggle");
-			Toggle toggle = visualElement.Q("ToolPanelToggle", null);
+			Toggle toggle = UQueryExtensions.Q<Toggle>(visualElement, "ToolPanelToggle", null);
 			toggle.text = this.GetFullName(spawnable, spawnableName);
-			toggle.RegisterValueChangedCallback(delegate(ChangeEvent<bool> evt)
+			INotifyValueChangedExtensions.RegisterValueChangedCallback<bool>(toggle, delegate(ChangeEvent<bool> evt)
 			{
 				this.SetSpawnableResourceEnabled(spawnable, evt.newValue);
 			});
@@ -100,8 +100,8 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._toggles.Add(spawnable, toggle);
 		}
 
-		// Token: 0x0600003B RID: 59 RVA: 0x00002B43 File Offset: 0x00000D43
-		private void SetSpawnableResourceEnabled(SpawnableResource spawnableResource, bool value)
+		// Token: 0x0600004F RID: 79 RVA: 0x00003037 File Offset: 0x00001237
+		public void SetSpawnableResourceEnabled(SpawnableResource spawnableResource, bool value)
 		{
 			if (value)
 			{
@@ -111,63 +111,63 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._tool.DisableSpawnableResource(spawnableResource);
 		}
 
-		// Token: 0x0600003C RID: 60 RVA: 0x00002B61 File Offset: 0x00000D61
-		private void UpdateSliderValue(float value)
+		// Token: 0x06000050 RID: 80 RVA: 0x00003055 File Offset: 0x00001255
+		public void UpdateSliderValue(float value)
 		{
 			this._sliderValue.text = value.ToString("P0");
 		}
 
-		// Token: 0x0600003D RID: 61 RVA: 0x00002B7C File Offset: 0x00000D7C
-		private string GetFullName(SpawnableResource matureSpawnable, string spawnableName)
+		// Token: 0x06000051 RID: 81 RVA: 0x00003070 File Offset: 0x00001270
+		public string GetFullName(SpawnableResource matureSpawnable, string spawnableName)
 		{
 			string str = matureSpawnable.IsSeedling ? this._loc.T(NaturalResourceSpawningBrushPanel.SeedlingLocKey) : this._loc.T<string>(NaturalResourceSpawningBrushPanel.MatureLocKey, spawnableName);
 			return spawnableName + " " + str;
 		}
 
-		// Token: 0x0600003E RID: 62 RVA: 0x00002BC2 File Offset: 0x00000DC2
-		private void SetDensity(ChangeEvent<float> changeEvent)
+		// Token: 0x06000052 RID: 82 RVA: 0x000030B6 File Offset: 0x000012B6
+		public void SetDensity(ChangeEvent<float> changeEvent)
 		{
 			this._tool.Density = changeEvent.newValue;
 			this.UpdateSliderValue(changeEvent.newValue);
 		}
 
-		// Token: 0x04000029 RID: 41
-		private static readonly string SeedlingLocKey = "NaturalResources.Seedling";
+		// Token: 0x04000044 RID: 68
+		public static readonly string SeedlingLocKey = "NaturalResources.Seedling";
 
-		// Token: 0x0400002A RID: 42
-		private static readonly string MatureLocKey = "NaturalResources.Mature";
+		// Token: 0x04000045 RID: 69
+		public static readonly string MatureLocKey = "NaturalResources.Mature";
 
-		// Token: 0x0400002B RID: 43
-		private readonly EventBus _eventBus;
+		// Token: 0x04000046 RID: 70
+		public readonly EventBus _eventBus;
 
-		// Token: 0x0400002C RID: 44
-		private readonly TemplateService _templateService;
+		// Token: 0x04000047 RID: 71
+		public readonly TemplateService _templateService;
 
-		// Token: 0x0400002D RID: 45
-		private readonly ILoc _loc;
+		// Token: 0x04000048 RID: 72
+		public readonly ILoc _loc;
 
-		// Token: 0x0400002E RID: 46
-		private readonly VisualElementLoader _visualElementLoader;
+		// Token: 0x04000049 RID: 73
+		public readonly VisualElementLoader _visualElementLoader;
 
-		// Token: 0x0400002F RID: 47
-		private VisualElement _root;
+		// Token: 0x0400004A RID: 74
+		public VisualElement _root;
 
-		// Token: 0x04000030 RID: 48
-		private VisualElement _togglesContainer;
+		// Token: 0x0400004B RID: 75
+		public VisualElement _togglesContainer;
 
-		// Token: 0x04000031 RID: 49
-		private Label _sliderValue;
+		// Token: 0x0400004C RID: 76
+		public Label _sliderValue;
 
-		// Token: 0x04000032 RID: 50
-		private Slider _densitySlider;
+		// Token: 0x0400004D RID: 77
+		public Slider _densitySlider;
 
-		// Token: 0x04000033 RID: 51
-		private Toggle _randomizeYieldGrowthToggle;
+		// Token: 0x0400004E RID: 78
+		public Toggle _randomizeYieldGrowthToggle;
 
-		// Token: 0x04000034 RID: 52
-		private readonly Dictionary<SpawnableResource, Toggle> _toggles = new Dictionary<SpawnableResource, Toggle>();
+		// Token: 0x0400004F RID: 79
+		public readonly Dictionary<SpawnableResource, Toggle> _toggles = new Dictionary<SpawnableResource, Toggle>();
 
-		// Token: 0x04000035 RID: 53
-		private NaturalResourceSpawningBrushTool _tool;
+		// Token: 0x04000050 RID: 80
+		public NaturalResourceSpawningBrushTool _tool;
 	}
 }

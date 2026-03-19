@@ -7,8 +7,8 @@ using Timberborn.BlueprintSystem;
 
 namespace Timberborn.MapEditorSceneLoading
 {
-	// Token: 0x02000009 RID: 9
-	internal class MapEditorTipSpec : ComponentSpec, IEquatable<MapEditorTipSpec>
+	// Token: 0x0200000A RID: 10
+	public class MapEditorTipSpec : ComponentSpec, IEquatable<MapEditorTipSpec>
 	{
 		// Token: 0x17000005 RID: 5
 		// (get) Token: 0x06000016 RID: 22 RVA: 0x00002259 File Offset: 0x00000459

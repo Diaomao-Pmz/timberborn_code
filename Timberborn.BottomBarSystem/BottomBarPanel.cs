@@ -53,13 +53,15 @@ namespace Timberborn.BottomBarSystem
 		{
 			VisualElement visualElement = UQueryExtensions.Q<VisualElement>(this._mainElements, "LeftSection", null);
 			Dictionary<int, IBottomBarElementsProvider> dictionary = new Dictionary<int, IBottomBarElementsProvider>();
-			foreach (KeyValuePair<int, IBottomBarElementsProvider> keyValuePair in Enumerable.SelectMany<BottomBarModule, KeyValuePair<int, IBottomBarElementsProvider>>(this._bottomBarModules, (BottomBarModule module) => module.LeftElements))
+			foreach (KeyValuePair<int, IBottomBarElementsProvider> keyValuePair in this._bottomBarModules.SelectMany((BottomBarModule module) => module.LeftElements))
 			{
 				dictionary.Add(keyValuePair.Key, keyValuePair.Value);
 			}
-			foreach (int num in Enumerable.OrderBy<int, int>(dictionary.Keys, (int key) => key))
+			foreach (int key2 in from key in dictionary.Keys
+			orderby key
+			select key)
 			{
-				foreach (BottomBarElement bottomBarElement in dictionary[num].GetElements())
+				foreach (BottomBarElement bottomBarElement in dictionary[key2].GetElements())
 				{
 					this.AddElement(bottomBarElement, visualElement);
 				}
@@ -71,7 +73,7 @@ namespace Timberborn.BottomBarSystem
 		public void InitializeMiddleSection()
 		{
 			VisualElement visualElement = UQueryExtensions.Q<VisualElement>(this._mainElements, "MiddleSection", null);
-			foreach (IBottomBarElementsProvider bottomBarElementsProvider in Enumerable.SelectMany<BottomBarModule, IBottomBarElementsProvider>(this._bottomBarModules, (BottomBarModule module) => module.MiddleElements))
+			foreach (IBottomBarElementsProvider bottomBarElementsProvider in this._bottomBarModules.SelectMany((BottomBarModule module) => module.MiddleElements))
 			{
 				foreach (BottomBarElement bottomBarElement in bottomBarElementsProvider.GetElements())
 				{
@@ -85,7 +87,7 @@ namespace Timberborn.BottomBarSystem
 		public void InitializeRightSection()
 		{
 			VisualElement visualElement = UQueryExtensions.Q<VisualElement>(this._mainElements, "RightSection", null);
-			foreach (IBottomBarElementsProvider bottomBarElementsProvider in Enumerable.SelectMany<BottomBarModule, IBottomBarElementsProvider>(this._bottomBarModules, (BottomBarModule module) => module.RightElements))
+			foreach (IBottomBarElementsProvider bottomBarElementsProvider in this._bottomBarModules.SelectMany((BottomBarModule module) => module.RightElements))
 			{
 				foreach (BottomBarElement bottomBarElement in bottomBarElementsProvider.GetElements())
 				{

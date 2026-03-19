@@ -11,10 +11,10 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorNaturalResourcesUI
 {
-	// Token: 0x02000007 RID: 7
+	// Token: 0x02000009 RID: 9
 	public class NaturalResourceBrushIterator
 	{
-		// Token: 0x06000009 RID: 9 RVA: 0x00002162 File Offset: 0x00000362
+		// Token: 0x0600000B RID: 11 RVA: 0x0000218B File Offset: 0x0000038B
 		public NaturalResourceBrushIterator(InputService inputService, BrushShapeIterator brushShapeIterator, ILevelVisibilityService levelVisibilityService, TerrainPicker terrainPicker, CameraService cameraService, ITerrainService terrainService)
 		{
 			this._inputService = inputService;
@@ -25,7 +25,7 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			this._terrainService = terrainService;
 		}
 
-		// Token: 0x0600000A RID: 10 RVA: 0x00002197 File Offset: 0x00000397
+		// Token: 0x0600000C RID: 12 RVA: 0x000021C0 File Offset: 0x000003C0
 		public IEnumerable<Vector3Int> Iterate(int size, BrushShape shape)
 		{
 			bool wasDrawing = this._isDrawing;
@@ -52,15 +52,15 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			yield break;
 		}
 
-		// Token: 0x0600000B RID: 11 RVA: 0x000021B5 File Offset: 0x000003B5
+		// Token: 0x0600000D RID: 13 RVA: 0x000021DE File Offset: 0x000003DE
 		public void Reset()
 		{
 			this._isDrawing = false;
 			this._originHeight = null;
 		}
 
-		// Token: 0x0600000C RID: 12 RVA: 0x000021CA File Offset: 0x000003CA
-		private IEnumerable<Vector3Int> IterateTerrain(int size, BrushShape brushShape)
+		// Token: 0x0600000E RID: 14 RVA: 0x000021F3 File Offset: 0x000003F3
+		public IEnumerable<Vector3Int> IterateTerrain(int size, BrushShape brushShape)
 		{
 			Ray ray = this._cameraService.ScreenPointToRayInGridSpace(this._inputService.MousePosition);
 			TraversedCoordinates? traversedCoordinates = this._terrainPicker.PickTerrainCoordinates(ray);
@@ -91,28 +91,28 @@ namespace Timberborn.MapEditorNaturalResourcesUI
 			yield break;
 		}
 
-		// Token: 0x04000003 RID: 3
-		private readonly InputService _inputService;
-
-		// Token: 0x04000004 RID: 4
-		private readonly BrushShapeIterator _brushShapeIterator;
-
-		// Token: 0x04000005 RID: 5
-		private readonly ILevelVisibilityService _levelVisibilityService;
-
-		// Token: 0x04000006 RID: 6
-		private readonly TerrainPicker _terrainPicker;
-
-		// Token: 0x04000007 RID: 7
-		private readonly CameraService _cameraService;
-
-		// Token: 0x04000008 RID: 8
-		private readonly ITerrainService _terrainService;
-
 		// Token: 0x04000009 RID: 9
-		private int? _originHeight;
+		public readonly InputService _inputService;
 
 		// Token: 0x0400000A RID: 10
-		private bool _isDrawing;
+		public readonly BrushShapeIterator _brushShapeIterator;
+
+		// Token: 0x0400000B RID: 11
+		public readonly ILevelVisibilityService _levelVisibilityService;
+
+		// Token: 0x0400000C RID: 12
+		public readonly TerrainPicker _terrainPicker;
+
+		// Token: 0x0400000D RID: 13
+		public readonly CameraService _cameraService;
+
+		// Token: 0x0400000E RID: 14
+		public readonly ITerrainService _terrainService;
+
+		// Token: 0x0400000F RID: 15
+		public int? _originHeight;
+
+		// Token: 0x04000010 RID: 16
+		public bool _isDrawing;
 	}
 }

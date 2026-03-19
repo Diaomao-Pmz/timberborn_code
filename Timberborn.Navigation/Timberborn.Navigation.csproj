@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78275E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.Navigation</RootNamespace>
+    <AssemblyName>Timberborn.Navigation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessFlowField.cs" />
+    <Compile Include="Accessible.cs" />
+    <Compile Include="AStarNode.cs" />
+    <Compile Include="BinaryHeap.cs" />
+    <Compile Include="BinaryHeapFactory.cs" />
+    <Compile Include="DistanceCalculator.cs" />
+    <Compile Include="District.cs" />
+    <Compile Include="DistrictChange.cs" />
+    <Compile Include="DistrictChangeType.cs" />
+    <Compile Include="DistrictConflictDetector.cs" />
+    <Compile Include="DistrictMap.cs" />
+    <Compile Include="DistrictNavMeshListener.cs" />
+    <Compile Include="DistrictObstacleService.cs" />
+    <Compile Include="DistrictRandomDestinationPicker.cs" />
+    <Compile Include="DistrictRoadFlowFieldGenerator.cs" />
+    <Compile Include="DistrictService.cs" />
+    <Compile Include="DistrictUpdater.cs" />
+    <Compile Include="DummyNavigationCachingService.cs" />
+    <Compile Include="DummyNavigationDebuggingService.cs" />
+    <Compile Include="DummyNavigationService.cs" />
+    <Compile Include="DummyNavMeshListenerEntityRegistry.cs" />
+    <Compile Include="DummyNavMeshService.cs" />
+    <Compile Include="FlowFieldCache.cs" />
+    <Compile Include="FlowFieldNode.cs" />
+    <Compile Include="FlowFieldPathBuilder.cs" />
+    <Compile Include="FlowFieldPathFinder.cs" />
+    <Compile Include="FlowFieldPathNode.cs" />
+    <Compile Include="FlowFieldPathTransformer.cs" />
+    <Compile Include="GateConflictDetector.cs" />
+    <Compile Include="GlobalReachabilityService.cs" />
+    <Compile Include="HeuristicsCalculator.cs" />
+    <Compile Include="IAccessibleNeeder.cs" />
+    <Compile Include="IAccessibleValidator.cs" />
+    <Compile Include="IBlockedAccessible.cs" />
+    <Compile Include="IDistrictService.cs" />
+    <Compile Include="IFlowField.cs" />
+    <Compile Include="IInstantNavMeshListener.cs" />
+    <Compile Include="INavigationCachingService.cs" />
+    <Compile Include="INavigationDebuggingService.cs" />
+    <Compile Include="INavigationPhase.cs" />
+    <Compile Include="INavigationRangeService.cs" />
+    <Compile Include="INavigationService.cs" />
+    <Compile Include="INavMeshDrawer.cs" />
+    <Compile Include="INavMeshGraph.cs" />
+    <Compile Include="INavMeshListener.cs" />
+    <Compile Include="INavMeshListenerEntityRegistry.cs" />
+    <Compile Include="INavMeshObjectFactory.cs" />
+    <Compile Include="INavMeshService.cs" />
+    <Compile Include="INavMeshSizeProvider.cs" />
+    <Compile Include="InstantDistrictMap.cs" />
+    <Compile Include="InstantDistrictObstacleService.cs" />
+    <Compile Include="InstantRoadNavMeshGraph.cs" />
+    <Compile Include="InstantRoadNavMeshSource.cs" />
+    <Compile Include="InstantTerrainNavMeshGraph.cs" />
+    <Compile Include="InstantTerrainNavMeshSource.cs" />
+    <Compile Include="IOrderable.cs" />
+    <Compile Include="IPathHeightProvider.cs" />
+    <Compile Include="IPathToAccessibleModifier.cs" />
+    <Compile Include="IPathTransformer.cs" />
+    <Compile Include="IPrioritizedSingletonInstantNavMeshListener.cs" />
+    <Compile Include="IPrioritizedSingletonNavMeshListener.cs" />
+    <Compile Include="IPrioritizedSingletonPreviewNavMeshListener.cs" />
+    <Compile Include="ISingletonInstantNavMeshListener.cs" />
+    <Compile Include="ISingletonNavMeshListener.cs" />
+    <Compile Include="ISingletonPreviewNavMeshListener.cs" />
+    <Compile Include="NavigationCachingService.cs" />
+    <Compile Include="NavigationConfigurator.cs" />
+    <Compile Include="NavigationCoordinateSystem.cs" />
+    <Compile Include="NavigationDebuggingService.cs" />
+    <Compile Include="NavigationDistance.cs" />
+    <Compile Include="NavigationRangeService.cs" />
+    <Compile Include="NavigationService.cs" />
+    <Compile Include="NavigationSynchronizer.cs" />
+    <Compile Include="NavMeshChange.cs" />
+    <Compile Include="NavMeshChangeFactory.cs" />
+    <Compile Include="NavMeshChangeSpecification.cs" />
+    <Compile Include="NavMeshChangeType.cs" />
+    <Compile Include="NavMeshDrawer.cs" />
+    <Compile Include="NavMeshEdge.cs" />
+    <Compile Include="NavMeshGroupService.cs" />
+    <Compile Include="NavMeshListenerEntityRegistry.cs" />
+    <Compile Include="NavMeshListenerSingletonRegistry.cs" />
+    <Compile Include="NavMeshNode.cs" />
+    <Compile Include="NavMeshObject.cs" />
+    <Compile Include="NavMeshObjectFactory.cs" />
+    <Compile Include="NavMeshPositionService.cs" />
+    <Compile Include="NavMeshService.cs" />
+    <Compile Include="NavMeshSource.cs" />
+    <Compile Include="NavMeshSourceNode.cs" />
+    <Compile Include="NavMeshUpdate.cs" />
+    <Compile Include="NavMeshUpdateBuilderFactory.cs" />
+    <Compile Include="NavMeshUpdateNotifier.cs" />
+    <Compile Include="NavMeshUpdater.cs" />
+    <Compile Include="NodeIdService.cs" />
+    <Compile Include="PathCorner.cs" />
+    <Compile Include="PathfindingService.cs" />
+    <Compile Include="PathFlowField.cs" />
+    <Compile Include="PathRequest.cs" />
+    <Compile Include="PreviewDistrictMap.cs" />
+    <Compile Include="PreviewDistrictObstacleService.cs" />
+    <Compile Include="PreviewRoadNavMeshGraph.cs" />
+    <Compile Include="PreviewRoadNavMeshSource.cs" />
+    <Compile Include="PreviewTerrainNavMeshGraph.cs" />
+    <Compile Include="PreviewTerrainNavMeshSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestrictedNodeMap.cs" />
+    <Compile Include="RestrictedNodeUpdater.cs" />
+    <Compile Include="RoadAStarPathfinder.cs" />
+    <Compile Include="RoadFlowFieldCache.cs" />
+    <Compile Include="RoadFlowFieldGenerator.cs" />
+    <Compile Include="RoadNavigationRangeService.cs" />
+    <Compile Include="RoadNavMeshGraph.cs" />
+    <Compile Include="RoadNavMeshSource.cs" />
+    <Compile Include="RoadReachabilityService.cs" />
+    <Compile Include="RoadSpillFlowField.cs" />
+    <Compile Include="RoadSpillFlowFieldGenerator.cs" />
+    <Compile Include="RoadSpillNavigationRangeService.cs" />
+    <Compile Include="TerrainAStarPathfinder.cs" />
+    <Compile Include="TerrainFlowFieldCache.cs" />
+    <Compile Include="TerrainFlowFieldGenerator.cs" />
+    <Compile Include="TerrainNavigationRangeService.cs" />
+    <Compile Include="TerrainNavMeshGraph.cs" />
+    <Compile Include="TerrainNavMeshSource.cs" />
+    <Compile Include="TerrainReachabilityService.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="WeightedCoordinates.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Coordinates\Timberborn.Coordinates.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A1}</Project>
+      <Name>Timberborn.Coordinates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TickSystem\Timberborn.TickSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E1}</Project>
+      <Name>Timberborn.TickSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WorldPersistence\Timberborn.WorldPersistence.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782826}</Project>
+      <Name>Timberborn.WorldPersistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

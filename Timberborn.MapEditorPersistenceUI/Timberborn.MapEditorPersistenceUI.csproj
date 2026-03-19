@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D53CA8FE-0901-47DA-9CE4-9D43A94314D9}</ProjectGuid>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782728}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Timberborn.MapEditorPersistenceUI</RootNamespace>
     <AssemblyName>Timberborn.MapEditorPersistenceUI</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,57 +30,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bindito.Core">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Bindito.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\netstandard.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.Common">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.CoreUI">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.CoreUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.InputSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.InputSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.Localization">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.MapItemsUI">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.MapItemsUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.MapRepositorySystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.MapRepositorySystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.MapRepositorySystemUI">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.MapRepositorySystemUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.MapSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.MapSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.PlatformUtilities">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.PlatformUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.QuickNotificationSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.QuickNotificationSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.SingletonSystem">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.SingletonSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Timberborn.Versioning">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\Timberborn.Versioning.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>E:\SteamLibrary\steamapps\common\Timberborn\Timberborn_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
-    </Reference>
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.UIElementsModule" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -96,9 +49,65 @@
     <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Name>Timberborn.CoreUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.InputSystem\Timberborn.InputSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782708}</Project>
+      <Name>Timberborn.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Localization\Timberborn.Localization.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78271B}</Project>
+      <Name>Timberborn.Localization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Timberborn.MapEditorPersistence\Timberborn.MapEditorPersistence.csproj">
-      <Project>{D53CA8FE-0901-47DA-9CE4-9D43A94314D8}</Project>
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782727}</Project>
       <Name>Timberborn.MapEditorPersistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MapItemsUI\Timberborn.MapItemsUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782735}</Project>
+      <Name>Timberborn.MapItemsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MapRepositorySystemUI\Timberborn.MapRepositorySystemUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782739}</Project>
+      <Name>Timberborn.MapRepositorySystemUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MapRepositorySystem\Timberborn.MapRepositorySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782738}</Project>
+      <Name>Timberborn.MapRepositorySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.MapSystem\Timberborn.MapSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78273B}</Project>
+      <Name>Timberborn.MapSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PlatformUtilities\Timberborn.PlatformUtilities.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782774}</Project>
+      <Name>Timberborn.PlatformUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.QuickNotificationSystem\Timberborn.QuickNotificationSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782783}</Project>
+      <Name>Timberborn.QuickNotificationSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Versioning\Timberborn.Versioning.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827FF}</Project>
+      <Name>Timberborn.Versioning</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

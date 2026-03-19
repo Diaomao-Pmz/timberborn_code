@@ -2,7 +2,7 @@
 
 namespace Timberborn.MapEditorTickSystem
 {
-	// Token: 0x02000003 RID: 3
+	// Token: 0x02000004 RID: 4
 	[AttributeUsage(AttributeTargets.Class)]
 	public class MapEditorTickableAttribute : Attribute
 	{

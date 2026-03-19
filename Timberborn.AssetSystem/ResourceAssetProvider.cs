@@ -28,7 +28,8 @@ namespace Timberborn.AssetSystem
 		// Token: 0x0600002D RID: 45 RVA: 0x000024C0 File Offset: 0x000006C0
 		public IEnumerable<OrderedAsset> LoadAll<T>(string path) where T : Object
 		{
-			return Enumerable.Select<T, OrderedAsset>(Resources.LoadAll<T>(path), (T asset) => new OrderedAsset(ResourceAssetProvider.ResourceAssetOrder, asset));
+			return from asset in Resources.LoadAll<T>(path)
+			select new OrderedAsset(ResourceAssetProvider.ResourceAssetOrder, asset);
 		}
 
 		// Token: 0x0600002E RID: 46 RVA: 0x000024EC File Offset: 0x000006EC

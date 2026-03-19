@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorScene
 {
-	// Token: 0x02000005 RID: 5
+	// Token: 0x02000006 RID: 6
 	public class MapEditorSceneExceptionStateSaver : MonoBehaviour
 	{
 		// Token: 0x06000007 RID: 7 RVA: 0x000021CC File Offset: 0x000003CC
@@ -30,14 +30,14 @@ namespace Timberborn.MapEditorScene
 		}
 
 		// Token: 0x0600000A RID: 10 RVA: 0x000021FB File Offset: 0x000003FB
-		private void OnFirstUncaughtException(object sender, EventArgs e)
+		public void OnFirstUncaughtException(object sender, EventArgs e)
 		{
 			Debug.Log("Creating an exception map save");
 			ErrorReporter.ExceptionSave = this.CreateExceptionSave();
 		}
 
 		// Token: 0x0600000B RID: 11 RVA: 0x00002214 File Offset: 0x00000414
-		private byte[] CreateExceptionSave()
+		public byte[] CreateExceptionSave()
 		{
 			try
 			{
@@ -54,7 +54,8 @@ namespace Timberborn.MapEditorScene
 			return null;
 		}
 
-		// Token: 0x04000003 RID: 3
-		private MapSaver _mapSaver;
+		// Token: 0x04000008 RID: 8
+		[HideInInspector]
+		public MapSaver _mapSaver;
 	}
 }

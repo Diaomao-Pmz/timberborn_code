@@ -5,7 +5,7 @@ using Timberborn.TimeSystem;
 
 namespace Timberborn.MapEditorSimulationSystem
 {
-	// Token: 0x02000003 RID: 3
+	// Token: 0x02000004 RID: 4
 	public class MapEditorSimulation : ILoadableSingleton
 	{
 		// Token: 0x17000001 RID: 1
@@ -39,10 +39,10 @@ namespace Timberborn.MapEditorSimulationSystem
 			this._simulationController.ResetSimulation();
 		}
 
-		// Token: 0x04000002 RID: 2
-		private readonly SimulationController _simulationController;
+		// Token: 0x04000007 RID: 7
+		public readonly SimulationController _simulationController;
 
-		// Token: 0x04000003 RID: 3
-		private readonly SpeedManager _speedManager;
+		// Token: 0x04000008 RID: 8
+		public readonly SpeedManager _speedManager;
 	}
 }

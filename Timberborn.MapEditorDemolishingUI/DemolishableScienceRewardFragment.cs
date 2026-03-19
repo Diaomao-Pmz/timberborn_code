@@ -8,8 +8,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorDemolishingUI
 {
-	// Token: 0x02000003 RID: 3
-	internal class DemolishableScienceRewardFragment : IEntityPanelFragment
+	// Token: 0x02000004 RID: 4
+	public class DemolishableScienceRewardFragment : IEntityPanelFragment
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
 		public DemolishableScienceRewardFragment(VisualElementLoader visualElementLoader, DemolishableScienceRewardLabelFactory demolishableScienceRewardLabelFactory)
@@ -50,16 +50,16 @@ namespace Timberborn.MapEditorDemolishingUI
 		{
 		}
 
-		// Token: 0x04000001 RID: 1
-		private readonly VisualElementLoader _visualElementLoader;
+		// Token: 0x04000006 RID: 6
+		public readonly VisualElementLoader _visualElementLoader;
 
-		// Token: 0x04000002 RID: 2
-		private readonly DemolishableScienceRewardLabelFactory _demolishableScienceRewardLabelFactory;
+		// Token: 0x04000007 RID: 7
+		public readonly DemolishableScienceRewardLabelFactory _demolishableScienceRewardLabelFactory;
 
-		// Token: 0x04000003 RID: 3
-		private VisualElement _root;
+		// Token: 0x04000008 RID: 8
+		public VisualElement _root;
 
-		// Token: 0x04000004 RID: 4
-		private DemolishableScienceRewardLabel _demolishableScienceRewardLabel;
+		// Token: 0x04000009 RID: 9
+		public DemolishableScienceRewardLabel _demolishableScienceRewardLabel;
 	}
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorSceneLoading
 {
-	// Token: 0x02000006 RID: 6
+	// Token: 0x02000007 RID: 7
 	public class MapEditorSceneLoader
 	{
 		// Token: 0x06000007 RID: 7 RVA: 0x000020FE File Offset: 0x000002FE
@@ -45,23 +45,23 @@ namespace Timberborn.MapEditorSceneLoading
 		}
 
 		// Token: 0x0600000C RID: 12 RVA: 0x00002188 File Offset: 0x00000388
-		private string Tip()
+		public string Tip()
 		{
 			MapEditorTipSpec singleSpec = this._specService.GetSingleSpec<MapEditorTipSpec>();
 			string listElement = this._randomNumberGenerator.GetListElement<string>(singleSpec.Tips);
 			return this._loc.T(listElement);
 		}
 
-		// Token: 0x04000003 RID: 3
-		private readonly ISceneLoader _sceneLoader;
+		// Token: 0x04000008 RID: 8
+		public readonly ISceneLoader _sceneLoader;
 
-		// Token: 0x04000004 RID: 4
-		private readonly ILoc _loc;
+		// Token: 0x04000009 RID: 9
+		public readonly ILoc _loc;
 
-		// Token: 0x04000005 RID: 5
-		private readonly ISpecService _specService;
+		// Token: 0x0400000A RID: 10
+		public readonly ISpecService _specService;
 
-		// Token: 0x04000006 RID: 6
-		private readonly IRandomNumberGenerator _randomNumberGenerator;
+		// Token: 0x0400000B RID: 11
+		public readonly IRandomNumberGenerator _randomNumberGenerator;
 	}
 }

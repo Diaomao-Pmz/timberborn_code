@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Timberborn.MapEditorPersistenceUI
 {
-	// Token: 0x02000004 RID: 4
+	// Token: 0x02000005 RID: 5
 	public class MapPersistenceController
 	{
 		// Token: 0x06000005 RID: 5 RVA: 0x000020EC File Offset: 0x000002EC
@@ -111,7 +111,7 @@ namespace Timberborn.MapEditorPersistenceUI
 		}
 
 		// Token: 0x0600000C RID: 12 RVA: 0x00002318 File Offset: 0x00000518
-		private bool TrySaveCurrentInternal(bool notify, Action successAction)
+		public bool TrySaveCurrentInternal(bool notify, Action successAction)
 		{
 			MapFileReference mapFileReference;
 			if (this.TryGetCurrentMap(out mapFileReference))
@@ -123,7 +123,7 @@ namespace Timberborn.MapEditorPersistenceUI
 		}
 
 		// Token: 0x0600000D RID: 13 RVA: 0x00002344 File Offset: 0x00000544
-		private void ForceSaveAs(string mapName, Action successAction, bool notify)
+		public void ForceSaveAs(string mapName, Action successAction, bool notify)
 		{
 			try
 			{
@@ -145,37 +145,37 @@ namespace Timberborn.MapEditorPersistenceUI
 			}
 		}
 
-		// Token: 0x04000001 RID: 1
-		private static readonly string MapExistsLocKey = "MapEditor.SaveMap.MapExists";
-
-		// Token: 0x04000002 RID: 2
-		private static readonly string SavedAsLocKey = "MapEditor.SaveMap.SavedAs";
-
-		// Token: 0x04000003 RID: 3
-		private static readonly string ErrorLocKey = "Saving.Error";
-
-		// Token: 0x04000004 RID: 4
-		private static readonly Version NewMapVersion = Version.Create("0");
-
-		// Token: 0x04000005 RID: 5
-		private readonly MapEditorMapLoader _mapEditorMapLoader;
-
 		// Token: 0x04000006 RID: 6
-		private readonly MapSaver _mapSaver;
+		public static readonly string MapExistsLocKey = "MapEditor.SaveMap.MapExists";
 
 		// Token: 0x04000007 RID: 7
-		private readonly DialogBoxShower _dialogBoxShower;
+		public static readonly string SavedAsLocKey = "MapEditor.SaveMap.SavedAs";
 
 		// Token: 0x04000008 RID: 8
-		private readonly QuickNotificationService _quickNotificationService;
+		public static readonly string ErrorLocKey = "Saving.Error";
 
 		// Token: 0x04000009 RID: 9
-		private readonly ILoc _loc;
+		public static readonly Version NewMapVersion = Version.Create("0");
 
 		// Token: 0x0400000A RID: 10
-		private readonly MapVersionCompatibilityService _mapVersionCompatibilityService;
+		public readonly MapEditorMapLoader _mapEditorMapLoader;
 
 		// Token: 0x0400000B RID: 11
-		private readonly EventBus _eventBus;
+		public readonly MapSaver _mapSaver;
+
+		// Token: 0x0400000C RID: 12
+		public readonly DialogBoxShower _dialogBoxShower;
+
+		// Token: 0x0400000D RID: 13
+		public readonly QuickNotificationService _quickNotificationService;
+
+		// Token: 0x0400000E RID: 14
+		public readonly ILoc _loc;
+
+		// Token: 0x0400000F RID: 15
+		public readonly MapVersionCompatibilityService _mapVersionCompatibilityService;
+
+		// Token: 0x04000010 RID: 16
+		public readonly EventBus _eventBus;
 	}
 }

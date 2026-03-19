@@ -2,7 +2,7 @@
 
 namespace Timberborn.MapEditorPersistenceUI
 {
-	// Token: 0x02000005 RID: 5
+	// Token: 0x02000007 RID: 7
 	public class MapSavedEvent
 	{
 	}

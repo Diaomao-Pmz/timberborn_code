@@ -6,8 +6,8 @@ using Timberborn.WaterSourceSystem;
 
 namespace Timberborn.MapEditorWaterSourceSystemUI
 {
-	// Token: 0x02000003 RID: 3
-	internal class BadwaterFlowStopper : BaseComponent, IAwakableComponent, IInitializableEntity, IWaterStrengthModifier
+	// Token: 0x02000004 RID: 4
+	public class BadwaterFlowStopper : BaseComponent, IAwakableComponent, IInitializableEntity, IWaterStrengthModifier
 	{
 		// Token: 0x06000003 RID: 3 RVA: 0x000020BE File Offset: 0x000002BE
 		public BadwaterFlowStopper(MapEditorHazardousWeatherSetter mapEditorHazardousWeatherSetter)
@@ -33,10 +33,10 @@ namespace Timberborn.MapEditorWaterSourceSystemUI
 			return (float)(this._mapEditorHazardousWeatherSetter.IsBadtideWeather ? 0 : 1);
 		}
 
-		// Token: 0x04000001 RID: 1
-		private readonly MapEditorHazardousWeatherSetter _mapEditorHazardousWeatherSetter;
+		// Token: 0x04000006 RID: 6
+		public readonly MapEditorHazardousWeatherSetter _mapEditorHazardousWeatherSetter;
 
-		// Token: 0x04000002 RID: 2
-		private WaterSource _waterSource;
+		// Token: 0x04000007 RID: 7
+		public WaterSource _waterSource;
 	}
 }

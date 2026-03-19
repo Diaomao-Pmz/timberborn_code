@@ -7,8 +7,8 @@ using Timberborn.EntityPanelSystem;
 
 namespace Timberborn.MapEditorDemolishingUI
 {
-	// Token: 0x02000004 RID: 4
-	internal class DemolishableScienceRewardDescriber : BaseComponent, IAwakableComponent, IEntityDescriber
+	// Token: 0x02000005 RID: 5
+	public class DemolishableScienceRewardDescriber : BaseComponent, IAwakableComponent, IEntityDescriber
 	{
 		// Token: 0x06000008 RID: 8 RVA: 0x00002175 File Offset: 0x00000375
 		public DemolishableScienceRewardDescriber(DemolishableScienceRewardLabelFactory demolishableScienceRewardLabelFactory)
@@ -34,10 +34,10 @@ namespace Timberborn.MapEditorDemolishingUI
 			yield break;
 		}
 
-		// Token: 0x04000005 RID: 5
-		private readonly DemolishableScienceRewardLabelFactory _demolishableScienceRewardLabelFactory;
+		// Token: 0x0400000A RID: 10
+		public readonly DemolishableScienceRewardLabelFactory _demolishableScienceRewardLabelFactory;
 
-		// Token: 0x04000006 RID: 6
-		private DemolishableScienceRewardSpec _spec;
+		// Token: 0x0400000B RID: 11
+		public DemolishableScienceRewardSpec _spec;
 	}
 }

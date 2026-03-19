@@ -5,7 +5,7 @@ using Timberborn.BlueprintSystem;
 
 namespace Timberborn.MapEditorPlacementRandomizing
 {
-	// Token: 0x02000008 RID: 8
+	// Token: 0x02000009 RID: 9
 	[NullableContext(1)]
 	[Nullable(0)]
 	public class BlockObjectRandomizablePlacementSpec : ComponentSpec, IEquatable<BlockObjectRandomizablePlacementSpec>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.FactionValidators</RootNamespace>
+    <AssemblyName>Timberborn.FactionValidators</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FactionSpecGoodsValidator.cs" />
+    <Compile Include="FactionSpecMaterialsValidator.cs" />
+    <Compile Include="FactionSpecNeedsValidator.cs" />
+    <Compile Include="FactionSpecTemplateValidator.cs" />
+    <Compile Include="FactionSpecValidationService.cs" />
+    <Compile Include="FactionValidatorsConfigurator.cs" />
+    <Compile Include="IFactionSpecValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlueprintSystem\Timberborn.BlueprintSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782672}</Project>
+      <Name>Timberborn.BlueprintSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.FactionSystem\Timberborn.FactionSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826CB}</Project>
+      <Name>Timberborn.FactionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GoodCollectionSystem\Timberborn.GoodCollectionSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826F2}</Project>
+      <Name>Timberborn.GoodCollectionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Modding\Timberborn.Modding.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782746}</Project>
+      <Name>Timberborn.Modding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.NeedCollectionSystem\Timberborn.NeedCollectionSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782763}</Project>
+      <Name>Timberborn.NeedCollectionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateCollectionSystem\Timberborn.TemplateCollectionSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D2}</Project>
+      <Name>Timberborn.TemplateCollectionSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TimbermeshMaterials\Timberborn.TimbermeshMaterials.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E7}</Project>
+      <Name>Timberborn.TimbermeshMaterials</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

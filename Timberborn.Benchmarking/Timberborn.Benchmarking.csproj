@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782664}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.Benchmarking</RootNamespace>
+    <AssemblyName>Timberborn.Benchmarking</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.UIElementsModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Benchmarker.cs" />
+    <Compile Include="BenchmarkingConfigurator.cs" />
+    <Compile Include="BenchmarkLogger.cs" />
+    <Compile Include="BenchmarkPanel.cs" />
+    <Compile Include="BenchmarkParameters.cs" />
+    <Compile Include="BenchmarkReport.cs" />
+    <Compile Include="BenchmarkReportCreator.cs" />
+    <Compile Include="BenchmarkStartedEvent.cs" />
+    <Compile Include="BenchmarkStarter.cs" />
+    <Compile Include="FrameTimingSampler.cs" />
+    <Compile Include="PerformanceSample.cs" />
+    <Compile Include="PerformanceSampleFormatter.cs" />
+    <Compile Include="PerformanceSampler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SavingBenchmarker.cs" />
+    <Compile Include="StatisticsCalculator.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ApplicationLifetime\Timberborn.ApplicationLifetime.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78264D}</Project>
+      <Name>Timberborn.ApplicationLifetime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Autosaving\Timberborn.Autosaving.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782659}</Project>
+      <Name>Timberborn.Autosaving</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Buildings\Timberborn.Buildings.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782684}</Project>
+      <Name>Timberborn.Buildings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CameraSystem\Timberborn.CameraSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78268B}</Project>
+      <Name>Timberborn.CameraSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Characters\Timberborn.Characters.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782695}</Project>
+      <Name>Timberborn.Characters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CommandLine\Timberborn.CommandLine.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782699}</Project>
+      <Name>Timberborn.CommandLine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Common\Timberborn.Common.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269A}</Project>
+      <Name>Timberborn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.ConstructionSites\Timberborn.ConstructionSites.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78269F}</Project>
+      <Name>Timberborn.ConstructionSites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.CoreUI\Timberborn.CoreUI.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826A3}</Project>
+      <Name>Timberborn.CoreUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.EntitySystem\Timberborn.EntitySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826C3}</Project>
+      <Name>Timberborn.EntitySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.FeatureToggleSystem\Timberborn.FeatureToggleSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826CD}</Project>
+      <Name>Timberborn.FeatureToggleSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.FileSystem\Timberborn.FileSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826D1}</Project>
+      <Name>Timberborn.FileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GameSaveRepositorySystem\Timberborn.GameSaveRepositorySystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826E4}</Project>
+      <Name>Timberborn.GameSaveRepositorySystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.GameSaveRuntimeSystem\Timberborn.GameSaveRuntimeSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826E6}</Project>
+      <Name>Timberborn.GameSaveRuntimeSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Metrics\Timberborn.Metrics.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782745}</Project>
+      <Name>Timberborn.Metrics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.PlatformUtilities\Timberborn.PlatformUtilities.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782774}</Project>
+      <Name>Timberborn.PlatformUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SceneLoading\Timberborn.SceneLoading.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78279C}</Project>
+      <Name>Timberborn.SceneLoading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.SingletonSystem\Timberborn.SingletonSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827AC}</Project>
+      <Name>Timberborn.SingletonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TickSystem\Timberborn.TickSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E1}</Project>
+      <Name>Timberborn.TickSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TimeSystem\Timberborn.TimeSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827E9}</Project>
+      <Name>Timberborn.TimeSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.UILayoutSystem\Timberborn.UILayoutSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827F9}</Project>
+      <Name>Timberborn.UILayoutSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

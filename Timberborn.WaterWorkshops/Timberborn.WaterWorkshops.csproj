@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782811}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timberborn.WaterWorkshops</RootNamespace>
+    <AssemblyName>Timberborn.WaterWorkshops</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManufactoryWaterConsumer.cs" />
+    <Compile Include="ManufactoryWaterConsumerSpec.cs" />
+    <Compile Include="ManufactoryWaterContaminationConsumer.cs" />
+    <Compile Include="ManufactoryWaterContaminationConsumerSpec.cs" />
+    <Compile Include="ManufactoryWaterContaminationProducer.cs" />
+    <Compile Include="ManufactoryWaterContaminationProducerSpec.cs" />
+    <Compile Include="ManufactoryWaterProducer.cs" />
+    <Compile Include="ManufactoryWaterProducerSpec.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="WaterContaminationGoodToWaterContaminationAmountConverter.cs" />
+    <Compile Include="WaterGoodToWaterAmountConverter.cs" />
+    <Compile Include="WaterInputContaminationManufactoryLimiter.cs" />
+    <Compile Include="WaterInputManufactoryLimiter.cs" />
+    <Compile Include="WaterOutputManufactoryLimiter.cs" />
+    <Compile Include="WaterWorkshopsConfigurator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindito.Core\Bindito.Core.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782642}</Project>
+      <Name>Bindito.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782641}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782643}</Project>
+      <Name>System.Collections.Immutable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BaseComponentSystem\Timberborn.BaseComponentSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A78265B}</Project>
+      <Name>Timberborn.BaseComponentSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.BlueprintSystem\Timberborn.BlueprintSystem.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782672}</Project>
+      <Name>Timberborn.BlueprintSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Goods\Timberborn.Goods.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7826F5}</Project>
+      <Name>Timberborn.Goods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.TemplateInstantiation\Timberborn.TemplateInstantiation.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A7827D3}</Project>
+      <Name>Timberborn.TemplateInstantiation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.WaterBuildings\Timberborn.WaterBuildings.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782805}</Project>
+      <Name>Timberborn.WaterBuildings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Timberborn.Workshops\Timberborn.Workshops.csproj">
+      <Project>{C44B47DA-BBBE-46A8-BCE8-D8DF9A782821}</Project>
+      <Name>Timberborn.Workshops</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -4,12 +4,12 @@ using Timberborn.TemplateInstantiation;
 
 namespace Timberborn.MapEditorPlacementRandomizing
 {
-	// Token: 0x02000009 RID: 9
+	// Token: 0x0200000A RID: 10
 	[Context("MapEditor")]
-	internal class MapEditorPlacementRandomizingConfigurator : Configurator
+	public class MapEditorPlacementRandomizingConfigurator : Configurator
 	{
 		// Token: 0x0600001C RID: 28 RVA: 0x00002288 File Offset: 0x00000488
-		protected override void Configure()
+		public override void Configure()
 		{
 			base.Bind<BlockObjectPlacementRandomizer>().AsTransient();
 			base.Bind<BlockObjectPlacementRandomizingService>().AsSingleton();
@@ -17,7 +17,7 @@ namespace Timberborn.MapEditorPlacementRandomizing
 		}
 
 		// Token: 0x0600001D RID: 29 RVA: 0x000022BF File Offset: 0x000004BF
-		private static TemplateModule ProvideTemplateModule()
+		public static TemplateModule ProvideTemplateModule()
 		{
 			TemplateModule.Builder builder = new TemplateModule.Builder();
 			builder.AddDecorator<BlockObjectRandomizablePlacementSpec, BlockObjectPlacementRandomizer>();

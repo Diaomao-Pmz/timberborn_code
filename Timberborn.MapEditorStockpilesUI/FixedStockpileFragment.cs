@@ -13,8 +13,8 @@ using UnityEngine.UIElements;
 
 namespace Timberborn.MapEditorStockpilesUI
 {
-	// Token: 0x02000004 RID: 4
-	internal class FixedStockpileFragment : IEntityPanelFragment, ILoadableSingleton
+	// Token: 0x02000005 RID: 5
+	public class FixedStockpileFragment : IEntityPanelFragment, ILoadableSingleton
 	{
 		// Token: 0x0600000E RID: 14 RVA: 0x000021B5 File Offset: 0x000003B5
 		public FixedStockpileFragment(EventBus eventBus, VisualElementLoader visualElementLoader, DropdownItemsSetter dropdownItemsSetter, EntityChangeRecorderFactory entityChangeRecorderFactory)
@@ -36,9 +36,9 @@ namespace Timberborn.MapEditorStockpilesUI
 		{
 			string elementName = "MapEditor/EntityPanel/FixedStockpileFragment";
 			this._root = this._visualElementLoader.LoadVisualElement(elementName);
-			this._goods = this._root.Q("Goods", null);
-			this._amount = this._root.Q("Amount", null);
-			this._amount.RegisterValueChangedCallback(new EventCallback<ChangeEvent<int>>(this.OnGoodAmountChanged));
+			this._goods = UQueryExtensions.Q<Dropdown>(this._root, "Goods", null);
+			this._amount = UQueryExtensions.Q<IntegerField>(this._root, "Amount", null);
+			INotifyValueChangedExtensions.RegisterValueChangedCallback<int>(this._amount, new EventCallback<ChangeEvent<int>>(this.OnGoodAmountChanged));
 			this._root.ToggleDisplayStyle(false);
 			return this._root;
 		}
@@ -89,7 +89,7 @@ namespace Timberborn.MapEditorStockpilesUI
 		}
 
 		// Token: 0x06000015 RID: 21 RVA: 0x00002368 File Offset: 0x00000568
-		private void OnGoodAmountChanged(ChangeEvent<int> changeEvent)
+		public void OnGoodAmountChanged(ChangeEvent<int> changeEvent)
 		{
 			int amount = Math.Clamp(changeEvent.newValue, 0, this._inventory.Capacity);
 			using (this._entityChangeRecorderFactory.CreateChangeRecorder(this._fixedStockpileInventorySetter))
@@ -98,37 +98,37 @@ namespace Timberborn.MapEditorStockpilesUI
 			}
 		}
 
-		// Token: 0x04000007 RID: 7
-		private readonly EventBus _eventBus;
-
-		// Token: 0x04000008 RID: 8
-		private readonly VisualElementLoader _visualElementLoader;
-
-		// Token: 0x04000009 RID: 9
-		private readonly DropdownItemsSetter _dropdownItemsSetter;
-
-		// Token: 0x0400000A RID: 10
-		private readonly EntityChangeRecorderFactory _entityChangeRecorderFactory;
-
-		// Token: 0x0400000B RID: 11
-		private FixedStockpileDropdownProvider _fixedStockpileDropdownProvider;
-
 		// Token: 0x0400000C RID: 12
-		private FixedStockpileInventorySetter _fixedStockpileInventorySetter;
+		public readonly EventBus _eventBus;
 
 		// Token: 0x0400000D RID: 13
-		private StockpileVisualizationUpdater _stockpileVisualizationUpdater;
+		public readonly VisualElementLoader _visualElementLoader;
 
 		// Token: 0x0400000E RID: 14
-		private Inventory _inventory;
+		public readonly DropdownItemsSetter _dropdownItemsSetter;
 
 		// Token: 0x0400000F RID: 15
-		private VisualElement _root;
+		public readonly EntityChangeRecorderFactory _entityChangeRecorderFactory;
 
 		// Token: 0x04000010 RID: 16
-		private Dropdown _goods;
+		public FixedStockpileDropdownProvider _fixedStockpileDropdownProvider;
 
 		// Token: 0x04000011 RID: 17
-		private IntegerField _amount;
+		public FixedStockpileInventorySetter _fixedStockpileInventorySetter;
+
+		// Token: 0x04000012 RID: 18
+		public StockpileVisualizationUpdater _stockpileVisualizationUpdater;
+
+		// Token: 0x04000013 RID: 19
+		public Inventory _inventory;
+
+		// Token: 0x04000014 RID: 20
+		public VisualElement _root;
+
+		// Token: 0x04000015 RID: 21
+		public Dropdown _goods;
+
+		// Token: 0x04000016 RID: 22
+		public IntegerField _amount;
 	}
 }
